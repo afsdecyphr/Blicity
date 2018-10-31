@@ -1,12 +1,3 @@
-/**
- Blicity CAD/MDT
- Copyright (C) 2018 Decyphr and Blicity.
- Credit is not allowed to be removed from this program, doing so will
- result in copyright takedown.
- WE DO NOT SUPPORT CHANGING CODE IN ANYWAY, AS IT WILL MESS WITH FUTURE
- UPDATES. NO SUPPORT IS PROVIDED FOR CODE THAT IS EDITED.
- **/
-
 function makeid() {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -148,39 +139,34 @@ function refresh() {
                                 console.log("ajax error");
                             }
                         });
-                        var isupdating = false;
-                        $( ".unitchange" ).each(function( index ) {
-                            if ($( ".unitchange" ).hasClass('show')) {
-                                isupdating = true;
-                            }
-                        });
-                        if (!isupdating) {
                             $.ajax({
                                 url:"actions.php",
                                 method:"GET",
                                 data:{
-                                    getUnits: '1'
+                                    getCalls: '1'
                                 },
                                 success:function(response) {
-                                    $('#unitsTableBody').html(response);
+                                    $('#callsTableBody').html(response);
                                 },
                                 error:function(){
                                     console.log("ajax error");
                                 }
                             });
-                        }
+                        console.log(1);
                     } else if (response == 0) {
                         $("#status_0").addClass("disabled");
                         $("#status_1").removeClass("disabled");
                         $("#status_2").addClass("disabled");
-                        $('#unitsTableBody').html("");
+                        $('#callsTableBody').html("");
                         $('#bolosTableBody').html("");
+                        console.log(0);
                     } else if (response == 2) {
                         $("#status_2").addClass("disabled");
                         $("#status_1").removeClass("disabled");
                         $("#status_0").removeClass("disabled");
-                        $('#unitsTableBody').html("");
+                        $('#callsTableBody').html("");
                         $('#bolosTableBody').html("");
+                        console.log(2);
                     }
                     status = response;
                 },
@@ -320,4 +306,118 @@ function issueTicket() {
             }
         }
     }
+}
+function issueWarrant() {
+    if ($("#warrReasonText").val() == "") {
+        $("#warrReasonHelp").show();
+    } else {
+            if (document.getElementById("testsel3").value == "default") {
+                $("#warrCharacterHelp").show();
+            } else {
+                var warrantOn = document.getElementById("testsel3").value;
+                var reason = $("#warrReasonText").val();
+            $.ajax({
+                url:"actions.php?warrant="+warrantOn+"&reason="+reason,
+                method:"GET",
+                data:{
+                },
+                success:function(response) {
+                    if (response == "success") {
+                        $("#warrantModal").modal('toggle');
+                    }
+                },
+                error:function(){
+                    console.log("ajax error");
+                }
+            });
+            }
+    }
+}
+function updateCharacters() {
+            if ('XDomainRequest' in window && window.XDomainRequest !== null) {
+                jQuery.ajaxSettings.xhr = function() {
+                    try { return new ActiveXObject("Microsoft.XMLHTTP"); }
+                    catch(e) { }
+                    jQuery.support.cors = true;
+                };
+            }
+            $.ajax({
+                url:"actions.php",
+                method:"GET",
+                data:{
+                    getCharacters: ''
+                },
+                success:function(response) {
+                    $("#characterSelect").html(response);
+                },
+                error:function(){
+                    console.log("ajax error");
+                }
+            });
+}
+function updateVehicles() {
+            if ('XDomainRequest' in window && window.XDomainRequest !== null) {
+                jQuery.ajaxSettings.xhr = function() {
+                    try { return new ActiveXObject("Microsoft.XMLHTTP"); }
+                    catch(e) { }
+                    jQuery.support.cors = true;
+                };
+            }
+            $.ajax({
+                url:"actions.php",
+                method:"GET",
+                data:{
+                    getVehicles: ''
+                },
+                success:function(response) {
+                    $("#vehicleSelect").html(response);
+                },
+                error:function(){
+                    console.log("ajax error");
+                }
+            });
+}
+function suspendLicense(uuid) {
+            if ('XDomainRequest' in window && window.XDomainRequest !== null) {
+                jQuery.ajaxSettings.xhr = function() {
+                    try { return new ActiveXObject("Microsoft.XMLHTTP"); }
+                    catch(e) { }
+                    jQuery.support.cors = true;
+                };
+            }
+            $.ajax({
+                url:"actions.php",
+                method:"GET",
+                data:{
+                    suspendLicense: uuid
+                },
+                success:function(response) {
+                    
+                },
+                error:function(){
+                    console.log("ajax error");
+                }
+            });
+}
+function showVehicle(uvid) {
+            if ('XDomainRequest' in window && window.XDomainRequest !== null) {
+                jQuery.ajaxSettings.xhr = function() {
+                    try { return new ActiveXObject("Microsoft.XMLHTTP"); }
+                    catch(e) { }
+                    jQuery.support.cors = true;
+                };
+            }
+            $.ajax({
+                url:"actions.php",
+                method:"GET",
+                data:{
+                    searchVehicle: uvid
+                },
+                success:function(response) {
+                    $("#showVeh").html(response);
+                },
+                error:function(){
+                    console.log("ajax error");
+                }
+            });
 }

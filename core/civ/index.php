@@ -29,9 +29,9 @@ $_SESSION['identifier'] = $_GET['q'];
     <title>Blicity | Civ</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css?v=1" rel="stylesheet" />
-    <link href="http://localhost:8080/Blicity/core/assets/select2-bootstrap4.css?v=1" rel="stylesheet" />
+    <link href="<?php echo SITE_URL; ?>core/assets/select2-bootstrap4.css?v=1" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/lux/bootstrap.min.css">
-    <link rel="stylesheet" href="http://localhost:8080/Blicity/core/assets/style.css">
+    <link rel="stylesheet" href="<?php echo SITE_URL; ?>core/assets/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     
@@ -39,7 +39,7 @@ $_SESSION['identifier'] = $_GET['q'];
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-    <script src="http://localhost:8080/Blicity/core/civ/civ.js?v=1"></script>
+    <script src="<?php echo SITE_URL; ?>core/obfuscated_js/civ.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <style>
         .table th , .table td {

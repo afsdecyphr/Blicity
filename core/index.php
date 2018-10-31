@@ -19,11 +19,15 @@ require_once 'includes/check_access.php';
 <html>
     <head>
         <title><?php echo TITLE; ?></title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="<?php echo SITE_URL; ?>core/assets/bootstrap-number-input.js"></script>
+        <script src="<?php echo SITE_URL; ?>core/obfuscated_js/home.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/lux/bootstrap.min.css">
-        <link rel="stylesheet" href="http://localhost:8080/Blicity/core/assets/style.css">
+        <link rel="stylesheet" href="<?php echo SITE_URL; ?>core/assets/style.css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-        <script src="http://localhost:8080/Blicity/core/assets/bootstrap-number-input.js"></script>
         <style>
             .col-centered {
                 float: none;
@@ -205,7 +209,7 @@ require_once 'includes/check_access.php';
                                 $result = $connection->query("SELECT * FROM characters WHERE association='$uuid'");
                                 if ($result->num_rows > 0) {
                                     while($row = $result->fetch_assoc()) {
-                                        echo '<option value="' . SITE_URL . 'civ/view.php?q=' . $row['uuid'] . '">' . $row['callsign'] . '</option>';
+                                        echo '<option value="' . SITE_URL . 'civ/view.php?q=' . $row['uuid'] . '">' . $row['name'] . '</option>';
                                     }
                                 }
                                 ?>
@@ -271,138 +275,8 @@ require_once 'includes/check_access.php';
             </div>
         </div>
         
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-        <script src="http://localhost:8080/Blicity/core/assets/bootstrap-number-input.js"></script>
         <script>
-            $('#ageSpinner').bootstrapNumber({
-// default, danger, success , warning, info, primary
-upClass: 'default',
-downClass: 'default',
-center: true});
 
-            function createIdentity() {
-                if ($("#csText").val() == "") {
-                    $("#csHelp2").html("Cannot be empty.");
-                    $("#csHelp2").show();
-                } else {
-                    if ('XDomainRequest' in window && window.XDomainRequest !== null) {
-                        jQuery.ajaxSettings.xhr = function() {
-                            try { return new ActiveXObject("Microsoft.XMLHTTP"); }
-                            catch(e) { }
-                            jQuery.support.cors = true;
-                        };
-                    }
-                    var cs = $("#csText").val();
-                    $.ajax({
-                        url:"actions.php",
-                        method:"GET",
-                        data:{
-                            createIdentity: cs
-                        },
-                        success:function(response) {
-                            if (response == "success") {
-                                $('#createIdentityModal').modal('toggle');
-                                $.ajax({
-                                    url:"actions.php",
-                                    method:"GET",
-                                    data:{
-                                        getIdentitiesDisp: "1"
-                                    },
-                                    success:function(response) {
-                                        $("#identifierSelect").html(response);
-                                    },
-                                    error:function(){
-                                        console.log("ajax error");
-                                    }
-                                });
-                                $.ajax({
-                                    url:"actions.php",
-                                    method:"GET",
-                                    data:{
-                                        getIdentitiesMDT: "1"
-                                    },
-                                    success:function(response) {
-                                        $("#identifierSelectMDT").html(response);
-                                    },
-                                    error:function(){
-                                        console.log("ajax error");
-                                    }
-                                });
-                                
-                            } else if (response == "exists") {
-                                $("#csHelp2").html("An identity with that callsign already exists.");
-                                $("#csHelp2").show();
-                            }
-                        },
-                        error:function(){
-                            console.log("ajax error");
-                        }
-                    });
-                }
-            }
-            function createCharacter() {
-                if ($("#nameText").val() == "") {
-                    $("#nameTextHelp").html("Cannot be empty.");
-                    $("#nameTextHelp").show();
-                } else {
-                    if ($("#addressText").val() == "") {
-                        $("#addressTextHelp").html("Cannot be empty.");
-                        $("#addressTextHelp").show();
-                    } else {
-                        if ('XDomainRequest' in window && window.XDomainRequest !== null) {
-                            jQuery.ajaxSettings.xhr = function() {
-                                try { return new ActiveXObject("Microsoft.XMLHTTP"); }
-                                catch(e) { }
-                                jQuery.support.cors = true;
-                            };
-                        }
-                        var name = $("#nameText").val();
-                        var address = $("#addressText").val();
-                        var age = $("#ageSpinner").val();
-                        var gender = 0;
-                        if (document.getElementById('genderRadio1').checked) {
-                            gender = 0;
-                        } else if (document.getElementById('genderRadio2').checked) {
-                            gender = 1;
-                        } else if (document.getElementById('genderRadio3').checked) {
-                            gender = 2;
-                        }
-                        $.ajax({
-                            url:"actions.php",
-                            method:"GET",
-                            data:{
-                                createCharacter: name,
-                                address: address,
-                                age: age,
-                                gender: gender
-                            },
-                            success:function(response) {
-                                if (response == "success") {
-                                    $('#createCharacterModal').modal('toggle');
-                                    $.ajax({
-                                        url:"actions.php",
-                                        method:"GET",
-                                        data:{
-                                            getCharacters: "1"
-                                        },
-                                        success:function(response) {
-                                            $("#characterSelect").html(response);
-                                        },
-                                        error:function(){
-                                            console.log("ajax error");
-                                        }
-                                    });
-                                }
-                            },
-                            error:function(){
-                                console.log("ajax error");
-                            }
-                        });
-                    }
-                }
-            }
         </script>
     </body>
 </html>
