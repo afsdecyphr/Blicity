@@ -22,10 +22,10 @@ $result = $connection->query("SELECT * FROM settings");
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         define('TITLE', $row["title"]);
+        define('SITE_URL', $row["siteUrl"]);
     }
 } else {
     echo "0 results";
 }
-        define('SITE_URL', "http://localhost:8080/Blicity/Blicity/live/");
 $connection->close();
 ?>

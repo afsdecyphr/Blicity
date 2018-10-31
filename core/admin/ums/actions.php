@@ -150,20 +150,31 @@ if (isset($_GET['getUserInfo'])) {
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }
-    $charactersQuery = $connection->query("SELECT * FROM characters WHERE association='$deleteUUID'");
-    if ($charactersQuery->num_rows > 0) {
-        while($characterRow = $charactersQuery->fetch_assoc()) {
-            $characterUUID = $characterRow['uuid'];
-            $vehiclesQuery = $connection->query("DELETE FROM vehicles WHERE association='$characterUUID'");
-            $ticketsQuery = $connection->query("DELETE FROM tickets WHERE giventouuid='$characterUUID'");
-            $warrantsQuery = $connection->query("DELETE FROM warrants WHERE gieventouuid='$characterUUID'");
+    $getLevelQuery = $connection->query("SELECT level FROM users WHERE uuid='$deleteUUID'");
+    if ($getLevelQuery->num_rows > 0) {
+        while($levelRow = $levelQuery->fetch_assoc()) {
+            if ($row['level'] <= $userLevel && $userLevel != 0) {
+                echo "cannotDelete";
+                exit();
+            } else {
+                $charactersQuery = $connection->query("SELECT * FROM characters WHERE association='$deleteUUID'");
+                if ($charactersQuery->num_rows > 0) {
+                    while($characterRow = $charactersQuery->fetch_assoc()) {
+                        $characterUUID = $characterRow['uuid'];
+                        $vehiclesQuery = $connection->query("DELETE FROM vehicles WHERE association='$characterUUID'");
+                        $ticketsQuery = $connection->query("DELETE FROM tickets WHERE giventouuid='$characterUUID'");
+                        $warrantsQuery = $connection->query("DELETE FROM warrants WHERE gieventouuid='$characterUUID'");
+                    }
+                }
+                $delCharactersQuery = $connection->query("DELETE FROM characters WHERE association='$deleteUUID'");
+                $unitsQuery = $connection->query("DELETE FROM units WHERE association='$deleteUUID'");
+                $userQuery = $connection->query("DELETE FROM users WHERE uuid='$deleteUUID'");
+                echo "success";
+                exit();
+            }
         }
     }
-    $warrantsQuery = $connection->query("DELETE FROM characters WHERE association='$deleteUUID'");
-    $unitsQuery = $connection->query("DELETE FROM units WHERE association='$deleteUUID'");
-    $unitsQuery = $connection->query("DELETE FROM users WHERE uuid='$deleteUUID'");
-    echo "success";
-    exit();
+    
 } else {
     echo 'unknownFunction';
     exit();
