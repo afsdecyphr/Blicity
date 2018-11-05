@@ -1,108 +1,212 @@
 {
     "versions": [
-        { "0.2.1d": {
-            "name": "0.2.1d",
-            "localFiles": [
-                {
-                    "reference": "BOOTSTRAP_THEME",
-                    "fileName": "bootstrap-{USER_THEME}.css",
-                    "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}' rel='stylesheet' />",
-                    "requiredEverywhere": true
-                },
-                {
-                    "reference": "STYLE",
-                    "fileName": "style.css",
-                    "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}' rel='stylesheet' />",
-                    "requiredEverywhere": true
-                },
-                {
-                    "reference": "SELECT2_CSS",
-                    "fileName": "select2-bootstrap4.css",
-                    "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}' rel='stylesheet' />",
-                    "requiredEverywhere": false
-                },
-                {
-                    "reference": "BOOTSTRAP_NUMBER_INPUT",
-                    "fileName": "bootstrap-number-input.js",
-                    "headerReference": "<script src='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}'></script>",
-                    "requiredEverywhere": false
-                },
-                {
-                    "reference": "HOME_JS",
-                    "fileName": "home.js",
-                    "headerReference": "<script src='{SITE_URL}core/obfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
-                    "requiredEverywhere": false
-                },
-                {
-                    "reference": "MDT_JS",
-                    "fileName": "mdt.js",
-                    "headerReference": "<script src='{SITE_URL}core/obfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
-                    "requiredEverywhere": false
-                },
-                {
-                    "reference": "DISPATCH_JS",
-                    "fileName": "dispatch.js",
-                    "headerReference": "<script src='{SITE_URL}core/unobfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
-                    "requiredEverywhere": false
-                },
-                {
-                    "reference": "CIV_JS",
-                    "fileName": "civ.js",
-                    "headerReference": "<script src='{SITE_URL}core/unobfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
-                    "requiredEverywhere": false
-                }
-            ],
-            "remoteFiles": [
-                {
-                    "reference": "JQUERY",
-                    "fileName": "jquery-3.3.1.min.js",
-                    "integrity": "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=",
-                    "headerReference": "<script src='https://code.jquery.com/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
-                    "requiredEverywhere": true
-                },
-                {
-                    "reference": "POPPER",
-                    "fileName": "popper.min.js",
-                    "integrity": "sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ",
-                    "headerReference": "<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
-                    "requiredEverywhere": true
-                },
-                {
-                    "reference": "BOOTSTRAP",
-                    "fileName": "bootstrap.min.js",
-                    "integrity": "sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm",
-                    "headerReference": "<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
-                    "requiredEverywhere": true
-                },
-                {
-                    "reference": "SOLID",
-                    "fileName": "solid.js",
-                    "integrity": "sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ",
-                    "headerReference": "<script src='https://use.fontawesome.com/releases/v5.0.13/js/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
-                    "requiredEverywhere": false
-                },
-                {
-                    "reference": "FONTAWESOME",
-                    "fileName": "fontawesome.js",
-                    "integrity": "sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY",
-                    "headerReference": "<script src='https://use.fontawesome.com/releases/v5.0.13/js/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
-                    "requiredEverywhere": false
-                },
-                {
-                    "reference": "SELECT2",
-                    "fileName": "select2.min.js",
-                    "integrity": "",
-                    "headerReference": "<script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/{FILE_NAME}'></script>",
-                    "requiredEverywhere": false
-                },
-                {
-                    "reference": "SELECT2_REMOTECSS",
-                    "fileName": "select2.min.css",
-                    "integrity": "",
-                    "headerReference": "<link href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/{FILE_NAME}' rel='stylesheet'/>",
-                    "requiredEverywhere": false
-                }
-            ]
-        } }
+      { "0.2.1d": {
+          "name": "0.2.1d",
+          "localFiles": [
+              {
+                  "reference": "BOOTSTRAP_THEME",
+                  "fileName": "bootstrap-{USER_THEME}.css",
+                  "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}' rel='stylesheet' />",
+                  "requiredEverywhere": true
+              },
+              {
+                  "reference": "STYLE",
+                  "fileName": "style.css",
+                  "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}' rel='stylesheet' />",
+                  "requiredEverywhere": true
+              },
+              {
+                  "reference": "SELECT2_CSS",
+                  "fileName": "select2-bootstrap4.css",
+                  "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}' rel='stylesheet' />",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "BOOTSTRAP_NUMBER_INPUT",
+                  "fileName": "bootstrap-number-input.js",
+                  "headerReference": "<script src='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "HOME_JS",
+                  "fileName": "home.js",
+                  "headerReference": "<script src='{SITE_URL}core/obfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "MDT_JS",
+                  "fileName": "mdt.js",
+                  "headerReference": "<script src='{SITE_URL}core/obfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "DISPATCH_JS",
+                  "fileName": "dispatch.js",
+                  "headerReference": "<script src='{SITE_URL}core/unobfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "CIV_JS",
+                  "fileName": "civ.js",
+                  "headerReference": "<script src='{SITE_URL}core/unobfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
+                  "requiredEverywhere": false
+              }
+          ],
+          "remoteFiles": [
+              {
+                  "reference": "JQUERY",
+                  "fileName": "jquery-3.3.1.min.js",
+                  "integrity": "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=",
+                  "headerReference": "<script src='https://code.jquery.com/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
+                  "requiredEverywhere": true
+              },
+              {
+                  "reference": "POPPER",
+                  "fileName": "popper.min.js",
+                  "integrity": "sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ",
+                  "headerReference": "<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
+                  "requiredEverywhere": true
+              },
+              {
+                  "reference": "BOOTSTRAP",
+                  "fileName": "bootstrap.min.js",
+                  "integrity": "sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm",
+                  "headerReference": "<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
+                  "requiredEverywhere": true
+              },
+              {
+                  "reference": "SOLID",
+                  "fileName": "solid.js",
+                  "integrity": "sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ",
+                  "headerReference": "<script src='https://use.fontawesome.com/releases/v5.0.13/js/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "FONTAWESOME",
+                  "fileName": "fontawesome.js",
+                  "integrity": "sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY",
+                  "headerReference": "<script src='https://use.fontawesome.com/releases/v5.0.13/js/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "SELECT2",
+                  "fileName": "select2.min.js",
+                  "integrity": "",
+                  "headerReference": "<script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/{FILE_NAME}'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "SELECT2_REMOTECSS",
+                  "fileName": "select2.min.css",
+                  "integrity": "",
+                  "headerReference": "<link href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/{FILE_NAME}' rel='stylesheet'/>",
+                  "requiredEverywhere": false
+              }
+          ]
+      } }
+      { "0.2.2": {
+          "name": "0.2.2",
+          "localFiles": [
+              {
+                  "reference": "BOOTSTRAP_THEME",
+                  "fileName": "bootstrap-{USER_THEME}.css",
+                  "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}' rel='stylesheet' />",
+                  "requiredEverywhere": true
+              },
+              {
+                  "reference": "STYLE",
+                  "fileName": "style.css",
+                  "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}' rel='stylesheet' />",
+                  "requiredEverywhere": true
+              },
+              {
+                  "reference": "SELECT2_CSS",
+                  "fileName": "select2-bootstrap4.css",
+                  "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}' rel='stylesheet' />",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "BOOTSTRAP_NUMBER_INPUT",
+                  "fileName": "bootstrap-number-input.js",
+                  "headerReference": "<script src='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "HOME_JS",
+                  "fileName": "home.js",
+                  "headerReference": "<script src='{SITE_URL}core/obfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "MDT_JS",
+                  "fileName": "mdt.js",
+                  "headerReference": "<script src='{SITE_URL}core/obfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "DISPATCH_JS",
+                  "fileName": "dispatch.js",
+                  "headerReference": "<script src='{SITE_URL}core/unobfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "CIV_JS",
+                  "fileName": "civ.js",
+                  "headerReference": "<script src='{SITE_URL}core/unobfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
+                  "requiredEverywhere": false
+              }
+          ],
+          "remoteFiles": [
+              {
+                  "reference": "JQUERY",
+                  "fileName": "jquery-3.3.1.min.js",
+                  "integrity": "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=",
+                  "headerReference": "<script src='https://code.jquery.com/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
+                  "requiredEverywhere": true
+              },
+              {
+                  "reference": "POPPER",
+                  "fileName": "popper.min.js",
+                  "integrity": "sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ",
+                  "headerReference": "<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
+                  "requiredEverywhere": true
+              },
+              {
+                  "reference": "BOOTSTRAP",
+                  "fileName": "bootstrap.min.js",
+                  "integrity": "sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm",
+                  "headerReference": "<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
+                  "requiredEverywhere": true
+              },
+              {
+                  "reference": "SOLID",
+                  "fileName": "solid.js",
+                  "integrity": "sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ",
+                  "headerReference": "<script src='https://use.fontawesome.com/releases/v5.0.13/js/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "FONTAWESOME",
+                  "fileName": "fontawesome.js",
+                  "integrity": "sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY",
+                  "headerReference": "<script src='https://use.fontawesome.com/releases/v5.0.13/js/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "SELECT2",
+                  "fileName": "select2.min.js",
+                  "integrity": "",
+                  "headerReference": "<script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/{FILE_NAME}'></script>",
+                  "requiredEverywhere": false
+              },
+              {
+                  "reference": "SELECT2_REMOTECSS",
+                  "fileName": "select2.min.css",
+                  "integrity": "",
+                  "headerReference": "<link href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/{FILE_NAME}' rel='stylesheet'/>",
+                  "requiredEverywhere": false
+              }
+          ]
+      } }
     ]
 }

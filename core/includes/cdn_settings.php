@@ -8,9 +8,9 @@
 
 $json = json_decode(file_get_contents(__DIR__ . "\_private\cdn.json"), true);
 
-$version = $json['versions'][0]['0.2.1d']['name'];
-$localFiles = $json['versions'][0]['0.2.1d']['localFiles'];
-$remoteFiles = $json['versions'][0]['0.2.1d']['remoteFiles'];
+$version = $json['versions'][0]['0.2.2']['name'];
+$localFiles = $json['versions'][0]['0.2.2']['localFiles'];
+$remoteFiles = $json['versions'][0]['0.2.2']['remoteFiles'];
 define('CDN_VERSION', '');
 
 $requiredFiles = array();
