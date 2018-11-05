@@ -22,6 +22,7 @@ if (isset($_SESSION["uuid"])) {
         while($row = $result->fetch_assoc()) {
             $level = $row["level"];
             $username = $row["username"];
+            $theme = $row["theme"];
         }
     }
 } else {

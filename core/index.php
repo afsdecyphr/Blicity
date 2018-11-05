@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 /**
 Blicity CAD/MDT
 Copyright (C) 2018 Decyphr and Blicity.
@@ -13,21 +10,26 @@ Copyright (C) 2018 Decyphr and Blicity.
 
 $file_access = "11011111";
 require_once 'includes/check_access.php';
+require_once '../core/includes/cdn_settings.php';
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <title><?php echo TITLE; ?></title>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-        <script src="<?php echo SITE_URL; ?>core/assets/bootstrap-number-input.js"></script>
-        <script src="<?php echo SITE_URL; ?>core/obfuscated_js/home.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/lux/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo SITE_URL; ?>core/assets/style.css">
-        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+        <?php
+        foreach ($requiredFiles as $file) {
+            echo $file;
+        }
+        echo SELECT2_CSS;
+        echo SELECT2_REMOTECSS;
+        echo SELECT2;
+        echo POPPER;
+        echo SOLID;
+        echo FONTAWESOME;
+        echo BOOTSTRAP_NUMBER_INPUT;
+        echo HOME_JS;
+        ?>
         <style>
             .col-centered {
                 float: none;
@@ -39,11 +41,19 @@ require_once 'includes/check_access.php';
         <h1 class="text-center" style="margin-top: 10px;"><?php echo TITLE; ?></h1>
         <h3 class="text-center">Welcome, <?php echo $username; ?></h3>
         <div class="col-centered" style="width:25%; height:auto;">
-            <a href="#dispatch" class="btn btn-primary form-control" data-toggle="modal" data-target="#dispatchModal">Dispatch CAD</a>
-            <a href="#mdt" class="btn btn-primary form-control" data-toggle="modal" data-target="#mdtModal" style="margin-top:10px;">MDT</a>
+            <a href="#dispatch" class="btn btn-primary form-control" data-toggle="modal" data-target="#dispatchModal">Dispatch</a>
+            <a href="#mdt" class="btn btn-primary form-control" data-toggle="modal" data-target="#mdtModal" style="margin-top:10px;">BCSO/LSPD</a>
             <a href="#civilian" class="btn btn-primary form-control" data-toggle="modal" data-target="#civModal" style="margin-top:10px;">Civilian</a>
             <a href="account/index.php" class="btn btn-info form-control" style="margin-top:50px;">Account</a>
             <a href="account/logout.php" class="btn btn-warning form-control" style="margin-top:10px;">Logout</a>
+            <?php
+            if ($theme == "dark") {
+                echo '<button class="btn btn-light form-control" style="margin-top:10px;" onclick="changeColor(' . "'" . 'light' . "'" . ')">Use Light Theme</button>';
+            } elseif ($theme == "light") {
+                echo '<button class="btn btn-dark form-control" style="margin-top:10px;" onclick="changeColor(' . "'" . 'dark' . "'" . ')">Use Dark Theme</button>';
+            }
+            ?>
+            
             <?php
             if ($level <= 1) {
                 echo '<a href="admin/index.php" class="btn btn-danger form-control" style="margin-top:50px;">Admin Panel</a>';
@@ -279,4 +289,12 @@ require_once 'includes/check_access.php';
 
         </script>
     </body>
+    <footer>
+        <p style="margin-bottom: 0px; text-align: center; width: 100%; margin-right: 5px; font-size: 14px; color: black; background-color: #f2f2f2;">
+            Blicity v<?php echo $version; ?>
+        </p>
+        <p style="margin-bottom: 0px; float: left; width: auto; font-size: 12px; color: white; background-color: red;">
+            Blicity is a closed-source CAD system developed by Decyphr for use by <font style="font-style: italic">SANRP</font>. If you would like to purchase the deployment version (has all the core features but is styled differently and lacks some extra features), contact Decyphr for more details and pricing via Discord: <font style="color: #7289da;"><strong>Decyphr#10</strong></font>
+        </p>
+    </footer>
 </html>

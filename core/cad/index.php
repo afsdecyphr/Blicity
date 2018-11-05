@@ -11,6 +11,7 @@ Copyright (C) 2018 Decyphr and Blicity.
 
 $file_access = "11111111";
 require '../../core/includes/check_access.php';
+require_once '../../core/includes/cdn_settings.php';
 
 if (isset($_GET['q'])) {
     $query = $_GET['q'];
@@ -47,14 +48,18 @@ $_SESSION['identifier'] = $_GET['q'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title><?php echo TITLE; ?> | CAD</title>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <link href="<?php echo SITE_URL; ?>core/assets/select2-bootstrap4.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/lux/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo SITE_URL; ?>core/assets/style.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    
+        <?php
+        foreach ($requiredFiles as $file) {
+            echo $file;
+        }
+        echo SOLID;
+        echo FONTAWESOME;
+        echo BOOTSTRAP_NUMBER_INPUT;
+        echo SELECT2;
+        echo SELECT2_REMOTECSS;
+        echo SELECT2_CSS;
+        echo DISPATCH_JS;
+        ?>
     <style>
         .table th , .table td {
             padding: 0.5rem;
@@ -97,10 +102,45 @@ $_SESSION['identifier'] = $_GET['q'];
                         <i class="fas fa-drivers-license"></i>
                         Issue Ticket
                     </a>
+                    <a data-toggle="modal" data-target="#notesModal">
+                        <i class="fas fa-drivers-license"></i>
+                        Note Pad
+                    </a>
                 </li>
             </ul>
         </nav>
 
+        <div class="modal fade" id="notesModal" role="dialog" aria-labelledby="notesModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="notesModalLabel">Note Pad</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea id="notesTA" style="width:100%; height: 300px;background-color: #fcff82; border: none;"><?php 
+                        $connection2 = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+                        if ($connection->connect_error) {
+                            die("Connection failed: " . $connection->connect_error);
+                        }
+                        $result2 = $connection2->query("SELECT notes FROM units WHERE uuid='$query'");
+                        if ($result2->num_rows > 0) {
+                            while($row = $result2->fetch_assoc()) {
+                                echo $row['notes'];
+                            }
+                        }
+                        ?></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success" onclick="saveNotes();">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="modal fade" id="addBoloModal" role="dialog" aria-labelledby="addBoloModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -291,14 +331,6 @@ $_SESSION['identifier'] = $_GET['q'];
             </div>
         </div>
     </div>
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <script src="<?php echo SITE_URL; ?>core/obfuscated_js/dispatch.js"></script>
-    
 </body>
 
 </html>

@@ -23,11 +23,11 @@ if (isset($_POST['submit'])) {
         while($row = $result->fetch_assoc()) {
             $username = $row['username'];
             if ($row['level'] == 9) {
-                $level = "User";
+                $level = "<span class='badge badge-primary'>User</span>";
             } elseif ($row['level'] == 1) {
-                $level = "Administrator";
+                $level = "<span class='badge badge-warning'>Administrator</span>";
             } elseif ($row['level'] == 0) {
-                $level = "Super Administrator";
+                $level = "<span class='badge badge-danger'>Super Administrator</span>";
             }
         }
     }
@@ -61,6 +61,8 @@ if (isset($_POST['submit'])) {
             }
         }
     }
+} elseif (isset($_POST['home'])) {
+    header('Location: ' . SITE_URL);
 } else {
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
     if ($connection->connect_error) {
@@ -72,36 +74,44 @@ if (isset($_POST['submit'])) {
         while($row = $result->fetch_assoc()) {
             $username = $row['username'];
             if ($row['level'] == 9) {
-                $level = "User";
+                $level = "<span class='badge badge-primary'>User</span>";
             } elseif ($row['level'] == 1) {
-                $level = "Administrator";
+                $level = "<span class='badge badge-warning'>Administrator</span>";
             } elseif ($row['level'] == 0) {
-                $level = "Super Administrator";
+                $level = "<span class='badge badge-danger'>Super Administrator</span>";
             }
         }
     }
     renderPage($username, $level, "", "", "");
 }
 
-function renderPage($username, $level, $error, $password, $confPassword) {
+function renderPage($username, $accessLevel, $error, $password, $confPassword) {  
+    $file_access = "11111111";
+    require '../../core/includes/check_access.php';
+    require_once '../../core/includes/cdn_settings.php';
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css?v=1" rel="stylesheet" />
-    <link href="http://localhost:8080/Blicity/core/assets/select2-bootstrap4.css?v=1" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/lux/bootstrap.min.css">
-    <link rel="stylesheet" href="http://localhost:8080/Blicity/core/assets/style.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-    <script src="http://localhost:8080/Blicity/core/civ/civ.js?v=1"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+        <script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = '<?php echo SITE_URL; ?>core/assets/bootstrap-<?php echo $theme; ?>.css';
+            document.head.appendChild(link);
+        </script>
         <title><?php echo TITLE; ?> ● Account</title>
+        <?php
+        foreach ($requiredFiles as $file) {
+            echo $file;
+        }
+        echo POPPER;
+        echo SOLID;
+        echo FONTAWESOME;
+        echo BOOTSTRAP_NUMBER_INPUT;
+        echo SELECT2;
+        echo SELECT2_REMOTECSS;
+        echo SELECT2_CSS;
+        ?>
         <style>
             .col-centered {
                 float: none;
@@ -135,9 +145,10 @@ function renderPage($username, $level, $error, $password, $confPassword) {
                     }
                 ?>
                 <p class="col-md-12 center" style="width: 100%; min-width: 175px;">
-                    <input type="submit" name="submit" value="Apply" class="btn btn-primary form-control" style="width:100%; margin-top:6px; margin-bottom:6px; border-color:#13ff13;">
+                    <input type="submit" name="submit" value="Apply" class="btn btn-primary form-control" style="width:100%; margin-top:6px; margin-bottom:6px;">
+                    <a href="<?php echo SITE_URL; ?>"><input type="submit" name="home" value="Home" class="btn btn-primary form-control" style="width:100%; margin-top:6px; margin-bottom:6px;"></a>
                 </p>
-                <p class="text-center">Account Level: <?php echo $level; ?></p>
+            <p class="text-center">Access Tag: <?php echo $accessLevel; ?></p>
             </form>
         </div>
 </html>

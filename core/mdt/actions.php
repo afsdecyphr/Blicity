@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /**
 Blicity CAD/MDT
 Copyright (C) 2018 Decyphr and Blicity.
@@ -10,6 +12,7 @@ Copyright (C) 2018 Decyphr and Blicity.
 **/
 
 require('../../core/includes/vehicleColorMatcher.php');
+require('../../core/includes/logging.php');
 
 if (session_id() == '' || !isset($_SESSION)) {
     session_start();
@@ -47,6 +50,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
         $color = mysqli_real_escape_string($connection, $_POST['color']);
         $lp = mysqli_real_escape_string($connection, $_POST['lp']);
         $result = $connection->query("INSERT INTO bolos (id, plate, makemodel, color) VALUES (DEFAULT, '$lp', '$makemodel', '$color')");
+        logUserAction($_SESSION['uuid'], "Added bolo. Details: [LicensePlate:" . '"' . $lp . '"' . "], [MakeModel:" . '"' . $makemodel . '"' . "], [Color:" . '"' . $color . '"' . "]");
         echo "success";
         exit();
     } else {
@@ -163,6 +167,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     }
     echo $result2 . '</tbody></table>';
     echo "<button class='btn btn-warning' style='float:right;' onclick='suspendLicense(" . '"' . $uuid . '"' . ");'>Suspend Driver's License</button>";
+    logUserAction($_SESSION['uuid'], "Ran character search. Details: [UCID:" . '"' . $uuid . '"' . "]");
 } elseif (isset($_GET['updateStatus'])) {
     $status = $_GET['updateStatus'];
     $uuid = $_SESSION['identifier'];
@@ -171,6 +176,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
         die("Connection failed: " . $connection->connect_error);
     }
     $result = $connection->query("UPDATE units SET status='$status' WHERE uuid='$uuid'");
+    logUserAction($_SESSION['uuid'], "Updated status. Details: [Target UUID:" . '"' . $uuid . '"' . "], [Status:" . '"' . $status . '"' . "]");
 } elseif (isset($_GET['suspendLicense'])) {
     $uuid = $_GET['suspendLicense'];
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
@@ -178,6 +184,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
         die("Connection failed: " . $connection->connect_error);
     }
     $result = $connection->query("UPDATE characters SET licenseStatus='2' WHERE uuid='$uuid'");
+    logUserAction($_SESSION['uuid'], "Suspended driver's license. Details: [Target UCID:" . '"' . $uuid . '"' . "]");
 } elseif (isset($_GET['setStatus']) && isset($_GET['uuid'])) {
     $status = $_GET['setStatus'];
     $uuid = $_GET['uuid'];
@@ -186,6 +193,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
         die("Connection failed: " . $connection->connect_error);
     }
     $result = $connection->query("UPDATE units SET status='$status' WHERE uuid='$uuid'");
+    logUserAction($_SESSION['uuid'], "Updated own status. Details: [Status:" . '"' . $status . '"' . "]");
 } elseif (isset($_GET['getStatus'])) {
     $uuid = $_SESSION['identifier'];
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
@@ -251,6 +259,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     $id = $_GET['remBolo'];
     $result = $connection->query("DELETE FROM bolos WHERE id='$id'");
     echo "success";
+    logUserAction($_SESSION['uuid'], "URemoved bolo. Details: [ID:" . '"' . $id . '"' . "]");
     exit();
 } elseif (isset($_GET['ticket']) && isset($_GET['reason']) && isset($_GET['amount'])) {
     $uuid = $_SESSION['identifier'];
@@ -263,6 +272,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     $amount = $_GET['amount'];
     $result = $connection->query("INSERT INTO tickets VALUES (DEFAULT, '$id', '$reason', '$amount', '$uuid')");
     echo "success";
+    logUserAction($_SESSION['uuid'], "Issued ticket. Details: [IssuedTo UCID:" . '"' . $id . '"' . "], [Reason:" . '"' . $reason . '"' . "], [Amount:" . '"' . $amount . '"' . "]");
     exit();
 } elseif (isset($_GET['warrant']) && isset($_GET['reason'])) {
     $uuid = $_SESSION['identifier'];
@@ -274,6 +284,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     $reason = $_GET['reason'];
     $result = $connection->query("INSERT INTO warrants VALUES (DEFAULT, '$id', '$reason', '$uuid')");
     echo "success";
+    logUserAction($_SESSION['uuid'], "Issued warrant. Details: [IssuedTo UCID:" . '"' . $id . '"' . "], [Reason:" . '"' . $reason . '"' . "]");
     exit();
 } elseif (isset($_GET['getCharacters'])) {
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
@@ -344,6 +355,33 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
         }
     }
     echo $return . '</tbody></table>';
+    exit();
+} elseif (isset($_GET['getNotes'])) {
+    $uuid = $_SESSION['identifier'];
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("SELECT notes FROM units WHERE uuid='$uuid'");
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo html_entity_decode(preg_replace("/%u([0-9a-f]{3,4})/i","&#x\\1;",urldecode($row['notes'])),null,'UTF-8');
+        }
+    } else {
+        echo 'error';
+    }
+    echo "";
+    exit();
+} elseif (isset($_GET['saveNotes'])) {
+    $uuid = $_SESSION['identifier'];
+    $notes = urlencode($_GET['saveNotes']);
+    echo $notes;
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("UPDATE units SET notes='$notes' WHERE uuid='$uuid'");
+    echo "success";
     exit();
 } else {
     echo "unknownFunction";

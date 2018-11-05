@@ -144,6 +144,15 @@ if (isset($_GET['getUserInfo'])) {
     }
     echo "success";
     exit();
+} elseif (isset($_GET['deleteUnit'])) {
+    $uuid = $_GET['deleteUnit'];
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("DELETE FROM units WHERE uuid='$uuid'");
+    echo "success";
+    exit();
 } elseif (isset($_GET['deleteUser'])) {
     $deleteUUID = $_GET['deleteUser'];
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);

@@ -10,8 +10,10 @@ bootstrap_alert = function() {};
 bootstrap_alert.success = function(message) {
     var name = makeid();
     $('#alert_placeholder').html($('#alert_placeholder').html() + '<div class="alert alert-dismissible alert-success fade show" id="' + name + '"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>' + message + '</div>');
+    var height = $('#name').height();
     setTimeout(function () {
         $('#'+name).alert('close');
+        $('#alert_placeholder').height($('#alert_placeholder').height() - height);
     }, 3000);
 };
 
@@ -336,13 +338,6 @@ function issueTicket() {
 
 function saveNotes() {
     var notes = $("#notesTA").html();
-    if ('XDomainRequest' in window && window.XDomainRequest !== null) {
-        jQuery.ajaxSettings.xhr = function() {
-            try { return new ActiveXObject("Microsoft.XMLHTTP"); }
-            catch(e) { }
-            jQuery.support.cors = true;
-        };
-            }
     $.ajax({
         url:"actions.php",
         method:"GET",

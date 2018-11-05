@@ -106,18 +106,34 @@ require '../../core/includes/check_access.php';
         <h1 class="text-center" style="margin-top: 10px;"><?php echo TITLE; ?> ● Admin Panel</h1>
         <div class="col-centered" style="width:24%; height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:left; margin-left:5px;">
             <a href="<?php echo SITE_URL; ?>" style="width:100%;"><button class="btn btn-primary" style="width:100%;">Home</button></a>
+            <a href="index.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">Admin Panel</button></a>
             <a href="ums/index.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">User Management System</button></a>
-            <a href="logs.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">Logs</button></a>
         </div>
         <div class="col-centered" style="width:75%; height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:right; margin-right:5px;">
-            <form action="" method="POST">
-                <b>Website Title</b>
-                <input type="text" name="title" class="form-control" placeholder="Website Title" style="width:40%; margin-top: 0px;" value="<?php echo $title; ?>">
-                <b>Website URL</b>
-                <input type="text" name="siteUrl" class="form-control" placeholder="Website URL (Ex: https://example.com/cad/)" style="width:40%; margin-top: 0px;" value="<?php echo $url; ?>">
-                <input type="submit" name="submit" value="Append/Save Changes" class="btn btn-primary form-control" style="width:40%; margin-top:6px; margin-bottom:6px; border-color:#13ff13;">
-            </form>
-            
+            <div style="width:100%;height:100%;margin-top:0px;overflow-y:scroll;line-height:16px;font-size:14px;" id="" class="form-control log-box" contenteditable="false"><?php
+            $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+            if ($connection->connect_error) {
+                die("Connection failed: " . $connection->connect_error);
+            }
+            $logsQuery = $connection->query("SELECT * FROM user_log");
+            $i = 0;
+            $add = "";
+            if (mysqli_num_rows($logsQuery) >= 0) {
+                while ($row = mysqli_fetch_assoc($logsQuery)) {
+                    if ($i === 0) { $i = 1; $add = ""; }
+                    elseif ($i === 1) { $i = 0; $add = "_dis"; }
+                    $uuid = $row['uuid'];
+                    $username = "";
+                    $userQuery = $connection->query("SELECT * FROM users WHERE uuid='$uuid'");
+                    if (mysqli_num_rows($userQuery) >= 0) {
+                        while ($row2 = mysqli_fetch_assoc($userQuery)) {
+                            $username = $row2['username'];
+                        }
+                    }
+                    echo '<span class="badge badge-dark">' . date('Y-m-d h:i:s', $row['timestamp']) . '</span> <span class="badge badge-dark">' . $username . '</span> <span class="badge badge-dark">' . $row['ip'] . '</span> <span class="badge badge-primary">' . $row['action'] . '</span><br>';
+                }
+            }
+            ?></div>
         </div>
         
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

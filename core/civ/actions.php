@@ -152,9 +152,9 @@ if (isset($_GET['getTickets'])) {
                     . '<option value="3">Revoked</option>'
                     . '</select>';
             
-            $js = $js . '<script>$("#dLicenseStatusSelect").select2();$("#dLicenseStatusSelect").select2({width: "100%", minimumResultsForSearch: Infinity});</script>';
+            $js = $js . '<script>$("#dLicenseStatusSelect").select2();$("#dLicenseStatusSelect").select2({width: "100%", minimumResultsForSearch: Infinity, theme: "bootstrap4"});</script>';
             $js = $js . '<script>$("#dLicenseStatusSelect").val("' . $characterRow['licenseStatus'] . '").trigger("change.select2");</script>';
-            $js = $js . '<script>$("#wLicenseStatusSelect").select2();$("#wLicenseStatusSelect").select2({width: "100%", minimumResultsForSearch: Infinity});</script>';
+            $js = $js . '<script>$("#wLicenseStatusSelect").select2();$("#wLicenseStatusSelect").select2({width: "100%", minimumResultsForSearch: Infinity, theme: "bootstrap4"});</script>';
             $js = $js . '<script>$("#wLicenseStatusSelect").val("' . $characterRow['weaponLicenseStatus'] . '").trigger("change.select2");</script>';
         }
         $js = $js . '<script></script>';
@@ -218,7 +218,7 @@ if (isset($_GET['getTickets'])) {
                     . '</select>'
                     . '<small id="colorEditHelp" class="form-text" style="color:red; display:none;"></small>'
                     . '</div>';
-            $js = $js . '<script>$("#colorSelect").select2();$("#colorSelect").select2({width: "100%", minimumResultsForSearch: Infinity});</script>';
+            $js = $js . '<script>$("#colorSelect").select2();$("#colorSelect").select2({width: "100%", minimumResultsForSearch: Infinity, theme: "bootstrap4"});</script>';
             $js = $js . '<script>$("#colorSelect").val("' . $vehicleRow['color'] . '").trigger("change.select2");</script>';
             $return = $return . '<div class="form-group">'
                     . '<label for="vehEditTagSelect">Vehicle Tag</label>'
@@ -229,7 +229,7 @@ if (isset($_GET['getTickets'])) {
                     . '</select>'
                     . '<small id="vehTagEditHelp" class="form-text" style="color:red; display:none;"></small>'
                     . '</div>';
-            $js = $js . '<script>$("#vehEditTagSelect").select2();$("#vehEditTagSelect").select2({width: "100%", minimumResultsForSearch: Infinity});</script>';
+            $js = $js . '<script>$("#vehEditTagSelect").select2();$("#vehEditTagSelect").select2({width: "100%", minimumResultsForSearch: Infinity, theme: "bootstrap4"});</script>';
             $js = $js . '<script>$("#vehEditTagSelect").val("' . $vehicleRow['vehicleTags'] . '").trigger("change.select2");</script>';
             $return = $return . '<div class="form-group">'
                     . '<label for="insuranceSelect">Insurance Status</label>'
@@ -272,6 +272,94 @@ if (isset($_GET['getTickets'])) {
         die("Connection failed: " . $connection->connect_error);
     }
     $sqlQuery = $connection->query("UPDATE characters SET licenseStatus='$dLicenseData', weaponLicenseStatus='$wLicenseData' WHERE uuid='$uuid'");
+    echo "success";
+    exit();
+} elseif (isset($_GET['loadEditCharacter'])) {
+    $uuid = $_SESSION['identifier'];
+    $return = '';
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $sqlQuery = $connection->query("SELECT * FROM characters WHERE uuid='$uuid'");
+    if ($sqlQuery->num_rows > 0) {
+        while($characterRow = $sqlQuery->fetch_assoc()) {
+            $genderOptions = "";
+            if ($characterRow['gender'] == 0) {
+                $genderOptions = '<div class="custom-control custom-radio">
+                                    <input type="radio" id="genderRadio1" name="genderRadio" class="custom-control-input" checked="">
+                                    <label class="custom-control-label" for="genderRadio1">Male</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="genderRadio2" name="genderRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="genderRadio2">Female</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="genderRadio3" name="genderRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="genderRadio3">Unspecified</label>
+                                </div>';
+            } elseif ($characterRow['gender'] == 1) {
+                $genderOptions = '<div class="custom-control custom-radio">
+                                    <input type="radio" id="genderRadio1" name="genderRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="genderRadio1">Male</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="genderRadio2" name="genderRadio" class="custom-control-input" checked="">
+                                    <label class="custom-control-label" for="genderRadio2">Female</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="genderRadio3" name="genderRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="genderRadio3">Unspecified</label>
+                                </div>';
+            } elseif ($characterRow['gender'] == 2) {
+                $genderOptions = '<div class="custom-control custom-radio">
+                                    <input type="radio" id="genderRadio1" name="genderRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="genderRadio1">Male</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="genderRadio2" name="genderRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="genderRadio2">Female</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="genderRadio3" name="genderRadio" class="custom-control-input" checked="">
+                                    <label class="custom-control-label" for="genderRadio3">Unspecified</label>
+                                </div>';
+            }
+            $return = '<div class="form-group">
+                            <label for="nameText">Name (First and Last)</label>
+                            <input type="text" class="form-control" id="nameText" placeholder="Name" value="' . $characterRow['name'] . '">
+                            <small id="nameTextHelp" class="form-text" style="color:red; display:none;">Cannot leave empty.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="nameText">Age</label>
+                            <input id="ageSpinner" class="form-control" type="number" value="' . $characterRow['age'] . '" min="1" max="120" />
+                        </div>
+                        <div class="form-group">
+                            <label for="addressText">Address</label>
+                            <input type="text" class="form-control" id="addressText" placeholder="Address" value="' . $characterRow['address'] . '">
+                            <small id="addressTextHelp" class="form-text" style="color:red; display:none;">Cannot leave empty.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="ageSpinner">Gender</label>
+                            <div class="form-group">
+                                ' . $genderOptions . '
+                            </div>
+                        </div>';
+        }
+    }
+    echo $return;
+    exit();
+} elseif (isset($_GET['saveCharacter']) && isset($_GET['address']) && isset($_GET['age']) && isset($_GET['gender'])) {
+    $uuid = $_SESSION['identifier'];
+    $name = $_GET['saveCharacter'];
+    $address = $_GET['address'];
+    $age = $_GET['age'];
+    $gender = $_GET['gender'];
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $sqlQuery = $connection->query("UPDATE characters SET name='$name', address='$address', age='$age', gender='$gender' WHERE uuid='$uuid'");
     echo "success";
     exit();
 } else {

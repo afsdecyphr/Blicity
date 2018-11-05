@@ -1,0 +1,29 @@
+{
+    "version": "0.2.1c",
+    "files": [
+        {
+            "reference": "style",
+            "fileName": "style.css",
+            "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}' rel='stylesheet' />",
+            "requiredEverywhere": true
+        },
+        {
+            "reference": "bootstrapTheme",
+            "fileName": "bootstrap-{USER_THEME}.css",
+            "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}' rel='stylesheet' />",
+            "requiredEverywhere": true
+        },
+        {
+            "reference": "bootstrap-number-input",
+            "fileName": "bootstrap-number-input.js",
+            "headerReference": "<script src='{SITE_URL}core/assets/{FILE_NAME}'></script>",
+            "requiredEverywhere": false
+        },
+        {
+            "reference": "homeJS",
+            "fileName": "home.js",
+            "headerReference": "<script src='{SITE_URL}core/obfuscated_js/{FILE_NAME}'></script>",
+            "requiredEverywhere": false
+        }
+    ]
+}

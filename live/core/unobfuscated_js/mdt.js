@@ -18,6 +18,7 @@ bootstrap_alert.success = function(message) {
 };
 
 var rawNotesText = "";
+var editing = false;
 
 $(document).ready(function () {
     $('.js-example-basic-single').select2();
@@ -47,18 +48,6 @@ $(document).ready(function () {
     $('#testsel').on('select2:select', function (e) {
         var data = e.params.data;
         console.log(data);
-    });
-    $('#notesTA').bind("DOMSubtreeModified",function(){
-        var rawNotesHTML = $('#notesTA').html();
-        console.log(rawNotesHTML);
-        var countHashTags = rawNotesHTML.replace(/[^#]/g, "").length;
-        console.log(countHashTags);
-        var remainder = countHashTags / 2;
-        console.log(remainder);
-        var innerText = rawNotesHTML.substring(
-            rawNotesHTML.lastIndexOf("#") + 1, 
-            rawNotesHTML.lastIndexOf("#")
-        );
     });
     if ('XDomainRequest' in window && window.XDomainRequest !== null) {
         jQuery.ajaxSettings.xhr = function() {

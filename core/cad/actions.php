@@ -222,8 +222,8 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
                 $tableBody = $tableBody . '<td><div class="btn-group" role="group" aria-label="" style="width:162px;">
                     <button type="button" class="btn btn-' . $btn . ' btn-sm" style="width:114px;">' . $status . '</button>
                     <div class="btn-group" role="group">
-                      <button id="btnGroupDrop1" type="button" class="btn btn-' . $btn . ' dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:auto;"></button>
-                      <div class="dropdown-menu unitchange" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 36px, 0px);" id="' . $row['uuid'] . '">
+                      <button id="btnGroupDrop' . $row['uuid'] . '" type="button" class="btn btn-' . $btn . ' btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:auto;"></button>
+                      <div class="dropdown-menu unitchange" aria-labelledby="btnGroupDrop' . $row['uuid'] . '" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 36px, 0px);" id="' . $row['uuid'] . '">
                         ' . $btns . '
                       </div>
                     </div>
@@ -259,6 +259,32 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     $reason = $_GET['reason'];
     $amount = $_GET['amount'];
     $result = $connection->query("INSERT INTO tickets VALUES (DEFAULT, '$id', '$reason', '$amount', '$uuid')");
+    echo "success";
+    exit();
+} elseif (isset($_GET['getNotes'])) {
+    $uuid = $_SESSION['identifier'];
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("SELECT notes FROM units WHERE uuid='$uuid'");
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo html_entity_decode(preg_replace("/%u([0-9a-f]{3,4})/i","&#x\\1;",urldecode($row['notes'])),null,'UTF-8');
+        }
+    } else {
+        echo 'error';
+    }
+    echo "";
+    exit();
+} elseif (isset($_GET['saveNotes'])) {
+    $uuid = $_SESSION['identifier'];
+    $notes = $_GET['saveNotes'];
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("UPDATE units SET notes='$notes' WHERE uuid='$uuid'");
     echo "success";
     exit();
 } else {

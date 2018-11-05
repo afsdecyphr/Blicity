@@ -27,6 +27,11 @@ p {
     color: #999;
 }
 
+footer {
+    text-align: right;
+    padding-right: 5px;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

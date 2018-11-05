@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 /**
 Blicity CAD/MDT
 Copyright (C) 2018 Decyphr and Blicity.
@@ -23,7 +21,7 @@ if (isset($_GET['createIdentity'])) {
     }
     $result = $connection->query("SELECT callsign FROM units WHERE callsign='$cs'");
     if ($result->num_rows == 0) {
-        $result = $connection->query("INSERT INTO units (id, uuid, association, callsign, status, currentcall_ucid, dispatch) VALUES (DEFAULT, '$gen_uuid', '$uuid', '$cs', 0, '', 0)");
+        $result = $connection->query("INSERT INTO units (id, uuid, association, callsign, status, currentcall_ucid, dispatch, mdt, civ, notes) VALUES (DEFAULT, '$gen_uuid', '$uuid', '$cs', 0, '', 0, 0, 1, '')");
         echo 'success';
         exit();
     } else {
@@ -78,6 +76,15 @@ if (isset($_GET['createIdentity'])) {
         die("Connection failed: " . $connection->connect_error);
     }
     $result = $connection->query("INSERT INTO characters VALUES (DEFAULT, '$ucid', '$name', '$age', '$gender', '$address', '$uuid', 0, 0)");
+    echo "success";
+} elseif (isset($_GET['changeColor'])) {
+    $color = $_GET['changeColor'];
+    $uuid = $_SESSION['uuid'];
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("UPDATE users SET theme='$color' WHERE uuid='$uuid'");
     echo "success";
 } else {
     echo "error";

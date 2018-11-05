@@ -37,12 +37,19 @@ $file_access = "11111111";
 require '../../../core/includes/check_access.php';
 renderPage("");
 function renderPage($info) {
+$file_access = "11111111";
+require '../../../core/includes/check_access.php';
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title><?php echo TITLE; ?> ● UMS</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/lux/bootstrap.min.css">
+        <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '<?php echo SITE_URL; ?>core/assets/bootstrap-<?php echo $theme; ?>.css';
+        document.head.appendChild(link);
+        </script>
         <link rel="stylesheet" href="<?php echo SITE_URL; ?>core/assets/style.css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -59,13 +66,14 @@ function renderPage($info) {
         <div class="col-centered" style="width:24%; height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:left; margin-left:5px;">
             <a href="<?php echo SITE_URL; ?>" style="width:100%;"><button class="btn btn-primary" style="width:100%;">Home</button></a>
             <a href="<?php echo SITE_URL; ?>admin/index.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">Admin Panel</button></a>
+            <a href="<?php echo SITE_URL; ?>admin/logs.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">Logs</button></a>
         </div>
         <div class="col-centered" style="width:75%; height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:right; margin-right:5px;">
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Username</th>
-                        <th scope="col">Level</th>
+                        <th scope="col">Access Tag</th>
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
@@ -132,6 +140,7 @@ function renderPage($info) {
                                     <th scope="col">Callsign</th>
                                     <th scope="col">Dispatch Access</th>
                                     <th scope="col">MDT Access</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody id="unitsTableBody">
@@ -150,7 +159,7 @@ function renderPage($info) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         <script src="<?php echo SITE_URL; ?>core/assets/bootstrap-number-input.js"></script>
-        <script src="<?php echo SITE_URL; ?>core/obfuscated_js/ums.js"></script>
+        <script src="<?php echo SITE_URL; ?>core/unobfuscated_js/ums.js"></script>
     </body>
 </html>
 <?php
