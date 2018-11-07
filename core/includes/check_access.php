@@ -9,7 +9,9 @@ Copyright (C) 2018 Decyphr and Blicity.
  UPDATES. NO SUPPORT IS PROVIDED FOR CODE THAT IS EDITED.
 **/
 
-session_start();
+if (session_id() == '' || !isset($_SESSION)) {
+    session_start();
+}
 if (isset($_SESSION["uuid"])) {
     $uuid = $_SESSION["uuid"];
     

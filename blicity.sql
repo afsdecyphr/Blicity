@@ -28,7 +28,7 @@ CREATE TABLE `bolos` (
   `makemodel` varchar(255) NOT NULL,
   `color` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,6 @@ CREATE TABLE `bolos` (
 
 LOCK TABLES `bolos` WRITE;
 /*!40000 ALTER TABLE `bolos` DISABLE KEYS */;
-INSERT INTO `bolos` VALUES (28,'lp','test make model','balck');
 /*!40000 ALTER TABLE `bolos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,6 +98,31 @@ INSERT INTO `characters` VALUES (1,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','max j
 UNLOCK TABLES;
 
 --
+-- Table structure for table `known_ips`
+--
+
+DROP TABLE IF EXISTS `known_ips`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `known_ips` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) DEFAULT NULL,
+  `ip` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `known_ips`
+--
+
+LOCK TABLES `known_ips` WRITE;
+/*!40000 ALTER TABLE `known_ips` DISABLE KEYS */;
+INSERT INTO `known_ips` VALUES (1,'csdhj','::1'),(2,'','::1');
+/*!40000 ALTER TABLE `known_ips` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `settings`
 --
 
@@ -106,7 +130,8 @@ DROP TABLE IF EXISTS `settings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `settings` (
-  `title` varchar(255) NOT NULL
+  `title` varchar(255) NOT NULL,
+  `siteUrl` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -116,7 +141,7 @@ CREATE TABLE `settings` (
 
 LOCK TABLES `settings` WRITE;
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
-INSERT INTO `settings` VALUES ('Blicity (DEV)');
+INSERT INTO `settings` VALUES ('Blicity (DEV)','http://localhost:8080/Blicity/Blicity/live/');
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +159,7 @@ CREATE TABLE `tickets` (
   `amount` varchar(255) DEFAULT NULL,
   `issuedBy` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,7 +168,7 @@ CREATE TABLE `tickets` (
 
 LOCK TABLES `tickets` WRITE;
 /*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
-INSERT INTO `tickets` VALUES (1,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','dsa','dsa','cc1acb28-673e-4e54-84d2-55087f2ce2ec'),(2,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','jk','290','cc1acb28-673e-4e54-84d2-55087f2ce2ec');
+INSERT INTO `tickets` VALUES (1,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','dsa','dsa','cc1acb28-673e-4e54-84d2-55087f2ce2ec'),(2,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','jk','290','cc1acb28-673e-4e54-84d2-55087f2ce2ec'),(3,'9ef0e3f3-bab3-49ac-800a-7980980af2b2','cndk','njfed','cc1acb28-673e-4e54-84d2-55087f2ce2ec'),(4,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','cdsj','hucde','cc1acb28-673e-4e54-84d2-55087f2ce2ec'),(5,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','cdsj','hucde','cc1acb28-673e-4e54-84d2-55087f2ce2ec');
 /*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,8 +189,9 @@ CREATE TABLE `units` (
   `dispatch` int(1) DEFAULT NULL,
   `mdt` int(6) DEFAULT NULL,
   `civ` int(6) DEFAULT NULL,
+  `notes` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,8 +200,35 @@ CREATE TABLE `units` (
 
 LOCK TABLES `units` WRITE;
 /*!40000 ALTER TABLE `units` DISABLE KEYS */;
-INSERT INTO `units` VALUES (6,'cc1acb28-673e-4e54-84d2-55087f2ce2ec','csdhj','SU-109',2,'',1,1,1),(11,'617c396f-7aad-4601-b7ce-941cdad1cef3','csdhj','DISP-01',1,'',1,1,1);
+INSERT INTO `units` VALUES (11,'617c396f-7aad-4601-b7ce-941cdad1cef3','csdhj','DISP-01',1,'',1,1,1,'hjk;\ncmdslds;\nbuyi;yu');
 /*!40000 ALTER TABLE `units` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_log`
+--
+
+DROP TABLE IF EXISTS `user_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `user_log` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `timestamp` varchar(255) DEFAULT NULL,
+  `uuid` varchar(255) DEFAULT NULL,
+  `action` varchar(255) DEFAULT NULL,
+  `ip` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_log`
+--
+
+LOCK TABLES `user_log` WRITE;
+/*!40000 ALTER TABLE `user_log` DISABLE KEYS */;
+INSERT INTO `user_log` VALUES (1,'1541435230','csdhj','Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]','::1'),(2,'1541435249','csdhj','Issued ticket. Details: [IssuedTo UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"], [Reason:\"cndk\"], [Amount:\"njfed\"]','::1'),(3,'1541438362','csdhj','Added bolo. Details: [LicensePlate:\"dsa\"], [MakeModel:\"dsa\"], [Color:\"dsa\"]','::1'),(4,'1541438371','csdhj','Issued ticket. Details: [IssuedTo UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"], [Reason:\"cdsj\"], [Amount:\"hucde\"]','::1'),(5,'1541438373','csdhj','Issued ticket. Details: [IssuedTo UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"], [Reason:\"cdsj\"], [Amount:\"hucde\"]','::1'),(6,'1541438388','csdhj','Issued warrant. Details: [IssuedTo UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"], [Reason:\"cdn\"]','::1');
+/*!40000 ALTER TABLE `user_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -191,6 +244,7 @@ CREATE TABLE `users` (
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `level` int(11) DEFAULT NULL,
+  `theme` varchar(255) DEFAULT 'dark',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -201,7 +255,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'csdhj','Decyphr','$2y$10$vHpeiWxDWYBXQ5qjSYts1eaV5xpa63qdrwN8hqD7qCYftRLBGrMbe',0);
+INSERT INTO `users` VALUES (1,'csdhj','Decyphr','$2y$10$vHpeiWxDWYBXQ5qjSYts1eaV5xpa63qdrwN8hqD7qCYftRLBGrMbe',0,'dark');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,7 +301,7 @@ CREATE TABLE `warrants` (
   `reason` varchar(255) DEFAULT NULL,
   `issuedBy` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -256,7 +310,7 @@ CREATE TABLE `warrants` (
 
 LOCK TABLES `warrants` WRITE;
 /*!40000 ALTER TABLE `warrants` DISABLE KEYS */;
-INSERT INTO `warrants` VALUES (1,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','jkl','cc1acb28-673e-4e54-84d2-55087f2ce2ec'),(2,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','cds','cc1acb28-673e-4e54-84d2-55087f2ce2ec');
+INSERT INTO `warrants` VALUES (1,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','jkl','cc1acb28-673e-4e54-84d2-55087f2ce2ec'),(2,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','cds','cc1acb28-673e-4e54-84d2-55087f2ce2ec'),(3,'29f89bac-f1bf-4b34-a1a0-f862730aaae3','cdn','cc1acb28-673e-4e54-84d2-55087f2ce2ec');
 /*!40000 ALTER TABLE `warrants` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -269,4 +323,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-27 14:09:50
+-- Dump completed on 2018-11-06 18:16:29

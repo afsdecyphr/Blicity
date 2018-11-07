@@ -36,7 +36,9 @@ if (isset($_GET['q'])) {
 } else {
     header("Location: ../");
 }
-session_start();
+if (session_id() == '' || !isset($_SESSION)) {
+    session_start();
+}
 $_SESSION['identifier'] = $_GET['q'];
 ?>
 

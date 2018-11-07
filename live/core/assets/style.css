@@ -11,6 +11,10 @@ Copyright (C) 2018 Decyphr and Blicity.
 */
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -28,7 +32,6 @@ p {
 }
 
 footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;

@@ -16,7 +16,12 @@ require_once '../../core/includes/cdn_settings.php';
 if (!isset($_GET['q'])) {
     header("Location: ../");
 }
-session_start();
+if (session_id() == '' || !isset($_SESSION)) {
+    session_start();
+}
+if (!isset($_SESSION['uuid'])) {
+    header('Location: ' . SITE_URL);
+}
 $_SESSION['identifier'] = $_GET['q'];
 ?>
 

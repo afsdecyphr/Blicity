@@ -37,29 +37,32 @@ require_once '../core/includes/cdn_settings.php';
             }
         </style>
     </head>
-    <body>
-        <h1 class="text-center" style="margin-top: 10px;"><?php echo TITLE; ?></h1>
-        <h3 class="text-center">Welcome, <?php echo $username; ?></h3>
-        <div class="col-centered" style="width:25%; height:auto;">
-            <a href="#dispatch" class="btn btn-primary form-control" data-toggle="modal" data-target="#dispatchModal">Dispatch</a>
-            <a href="#mdt" class="btn btn-primary form-control" data-toggle="modal" data-target="#mdtModal" style="margin-top:10px;">BCSO/LSPD</a>
-            <a href="#civilian" class="btn btn-primary form-control" data-toggle="modal" data-target="#civModal" style="margin-top:10px;">Civilian</a>
-            <a href="account/index.php" class="btn btn-info form-control" style="margin-top:50px;">Account</a>
-            <a href="account/logout.php" class="btn btn-warning form-control" style="margin-top:10px;">Logout</a>
-            <?php
-            if ($theme == "dark") {
-                echo '<button class="btn btn-light form-control" style="margin-top:10px;" onclick="changeColor(' . "'" . 'light' . "'" . ')">Use Light Theme</button>';
-            } elseif ($theme == "light") {
-                echo '<button class="btn btn-dark form-control" style="margin-top:10px;" onclick="changeColor(' . "'" . 'dark' . "'" . ')">Use Dark Theme</button>';
-            }
-            ?>
-            
-            <?php
-            if ($level <= 1) {
-                echo '<a href="admin/index.php" class="btn btn-danger form-control" style="margin-top:50px;">Admin Panel</a>';
-            }
-            ?>
+    <body style="display: flex; flex-direction: column;">
+        <div style="width: 100%; flex: 1 0 auto;">
+            <h1 class="text-center" style="margin-top: 10px;"><?php echo TITLE; ?></h1>
+            <h3 class="text-center">Welcome, <?php echo $username; ?></h3>
+            <div class="col-centered" style="width:25%; height:auto;">
+                <a href="#dispatch" class="btn btn-primary form-control" data-toggle="modal" data-target="#dispatchModal">Dispatch</a>
+                <a href="#mdt" class="btn btn-primary form-control" data-toggle="modal" data-target="#mdtModal" style="margin-top:10px;">BCSO/LSPD</a>
+                <a href="#civilian" class="btn btn-primary form-control" data-toggle="modal" data-target="#civModal" style="margin-top:10px;">Civilian</a>
+                <a href="account/index.php" class="btn btn-info form-control" style="margin-top:50px;">Account</a>
+                <a href="account/logout.php" class="btn btn-warning form-control" style="margin-top:10px;">Logout</a>
+                <?php
+                if ($theme == "dark") {
+                    echo '<button class="btn btn-light form-control" style="margin-top:10px;" onclick="changeColor(' . "'" . 'light' . "'" . ')">Use Light Theme</button>';
+                } elseif ($theme == "light") {
+                    echo '<button class="btn btn-dark form-control" style="margin-top:10px;" onclick="changeColor(' . "'" . 'dark' . "'" . ')">Use Dark Theme</button>';
+                }
+                ?>
+
+                <?php
+                if ($level <= 1) {
+                    echo '<a href="admin/index.php" class="btn btn-danger form-control" style="margin-top:50px;">Admin Panel</a>';
+                }
+                ?>
+            </div>
         </div>
+        
         
         <div class="modal fade" id="dispatchModal" tabindex="-1" role="dialog" aria-labelledby="dispatchModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -284,17 +287,13 @@ require_once '../core/includes/cdn_settings.php';
                 </div>
             </div>
         </div>
-        
-        <script>
-
-        </script>
+        <footer style="flex-shrink: 0;">
+            <p style="margin-bottom: 0px; text-align: center; width: 100%; margin-right: 5px; font-size: 14px; color: black; background-color: #f2f2f2;">
+                Blicity v<?php echo $version; ?>
+            </p>
+            <p style="margin-bottom: 0px; float: left; width: auto; font-size: 12px; color: white; background-color: red;">
+                Blicity is a closed-source CAD system developed by Decyphr for use by <font style="font-style: italic">SANRP</font>. If you would like to purchase the deployment version (has all the core features but is styled differently and lacks some extra features), contact Decyphr for more details and pricing via Discord: <font style="color: #7289da;"><strong>Decyphr#10</strong></font>
+            </p>
+        </footer>
     </body>
-    <footer>
-        <p style="margin-bottom: 0px; text-align: center; width: 100%; margin-right: 5px; font-size: 14px; color: black; background-color: #f2f2f2;">
-            Blicity v<?php echo $version; ?>
-        </p>
-        <p style="margin-bottom: 0px; float: left; width: auto; font-size: 12px; color: white; background-color: red;">
-            Blicity is a closed-source CAD system developed by Decyphr for use by <font style="font-style: italic">SANRP</font>. If you would like to purchase the deployment version (has all the core features but is styled differently and lacks some extra features), contact Decyphr for more details and pricing via Discord: <font style="color: #7289da;"><strong>Decyphr#10</strong></font>
-        </p>
-    </footer>
 </html>

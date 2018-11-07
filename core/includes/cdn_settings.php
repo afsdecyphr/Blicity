@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,10 +10,9 @@
 
 $json = json_decode(file_get_contents(__DIR__ . "\_private\cdn.json"), true);
 
-$version = $json['versions'][0]['0.2.2']['name'];
-$localFiles = $json['versions'][0]['0.2.2']['localFiles'];
-$remoteFiles = $json['versions'][0]['0.2.2']['remoteFiles'];
-define('CDN_VERSION', '');
+$version = $json['versions'][0]['name'];
+$localFiles = $json['versions'][0]['localFiles'];
+$remoteFiles = $json['versions'][0]['remoteFiles'];
 
 $requiredFiles = array();
 
