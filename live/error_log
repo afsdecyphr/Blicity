@@ -1,0 +1,717 @@
+[07-Nov-2018 00:57:17 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'pdo'@'localhost' (using password: YES) in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:00:07 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'pdo'@'localhost' (using password: YES) in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:00:42 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'pdo'@'localhost' (using password: YES) in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:01:57 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'pdo'@'localhost' (using password: YES) in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:01:58 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'pdo'@'localhost' (using password: YES) in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:02:06 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:03:34 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:03:35 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:03:37 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:03:37 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:03:37 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:03:37 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:04:32 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:04:33 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:04:34 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:04:34 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:04:34 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:04:36 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:04:36 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:04:36 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'localhost' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:04:41 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'96.9.244.101' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:04:42 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'96.9.244.101' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:05:28 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'96.9.244.101' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:05:29 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'96.9.244.101' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:05:30 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'96.9.244.101' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:05:30 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'96.9.244.101' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:05:30 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'96.9.244.101' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:05:30 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'96.9.244.101' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:05:31 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'hawkcadc_blicity'@'96.9.244.101' to database 'blicity' in /home/hawkcadc/public_html/config.php on line 17
+[07-Nov-2018 01:05:34 UTC] PHP Warning:  file_get_contents(/home/hawkcadc/core/includes\_private\cdn.json): failed to open stream: No such file or directory in /home/hawkcadc/core/includes/cdn_settings.php on line 11
+[07-Nov-2018 01:05:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 19
+[07-Nov-2018 01:05:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 28
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Use of undefined constant SELECT2_CSS - assumed 'SELECT2_CSS' in /home/hawkcadc/core/index.php on line 24
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Use of undefined constant SELECT2_REMOTECSS - assumed 'SELECT2_REMOTECSS' in /home/hawkcadc/core/index.php on line 25
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Use of undefined constant SELECT2 - assumed 'SELECT2' in /home/hawkcadc/core/index.php on line 26
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Use of undefined constant POPPER - assumed 'POPPER' in /home/hawkcadc/core/index.php on line 27
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Use of undefined constant SOLID - assumed 'SOLID' in /home/hawkcadc/core/index.php on line 28
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Use of undefined constant FONTAWESOME - assumed 'FONTAWESOME' in /home/hawkcadc/core/index.php on line 29
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Use of undefined constant BOOTSTRAP_NUMBER_INPUT - assumed 'BOOTSTRAP_NUMBER_INPUT' in /home/hawkcadc/core/index.php on line 30
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Use of undefined constant HOME_JS - assumed 'HOME_JS' in /home/hawkcadc/core/index.php on line 31
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:05:34 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:05:48 UTC] PHP Warning:  file_get_contents(/home/hawkcadc/core/includes\_private\cdn.json): failed to open stream: No such file or directory in /home/hawkcadc/core/includes/cdn_settings.php on line 11
+[07-Nov-2018 01:05:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 19
+[07-Nov-2018 01:05:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 28
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Use of undefined constant SELECT2_CSS - assumed 'SELECT2_CSS' in /home/hawkcadc/core/index.php on line 24
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Use of undefined constant SELECT2_REMOTECSS - assumed 'SELECT2_REMOTECSS' in /home/hawkcadc/core/index.php on line 25
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Use of undefined constant SELECT2 - assumed 'SELECT2' in /home/hawkcadc/core/index.php on line 26
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Use of undefined constant POPPER - assumed 'POPPER' in /home/hawkcadc/core/index.php on line 27
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Use of undefined constant SOLID - assumed 'SOLID' in /home/hawkcadc/core/index.php on line 28
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Use of undefined constant FONTAWESOME - assumed 'FONTAWESOME' in /home/hawkcadc/core/index.php on line 29
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Use of undefined constant BOOTSTRAP_NUMBER_INPUT - assumed 'BOOTSTRAP_NUMBER_INPUT' in /home/hawkcadc/core/index.php on line 30
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Use of undefined constant HOME_JS - assumed 'HOME_JS' in /home/hawkcadc/core/index.php on line 31
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:05:48 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:05:50 UTC] PHP Warning:  file_get_contents(/home/hawkcadc/core/includes\_private\cdn.json): failed to open stream: No such file or directory in /home/hawkcadc/core/includes/cdn_settings.php on line 11
+[07-Nov-2018 01:05:50 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 19
+[07-Nov-2018 01:05:50 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 28
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Use of undefined constant SELECT2_CSS - assumed 'SELECT2_CSS' in /home/hawkcadc/core/index.php on line 24
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Use of undefined constant SELECT2_REMOTECSS - assumed 'SELECT2_REMOTECSS' in /home/hawkcadc/core/index.php on line 25
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Use of undefined constant SELECT2 - assumed 'SELECT2' in /home/hawkcadc/core/index.php on line 26
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Use of undefined constant POPPER - assumed 'POPPER' in /home/hawkcadc/core/index.php on line 27
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Use of undefined constant SOLID - assumed 'SOLID' in /home/hawkcadc/core/index.php on line 28
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Use of undefined constant FONTAWESOME - assumed 'FONTAWESOME' in /home/hawkcadc/core/index.php on line 29
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Use of undefined constant BOOTSTRAP_NUMBER_INPUT - assumed 'BOOTSTRAP_NUMBER_INPUT' in /home/hawkcadc/core/index.php on line 30
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Use of undefined constant HOME_JS - assumed 'HOME_JS' in /home/hawkcadc/core/index.php on line 31
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:05:50 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:06:55 UTC] PHP Warning:  file_get_contents(/home/hawkcadc/core/includes\_private\cdn.json): failed to open stream: No such file or directory in /home/hawkcadc/core/includes/cdn_settings.php on line 11
+[07-Nov-2018 01:06:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 19
+[07-Nov-2018 01:06:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 28
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant SELECT2_CSS - assumed 'SELECT2_CSS' in /home/hawkcadc/core/index.php on line 24
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant SELECT2_REMOTECSS - assumed 'SELECT2_REMOTECSS' in /home/hawkcadc/core/index.php on line 25
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant SELECT2 - assumed 'SELECT2' in /home/hawkcadc/core/index.php on line 26
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant POPPER - assumed 'POPPER' in /home/hawkcadc/core/index.php on line 27
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant SOLID - assumed 'SOLID' in /home/hawkcadc/core/index.php on line 28
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant FONTAWESOME - assumed 'FONTAWESOME' in /home/hawkcadc/core/index.php on line 29
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant BOOTSTRAP_NUMBER_INPUT - assumed 'BOOTSTRAP_NUMBER_INPUT' in /home/hawkcadc/core/index.php on line 30
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant HOME_JS - assumed 'HOME_JS' in /home/hawkcadc/core/index.php on line 31
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:06:55 UTC] PHP Warning:  file_get_contents(/home/hawkcadc/core/includes\_private\cdn.json): failed to open stream: No such file or directory in /home/hawkcadc/core/includes/cdn_settings.php on line 11
+[07-Nov-2018 01:06:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 19
+[07-Nov-2018 01:06:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 28
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant SELECT2_CSS - assumed 'SELECT2_CSS' in /home/hawkcadc/core/index.php on line 24
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant SELECT2_REMOTECSS - assumed 'SELECT2_REMOTECSS' in /home/hawkcadc/core/index.php on line 25
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant SELECT2 - assumed 'SELECT2' in /home/hawkcadc/core/index.php on line 26
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant POPPER - assumed 'POPPER' in /home/hawkcadc/core/index.php on line 27
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant SOLID - assumed 'SOLID' in /home/hawkcadc/core/index.php on line 28
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant FONTAWESOME - assumed 'FONTAWESOME' in /home/hawkcadc/core/index.php on line 29
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant BOOTSTRAP_NUMBER_INPUT - assumed 'BOOTSTRAP_NUMBER_INPUT' in /home/hawkcadc/core/index.php on line 30
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Use of undefined constant HOME_JS - assumed 'HOME_JS' in /home/hawkcadc/core/index.php on line 31
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:06:55 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:06:56 UTC] PHP Warning:  file_get_contents(/home/hawkcadc/core/includes\_private\cdn.json): failed to open stream: No such file or directory in /home/hawkcadc/core/includes/cdn_settings.php on line 11
+[07-Nov-2018 01:06:56 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 19
+[07-Nov-2018 01:06:56 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 28
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Use of undefined constant SELECT2_CSS - assumed 'SELECT2_CSS' in /home/hawkcadc/core/index.php on line 24
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Use of undefined constant SELECT2_REMOTECSS - assumed 'SELECT2_REMOTECSS' in /home/hawkcadc/core/index.php on line 25
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Use of undefined constant SELECT2 - assumed 'SELECT2' in /home/hawkcadc/core/index.php on line 26
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Use of undefined constant POPPER - assumed 'POPPER' in /home/hawkcadc/core/index.php on line 27
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Use of undefined constant SOLID - assumed 'SOLID' in /home/hawkcadc/core/index.php on line 28
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Use of undefined constant FONTAWESOME - assumed 'FONTAWESOME' in /home/hawkcadc/core/index.php on line 29
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Use of undefined constant BOOTSTRAP_NUMBER_INPUT - assumed 'BOOTSTRAP_NUMBER_INPUT' in /home/hawkcadc/core/index.php on line 30
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Use of undefined constant HOME_JS - assumed 'HOME_JS' in /home/hawkcadc/core/index.php on line 31
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:06:56 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:07:03 UTC] PHP Warning:  file_get_contents(/home/hawkcadc/core/includes\_private\cdn.json): failed to open stream: No such file or directory in /home/hawkcadc/core/includes/cdn_settings.php on line 11
+[07-Nov-2018 01:07:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 19
+[07-Nov-2018 01:07:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/hawkcadc/core/includes/cdn_settings.php on line 28
+[07-Nov-2018 01:07:03 UTC] PHP Notice:  Use of undefined constant SELECT2_CSS - assumed 'SELECT2_CSS' in /home/hawkcadc/core/index.php on line 24
+[07-Nov-2018 01:07:03 UTC] PHP Notice:  Use of undefined constant SELECT2_REMOTECSS - assumed 'SELECT2_REMOTECSS' in /home/hawkcadc/core/index.php on line 25
+[07-Nov-2018 01:07:03 UTC] PHP Notice:  Use of undefined constant SELECT2 - assumed 'SELECT2' in /home/hawkcadc/core/index.php on line 26
+[07-Nov-2018 01:07:03 UTC] PHP Notice:  Use of undefined constant POPPER - assumed 'POPPER' in /home/hawkcadc/core/index.php on line 27
+[07-Nov-2018 01:07:03 UTC] PHP Notice:  Use of undefined constant SOLID - assumed 'SOLID' in /home/hawkcadc/core/index.php on line 28
+[07-Nov-2018 01:07:03 UTC] PHP Notice:  Use of undefined constant FONTAWESOME - assumed 'FONTAWESOME' in /home/hawkcadc/core/index.php on line 29
+[07-Nov-2018 01:07:03 UTC] PHP Notice:  Use of undefined constant BOOTSTRAP_NUMBER_INPUT - assumed 'BOOTSTRAP_NUMBER_INPUT' in /home/hawkcadc/core/index.php on line 30
+[07-Nov-2018 01:07:03 UTC] PHP Notice:  Use of undefined constant HOME_JS - assumed 'HOME_JS' in /home/hawkcadc/core/index.php on line 31
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:15:53 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:15:57 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:16:03 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:16:51 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:18:01 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:18:59 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:19:06 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:19:25 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:19:29 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:20:04 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:20:14 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:20:47 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/core/index.php on line 43
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 51
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/index.php on line 53
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/core/index.php on line 59
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 86
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 122
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 158
+[07-Nov-2018 01:21:07 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/core/index.php on line 222
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 01:34:20 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 01:36:01 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 01:36:06 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 01:36:32 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 01:36:37 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 01:36:39 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 01:46:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 01:46:15 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 01:46:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 01:47:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 04:04:41 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 04:08:51 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 04:42:39 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 43
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 61
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 94
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 130
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 166
+[07-Nov-2018 05:57:00 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 230
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 51
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 58
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 60
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 66
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 92
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 128
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 164
+[07-Nov-2018 06:13:11 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 228
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 51
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 65
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 73
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 99
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 135
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 171
+[07-Nov-2018 06:29:18 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 235
+[07-Nov-2018 06:37:16 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:37:16 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:37:16 UTC] PHP Fatal error:  require(): Failed opening required '../../config.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:37:53 UTC] PHP Warning:  require(../../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:37:53 UTC] PHP Warning:  require(../../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:37:53 UTC] PHP Fatal error:  require(): Failed opening required '../../../config.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:12 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:12 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:12 UTC] PHP Fatal error:  require(): Failed opening required '../../config.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:46 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:46 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:46 UTC] PHP Fatal error:  require(): Failed opening required '../../config.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:47 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:47 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:47 UTC] PHP Fatal error:  require(): Failed opening required '../../config.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:48 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:48 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:48 UTC] PHP Fatal error:  require(): Failed opening required '../../config.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:48 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:48 UTC] PHP Warning:  require(../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:39:48 UTC] PHP Fatal error:  require(): Failed opening required '../../config.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:40:23 UTC] PHP Warning:  require(/home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:40:23 UTC] PHP Warning:  require(/home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule../../config.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:40:23 UTC] PHP Fatal error:  require(): Failed opening required '/home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule../../config.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hawkcadc/public_html/blicity/modules/threeDepartmentsModule/index_buttons.php on line 12
+[07-Nov-2018 06:40:35 UTC] PHP Notice:  Constant MYSQL_USER already defined in /home/hawkcadc/public_html/blicity/config.php on line 12
+[07-Nov-2018 06:40:35 UTC] PHP Notice:  Constant MYSQL_PASSWORD already defined in /home/hawkcadc/public_html/blicity/config.php on line 13
+[07-Nov-2018 06:40:35 UTC] PHP Notice:  Constant MYSQL_HOST already defined in /home/hawkcadc/public_html/blicity/config.php on line 14
+[07-Nov-2018 06:40:35 UTC] PHP Notice:  Constant MYSQL_DATABASE already defined in /home/hawkcadc/public_html/blicity/config.php on line 15
+[07-Nov-2018 06:40:35 UTC] PHP Notice:  Constant TITLE already defined in /home/hawkcadc/public_html/blicity/config.php on line 24
+[07-Nov-2018 06:40:35 UTC] PHP Notice:  Constant SITE_URL already defined in /home/hawkcadc/public_html/blicity/config.php on line 25
+[07-Nov-2018 06:40:35 UTC] PHP Notice:  Constant DISCORD_MODULE already defined in /home/hawkcadc/public_html/blicity/config.php on line 26
+[07-Nov-2018 06:40:35 UTC] PHP Notice:  Constant EXTRA_DEPARTMENTS_MODULE already defined in /home/hawkcadc/public_html/blicity/config.php on line 27
+[07-Nov-2018 06:40:56 UTC] PHP Notice:  Constant MYSQL_USER already defined in /home/hawkcadc/public_html/blicity/config.php on line 12
+[07-Nov-2018 06:40:56 UTC] PHP Notice:  Constant MYSQL_PASSWORD already defined in /home/hawkcadc/public_html/blicity/config.php on line 13
+[07-Nov-2018 06:40:56 UTC] PHP Notice:  Constant MYSQL_HOST already defined in /home/hawkcadc/public_html/blicity/config.php on line 14
+[07-Nov-2018 06:40:56 UTC] PHP Notice:  Constant MYSQL_DATABASE already defined in /home/hawkcadc/public_html/blicity/config.php on line 15
+[07-Nov-2018 06:40:56 UTC] PHP Notice:  Constant TITLE already defined in /home/hawkcadc/public_html/blicity/config.php on line 24
+[07-Nov-2018 06:40:56 UTC] PHP Notice:  Constant SITE_URL already defined in /home/hawkcadc/public_html/blicity/config.php on line 25
+[07-Nov-2018 06:40:56 UTC] PHP Notice:  Constant DISCORD_MODULE already defined in /home/hawkcadc/public_html/blicity/config.php on line 26
+[07-Nov-2018 06:40:56 UTC] PHP Notice:  Constant EXTRA_DEPARTMENTS_MODULE already defined in /home/hawkcadc/public_html/blicity/config.php on line 27
+[07-Nov-2018 06:40:58 UTC] PHP Notice:  Constant MYSQL_USER already defined in /home/hawkcadc/public_html/blicity/config.php on line 12
+[07-Nov-2018 06:40:58 UTC] PHP Notice:  Constant MYSQL_PASSWORD already defined in /home/hawkcadc/public_html/blicity/config.php on line 13
+[07-Nov-2018 06:40:58 UTC] PHP Notice:  Constant MYSQL_HOST already defined in /home/hawkcadc/public_html/blicity/config.php on line 14
+[07-Nov-2018 06:40:58 UTC] PHP Notice:  Constant MYSQL_DATABASE already defined in /home/hawkcadc/public_html/blicity/config.php on line 15
+[07-Nov-2018 06:40:58 UTC] PHP Notice:  Constant TITLE already defined in /home/hawkcadc/public_html/blicity/config.php on line 24
+[07-Nov-2018 06:40:58 UTC] PHP Notice:  Constant SITE_URL already defined in /home/hawkcadc/public_html/blicity/config.php on line 25
+[07-Nov-2018 06:40:58 UTC] PHP Notice:  Constant DISCORD_MODULE already defined in /home/hawkcadc/public_html/blicity/config.php on line 26
+[07-Nov-2018 06:40:58 UTC] PHP Notice:  Constant EXTRA_DEPARTMENTS_MODULE already defined in /home/hawkcadc/public_html/blicity/config.php on line 27
+[07-Nov-2018 06:46:17 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/hawkcadc/public_html/core/index.php on line 59
+[07-Nov-2018 06:52:02 UTC] PHP Warning:  require_once(modules/threeDepartmentsModule/index_buttons.php): failed to open stream: No such file or directory in /home/hawkcadc/public_html/core/index.php on line 56
+[07-Nov-2018 06:52:02 UTC] PHP Fatal error:  require_once(): Failed opening required 'modules/threeDepartmentsModule/index_buttons.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hawkcadc/public_html/core/index.php on line 56
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 51
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 65
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 73
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 99
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 135
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 171
+[07-Nov-2018 07:15:58 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 235
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 51
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 65
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 73
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 99
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 135
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 171
+[07-Nov-2018 08:03:41 UTC] PHP Notice:  Undefined variable: uuid in /home/hawkcadc/public_html/core/index.php on line 235

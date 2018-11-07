@@ -43,7 +43,7 @@ require '../../../core/includes/check_access.php';
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php echo TITLE; ?> ● UMS</title>
+        <title><?php echo TITLE; ?></title>
         <script>
         var link = document.createElement('link');
         link.rel = 'stylesheet';

@@ -1,0 +1,58 @@
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant TITLE - assumed 'TITLE' in /home/hawkcadc/public_html/core/index.php on line 19
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant TITLE - assumed 'TITLE' in /home/hawkcadc/public_html/core/index.php on line 41
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 51
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant EXTRA_DEPARTMENTS_MODULE - assumed 'EXTRA_DEPARTMENTS_MODULE' in /home/hawkcadc/public_html/core/index.php on line 55
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 65
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 73
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant MYSQL_HOST - assumed 'MYSQL_HOST' in /home/hawkcadc/public_html/core/index.php on line 95
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant MYSQL_USER - assumed 'MYSQL_USER' in /home/hawkcadc/public_html/core/index.php on line 95
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant MYSQL_PASSWORD - assumed 'MYSQL_PASSWORD' in /home/hawkcadc/public_html/core/index.php on line 95
+[07-Nov-2018 06:29:25 UTC] PHP Notice:  Use of undefined constant MYSQL_DATABASE - assumed 'MYSQL_DATABASE' in /home/hawkcadc/public_html/core/index.php on line 95
+[07-Nov-2018 06:29:25 UTC] PHP Warning:  mysqli::mysqli(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/hawkcadc/public_html/core/index.php on line 95
+[07-Nov-2018 06:29:25 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/hawkcadc/public_html/core/index.php on line 95
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant SITE_URL - assumed 'SITE_URL' in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 29
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant TITLE - assumed 'TITLE' in /home/hawkcadc/public_html/core/index.php on line 19
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant TITLE - assumed 'TITLE' in /home/hawkcadc/public_html/core/index.php on line 41
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: username in /home/hawkcadc/public_html/core/index.php on line 51
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant CUSTOM_DEPARTMENTS_MODULE - assumed 'CUSTOM_DEPARTMENTS_MODULE' in /home/hawkcadc/public_html/core/index.php on line 55
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 65
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/public_html/core/index.php on line 67
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Undefined variable: level in /home/hawkcadc/public_html/core/index.php on line 73
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant MYSQL_HOST - assumed 'MYSQL_HOST' in /home/hawkcadc/public_html/core/index.php on line 95
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant MYSQL_USER - assumed 'MYSQL_USER' in /home/hawkcadc/public_html/core/index.php on line 95
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant MYSQL_PASSWORD - assumed 'MYSQL_PASSWORD' in /home/hawkcadc/public_html/core/index.php on line 95
+[07-Nov-2018 07:52:57 UTC] PHP Notice:  Use of undefined constant MYSQL_DATABASE - assumed 'MYSQL_DATABASE' in /home/hawkcadc/public_html/core/index.php on line 95
+[07-Nov-2018 07:52:57 UTC] PHP Warning:  mysqli::mysqli(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/hawkcadc/public_html/core/index.php on line 95
+[07-Nov-2018 07:52:57 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/hawkcadc/public_html/core/index.php on line 95

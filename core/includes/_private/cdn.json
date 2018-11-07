@@ -36,7 +36,7 @@
                 {
                   "reference": "MDT_JS",
                   "fileName": "mdt.js",
-                  "headerReference": "<script src='{SITE_URL}core/obfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
+                  "headerReference": "<script src='{SITE_URL}core/unobfuscated_js/{FILE_NAME}?v={VERSION}'></script>",
                   "requiredEverywhere": false
                 },
                 {

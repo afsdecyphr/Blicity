@@ -1,39 +1,4 @@
 <?php
-
-/**
-Blicity CAD/MDT
-Copyright (C) 2018 Decyphr and Blicity.
- Credit is not allowed to be removed from this program, doing so will
- result in copyright takedown.
- WE DO NOT SUPPORT CHANGING CODE IN ANYWAY, AS IT WILL MESS WITH FUTURE
- UPDATES. NO SUPPORT IS PROVIDED FOR CODE THAT IS EDITED.
-**/
-
-if (session_id() == '' || !isset($_SESSION)) {
-    session_start();
-}
-if (isset($_SESSION['uuid'])) {
-    $uuid = $_SESSION['uuid'];
-    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
-    if ($connection->connect_error) {
-        die("Connection failed: " . $connection->connect_error);
-    }
-    $result = $connection->query("SELECT level FROM users WHERE uuid='$uuid'");
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            if ($row['level'] > 1) {
-                echo "noAccess";
-                exit();
-            }
-        }
-    } else {
-        echo "noAccess";
-        exit();
-    }
-} else {
-    echo "noAccess";
-    exit();
-}
 $file_access = "11111111";
 require '../../core/includes/check_access.php';
 
@@ -43,7 +8,33 @@ if (isset($_POST['submit'])) {
         die("Connection failed: " . $connection->connect_error);
     }
     $title = mysqli_real_escape_string($connection, $_POST["title"]);
-    $url = mysqli_real_escape_string($connection, $_POST["url"]);
+    $url = mysqli_real_escape_string($connection, $_POST["siteUrl"]);
+    if (isset($_POST['discord'])) {
+      $discord = 1;
+    } else {
+      $discord = 0;
+    }
+    if (isset($_POST['customDeps'])) {
+      $customDeps = 1;
+    } else {
+      $customDeps = 0;
+    }
+    if (isset($_POST['dep1'])) {
+      $dep1 = $_POST['dep1'];
+    } else {
+      $dep1 = "";
+    }
+    if (isset($_POST['dep2'])) {
+      $dep2 = $_POST['dep2'];
+    } else {
+      $dep2 = "";
+    }
+    if (isset($_POST['dep3'])) {
+      $dep3 = $_POST['dep3'];
+    } else {
+      $dep3 = "";
+    }
+    echo $customDeps;
     $result = $connection->query("SELECT * FROM settings");
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -51,15 +42,43 @@ if (isset($_POST['submit'])) {
                 $oldTitle = $row['title'];
                 $query = $connection->query("UPDATE settings SET title='$title' WHERE title='$oldTitle'");
             }
+                if ($customDeps != $row['customDepartmentsModule']) {
+                    $oldcustomDeps = $row['customDepartmentsModule'];
+                    $query = $connection->query("UPDATE settings SET customDepartmentsModule='$customDeps' WHERE customDepartmentsModule='$oldcustomDeps'");
+                }
+                if ($discord != $row['discordModule']) {
+                    $oldDiscord = $row['discordModule'];
+                    $query = $connection->query("UPDATE settings SET discordModule='$discord' WHERE discordModule='$oldDiscord'");
+                }
             if ($url != $row['siteUrl']) {
                 $oldUrl = $row['siteUrl'];
                 $query = $connection->query("UPDATE settings SET siteUrl='$url' WHERE siteUrl='$oldUrl'");
             }
         }
-        renderPage($title, $url, "");
+        $result = $connection->query("SELECT * FROM customDepartmentsModule");
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+              if ($row['id'] == 1) {
+                if ($row['depName'] != $dep1) {
+                  $query = $connection->query("UPDATE customDepartmentsModule SET depName='$dep1' WHERE id='1'");
+                }
+              }
+                if ($row['id'] == 2) {
+                  if ($row['depName'] != $dep2) {
+                    $query = $connection->query("UPDATE customDepartmentsModule SET depName='$dep2' WHERE id='2'");
+                  }
+                }
+                  if ($row['id'] == 3) {
+                    if ($row['depName'] != $dep3) {
+                      $query = $connection->query("UPDATE customDepartmentsModule SET depName='$dep3' WHERE id='3'");
+                    }
+                  }
+            }
+        }
+        renderPage($title, $url, "", $discord, $customDeps, $dep1, $dep2, $dep3);
     } else {
         $error = "An error occured.";
-        renderPage("", "", $error);
+        renderPage("", "", $error, $discord, $customDeps, $dep1, $dep2, $dep3);
     }
     $connection->close();
 } else {
@@ -72,12 +91,59 @@ if (isset($_POST['submit'])) {
         while($row = $result->fetch_assoc()) {
             $title = $row['title'];
             $url = $row['siteUrl'];
+            $discord = $row['discordModule'];
+            $customDeps = $row['customDepartmentsModule'];
         }
     }
-    renderPage($title, $url, "");
+    $result = $connection->query("SELECT * FROM customDepartmentsModule");
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            if ($row['id'] == 1) {
+              $dep1 = $row['depName'];
+            }
+                if ($row['id'] == 2) {
+                  $dep2 = $row['depName'];
+                }
+                    if ($row['id'] == 3) {
+                      $dep3 = $row['depName'];
+                    }
+        }
+    }
+    if (isset($_SESSION['uuid'])) {
+        $uuid = $_SESSION['uuid'];
+        $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+        if ($connection->connect_error) {
+            die("Connection failed: " . $connection->connect_error);
+        }
+        $result = $connection->query("SELECT level FROM users WHERE uuid='$uuid'");
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                if ($row['level'] > 0) {
+                  if ($row['level'] == 1) {
+                    header('Location: ums/index.php');
+                  } else {
+                    echo "noAccess";
+                    exit();
+                  }
+                }
+            }
+        } else {
+            echo "noAccess";
+            exit();
+        }
+    } else {
+        echo "noAccess";
+        exit();
+    }
+    renderPage($title, $url, "", $discord, $customDeps, $dep1, $dep2, $dep3);
     exit();
 }
-function renderPage($title, $url, $info) {
+function renderPage($title, $url, $info, $discord, $customDeps, $dep1, $dep2, $dep3) {
+$file_access = "11111111";
+require '../../core/includes/check_access.php';
+  if ($level == 1) {
+    header('Location: ums/index.php');
+  }
 $file_access = "11111111";
 require '../../core/includes/check_access.php';
 ?>
@@ -115,11 +181,42 @@ require '../../core/includes/check_access.php';
                 <input type="text" name="title" class="form-control" placeholder="Website Title" style="width:40%; margin-top: 0px;" value="<?php echo $title; ?>">
                 <b>Website URL</b>
                 <input type="text" name="siteUrl" class="form-control" placeholder="Website URL (Ex: https://example.com/cad/)" style="width:40%; margin-top: 0px;" value="<?php echo $url; ?>">
+                <div class="form-check" style="margin-top: 10px;">
+                  <label class="form-check-label">
+                    <?php
+                    if ($discord == "1") {
+                      echo '<input name="discord" class="form-check-input" type="checkbox" value="1" checked="">';
+                    } else {
+                      echo '<input name="discord" class="form-check-input" type="checkbox" value="0">';
+                    }
+                    ?>
+                    Discord Username Module
+                  </label>
+                </div>
+                <div class="form-check" style="margin-top: 10px;">
+                  <label class="form-check-label">
+                    <?php
+                    if ($customDeps == "1") {
+                      echo '<input name="customDeps" class="form-check-input" type="checkbox" value="1" checked="">';
+                    } else {
+                      echo '<input name="customDeps" class="form-check-input" type="checkbox" value="0">';
+                    }
+                    ?>
+                    Custom Departments Module
+                  </label>
+                </div>
+                <?php
+                if ($customDeps == "1") {
+                  echo '<input type="text" name="dep1" class="form-control" placeholder="Department 1" style="width:40%; margin-top: 0px;" value="' . $dep1 . '">';
+                    echo '<input type="text" name="dep2" class="form-control" placeholder="Department 2" style="width:40%; margin-top: 0px;" value="' . $dep2 . '">';
+                      echo '<input type="text" name="dep3" class="form-control" placeholder="Department 3" style="width:40%; margin-top: 0px;" value="' . $dep3 . '">';
+                }
+                ?>
                 <input type="submit" name="submit" value="Append/Save Changes" class="btn btn-primary form-control" style="width:40%; margin-top:6px; margin-bottom:6px; border-color:#13ff13;">
             </form>
-            
+
         </div>
-        
+
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>

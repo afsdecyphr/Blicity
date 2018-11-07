@@ -9,6 +9,5 @@ Copyright (C) 2018 Decyphr and Blicity.
  UPDATES. NO SUPPORT IS PROVIDED FOR CODE THAT IS EDITED.
 **/
 
-require '../config.php';
-require '../../core/includes/logging.php';
+require __DIR__ . '/../../../core/modules/customDepartmentsModule/index_buttons.php';
 ?>

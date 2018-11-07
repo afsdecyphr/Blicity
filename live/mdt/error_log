@@ -1,0 +1,98 @@
+[07-Nov-2018 07:30:12 UTC] PHP Notice:  Undefined index: assignSelfToCall in /home/hawkcadc/public_html/core/mdt/actions.php on line 181
+[07-Nov-2018 07:30:12 UTC] PHP Notice:  Trying to get property of non-object in /home/hawkcadc/public_html/core/mdt/actions.php on line 188
+[07-Nov-2018 07:30:12 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:30:26 UTC] PHP Notice:  Undefined index: assignSelfToCall in /home/hawkcadc/public_html/core/mdt/actions.php on line 181
+[07-Nov-2018 07:30:26 UTC] PHP Notice:  Trying to get property of non-object in /home/hawkcadc/public_html/core/mdt/actions.php on line 188
+[07-Nov-2018 07:30:26 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Undefined index: assignSelfToCall in /home/hawkcadc/public_html/core/mdt/actions.php on line 181
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Trying to get property of non-object in /home/hawkcadc/public_html/core/mdt/actions.php on line 188
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Undefined index: assignSelfToCall in /home/hawkcadc/public_html/core/mdt/actions.php on line 181
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Trying to get property of non-object in /home/hawkcadc/public_html/core/mdt/actions.php on line 188
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Undefined index: assignSelfToCall in /home/hawkcadc/public_html/core/mdt/actions.php on line 181
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Trying to get property of non-object in /home/hawkcadc/public_html/core/mdt/actions.php on line 188
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Undefined index: assignSelfToCall in /home/hawkcadc/public_html/core/mdt/actions.php on line 181
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Trying to get property of non-object in /home/hawkcadc/public_html/core/mdt/actions.php on line 188
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Undefined index: assignSelfToCall in /home/hawkcadc/public_html/core/mdt/actions.php on line 181
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Trying to get property of non-object in /home/hawkcadc/public_html/core/mdt/actions.php on line 188
+[07-Nov-2018 07:30:27 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:30:55 UTC] PHP Notice:  Trying to get property of non-object in /home/hawkcadc/public_html/core/mdt/actions.php on line 188
+[07-Nov-2018 07:30:55 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:30:55 UTC] PHP Notice:  Trying to get property of non-object in /home/hawkcadc/public_html/core/mdt/actions.php on line 188
+[07-Nov-2018 07:30:55 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:06 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:06 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:13 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:15 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:15 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:15 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:16 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:16 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:16 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:16 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:17 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:20 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:20 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:20 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:20 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:20 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:20 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:20 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:20 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:21 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:21 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:21 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:21 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:21 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:21 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:22 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:22 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:23 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:23 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:23 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:23 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:24 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:24 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:24 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:32:24 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:36:02 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:36:39 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:41:51 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:49:03 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 209
+[07-Nov-2018 07:49:37 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:46 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:46 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:47 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:47 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:48 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:48 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:48 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:48 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:49 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:49 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:49 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:49 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:49 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:50 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:51 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:51 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:51 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:51 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:51 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:52 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:52 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:52 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:53 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:53 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:53 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:54 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:54 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:54 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:54 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:55 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:55 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:55 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198
+[07-Nov-2018 07:59:55 UTC] PHP Notice:  Undefined variable: status in /home/hawkcadc/public_html/core/mdt/actions.php on line 198

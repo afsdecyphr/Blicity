@@ -23,18 +23,18 @@ if (isset($_GET['q'])) {
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             if ($row['association'] != $uuid) {
-                header("Location: ../");
+                header("Location: ../index.php?noAccess");
             } else {
                 if ($row['dispatch'] == 0) {
-                    header("Location: ../");
+                    header("Location: ../index.php?noAccess");
                 }
             }
         }
     } else {
-        header("Location: ../");
+        header("Location: ../index.php?noAccess");
     }
 } else {
-    header("Location: ../");
+    header("Location: ../index.php?noAccess");
 }
 if (session_id() == '' || !isset($_SESSION)) {
     session_start();
@@ -122,7 +122,7 @@ $_SESSION['identifier'] = $_GET['q'];
                         </button>
                     </div>
                     <div class="modal-body">
-                        <textarea id="notesTA" style="width:100%; height: 300px;background-color: #fcff82; border: none;"><?php 
+                        <textarea id="notesTA" style="width:100%; height: 300px;background-color: #fcff82; border: none;"><?php
                         $connection2 = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
                         if ($connection->connect_error) {
                             die("Connection failed: " . $connection->connect_error);
@@ -142,7 +142,7 @@ $_SESSION['identifier'] = $_GET['q'];
                 </div>
             </div>
         </div>
-        
+
         <div class="modal fade" id="addBoloModal" role="dialog" aria-labelledby="addBoloModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -176,8 +176,8 @@ $_SESSION['identifier'] = $_GET['q'];
                 </div>
             </div>
         </div>
-        
-        
+
+
         <div class="modal fade" id="charLookupModal" role="dialog" aria-labelledby="charLookupModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xlg" role="document">
                 <div class="modal-content" style="max-height:90vh;overflow-y:auto;">
@@ -205,7 +205,7 @@ $_SESSION['identifier'] = $_GET['q'];
                                 }
                                 ?>
                             </select>
-                            
+
                             <div id="showChar"></div>
                         </div>
                     </div>
@@ -243,7 +243,7 @@ $_SESSION['identifier'] = $_GET['q'];
                                 ?>
                             </select>
                             <small id="characterHelp" class="form-text" style="color:red; display:none;">Please to a person to cite.</small>
-                            
+
                             <div id="ticketForm">
                                 <div class="form-group">
                                     <label for="reasonText">Ticket Reason</label>

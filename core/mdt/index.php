@@ -23,18 +23,18 @@ if (isset($_GET['q'])) {
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             if ($row['association'] != $uuid) {
-                header("Location: ../");
+                header("Location: ../index.php?noAccess");
             } else {
                 if ($row['mdt'] == 0) {
-                    header("Location: ../");
+                    header("Location: ../index.php?noAccess");
                 }
             }
         }
     } else {
-        header("Location: ../");
+        header("Location: ../index.php?noAccess");
     }
 } else {
-    header("Location: ../");
+    header("Location: ../index.php?noAccess");
 }
 if (session_id() == '' || !isset($_SESSION)) {
     session_start();
@@ -110,6 +110,9 @@ $_SESSION['identifier'] = $_GET['q'];
                         <a data-toggle="modal" data-target="#warrantModal">
                             <i class="fas fa-drivers-license"></i>
                             Issue Warrant
+                        </a>
+                        <a data-toggle="modal" data-target="#callModal">
+                            New Call
                         </a>
                         <a data-toggle="modal" data-target="#notesModal">
                             Note Pad
@@ -356,6 +359,34 @@ $_SESSION['identifier'] = $_GET['q'];
                 </div>
             </div>
 
+            <div class="modal fade" id="callModal" role="dialog" aria-labelledby="callModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="max-height:90vh;overflow-y:auto;">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="callModalLabel">New Call</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <div id="callForm">
+                                    <div class="form-group">
+                                        <label for="callDescText">Warrant Reason</label>
+                                        <input type="text" class="form-control" id="callDescText" placeholder="Reason">
+                                        <small id="callDescTextHelp" class="form-text" style="color:red; display:none;">Cannot be left blank.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer" style="margin-bottom:10px;">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success" onclick="createCall();">Create Call</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div id="content">
                 <div id = "alert_placeholder"></div>
                 <?php
@@ -413,7 +444,7 @@ $_SESSION['identifier'] = $_GET['q'];
             </div>
         </div>
     </body>
-    
+
     <footer>
         <p style="margin-bottom: 0px; text-align: center; width: 100%; margin-right: 5px; font-size: 14px; color: black; background-color: #f2f2f2;">
             Blicity v<?php echo $version; ?>

@@ -9678,3 +9678,15 @@ a.text-dark:hover, a.text-dark:focus {
     background-color: #fff;
     color: #212529;
 }
+
+.center-box {
+    background-image: linear-gradient(to right, #ffffff, #f2f2f2, #e5e5e5, #d8d8d8, #cbcbcb);
+    height: auto;
+    width: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width:25%;
+    min-width: 480px;
+}

@@ -35,9 +35,14 @@ if (isset($_POST['submit'])) {
     $username = mysqli_real_escape_string($connection, $_POST["username"]);
     $password = mysqli_real_escape_string($connection, $_POST["password"]);
     $confPassword = mysqli_real_escape_string($connection, $_POST["confPassword"]);
+    if (!isset($_POST["discord"])) {
+      $discord = "";
+    } else {
+      $discord = mysqli_real_escape_string($connection, $_POST["discord"]);
+    }
     $toUsername = "";
     $toPassword = "";
-    $result = $connection->query("SELECT username, password, uuid FROM users WHERE uuid='$uuid'");
+    $result = $connection->query("SELECT username, password, discord, uuid FROM users WHERE uuid='$uuid'");
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $hashedPassword = $row["password"];
@@ -47,17 +52,21 @@ if (isset($_POST['submit'])) {
                 $error = "";
                 $updateQuery = $connection->query("UPDATE users SET username='$username' WHERE uuid='$uuid'");
             }
+            if ($discord != $row['discord']) {
+                $error = "";
+                $updateQuery = $connection->query("UPDATE users SET discord='$discord' WHERE uuid='$uuid'");
+            }
             if (!password_verify($password, $hashedPassword) && $password != "") {
                 if ($password != $confPassword) {
-                    renderPage($username, $level, "Passwords do not match.", $password, "");
+                    renderPage($username, $level, "Passwords do not match.", $password, "", $discord);
                 } else {
                     $hashedPass = password_hash($password, PASSWORD_DEFAULT);
                     $updateQuery = $connection->query("UPDATE users SET password='$hashedPass' WHERE uuid='$uuid'");
                     $error = "updated pass";
-                    renderPage($username, $level, $error, "", "");
+                    renderPage($username, $level, $error, "", "", $discord);
                 }
             } else {
-                renderPage($username, $level, $error, "", "");
+                renderPage($username, $level, $error, "", "", $discord);
             }
         }
     }
@@ -69,10 +78,11 @@ if (isset($_POST['submit'])) {
         die("Connection failed: " . $connection->connect_error);
     }
     $uuid = $_SESSION['uuid'];
-    $result = $connection->query("SELECT username, level FROM users WHERE uuid='$uuid'");
+    $result = $connection->query("SELECT username, level, discord FROM users WHERE uuid='$uuid'");
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $username = $row['username'];
+            $discord = $row['discord'];
             if ($row['level'] == 9) {
                 $level = "<span class='badge badge-primary'>User</span>";
             } elseif ($row['level'] == 1) {
@@ -82,10 +92,10 @@ if (isset($_POST['submit'])) {
             }
         }
     }
-    renderPage($username, $level, "", "", "");
+    renderPage($username, $level, "", "", "", $discord);
 }
 
-function renderPage($username, $accessLevel, $error, $password, $confPassword) {  
+function renderPage($username, $accessLevel, $error, $password, $confPassword, $discord) {
     $file_access = "11111111";
     require '../../core/includes/check_access.php';
     require_once '../../core/includes/cdn_settings.php';
@@ -117,7 +127,7 @@ function renderPage($username, $accessLevel, $error, $password, $confPassword) {
                 float: none;
                 margin: 0 auto;
             }
-            
+
             a:link {
                 text-decoration: underline;
             }
@@ -131,6 +141,16 @@ function renderPage($username, $accessLevel, $error, $password, $confPassword) {
                     <b>Username</b>
                     <input type="text" name="username" class="form-control" placeholder="Username" style="width:100%; margin-top: 0px;" value="<?php echo $username; ?>">
                 </p>
+                <?php
+                if (DISCORD_MODULE == 1) {
+                  ?>
+                     <p class="col-md-12 center" style="width: 100%; min-width: 175px;">
+                         <b>Discord</b>
+                         <input type="text" name="discord" class="form-control" placeholder="Discord" style="width:100%; margin-top: 0px;" value="<?php echo $discord; ?>">
+                     </p>
+                  <?php
+                }
+                 ?>
                 <p class="col-md-12 center" style="width: 100%; min-width: 175px;">
                     <b>Password</b>
                     <input type="password" name="password" class="form-control" placeholder="Password" style="width:100%; margin-top: 0px;" value="<?php echo $password; ?>">

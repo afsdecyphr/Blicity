@@ -5,7 +5,7 @@ Copyright (C) 2018 Decyphr and Blicity.
  result in copyright takedown.
  WE DO NOT SUPPORT CHANGING CODE IN ANYWAY, AS IT WILL MESS WITH FUTURE
  UPDATES. NO SUPPORT IS PROVIDED FOR CODE THAT IS EDITED.
-**//* 
+**//*
     Created on : Oct 12, 2018, 8:50:44 AM
     Author     : Joshua.Duncan
 */
@@ -17,6 +17,7 @@ html, body {
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to right, #2c3e50, #fd746c);
 }
 
 .modal-xlg {
@@ -47,17 +48,17 @@ footer {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #555;
 }
 
 a,
@@ -331,4 +332,10 @@ a.article:hover {
 #link_bar_9 { color:#000000; background-color:#403a57; border-radius: 4px; margin: 0px 2px; padding: 1px 3px; text-decoration: none; }
 #link_bar_9 { color:#000000; background-color:#403a57; border-radius: 4px; margin: 0px 2px; padding: 1px 3px; text-decoration: none; }
 #link_bar_9 { color:#000000; background-color:#403a57; border-radius: 4px; margin: 0px 2px; padding: 1px 3px; text-decoration: none; }
-#link_bar_9 { color:#000000; background-color:#403a57; border-radius: 4px; margin: 0px 2px; padding: 1px 3px; text-decoration: none; }
+#link_bar_9 { color:#000000; background-color:#403a57; border-radius: 4px; margin: 0px 2px; padding: 1px 3px; text-decoration: none; }\
+
+.login-box {
+  background-image: linear-gradient(to left bottom, #000000, #080808, #0e0e0e, #141414, #181818);
+  height: auto;
+  width: auto;
+}

@@ -1,0 +1,17 @@
+[07-Nov-2018 01:17:52 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:17:52 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:17:52 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:17:52 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:17:52 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:17:52 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:17:52 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:17:52 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/includes/cdn_settings.php on line 31
+[07-Nov-2018 01:17:52 UTC] PHP Notice:  Undefined variable: theme in /home/hawkcadc/core/account/index.php on line 99
+[07-Nov-2018 03:51:46 UTC] PHP Notice:  Undefined variable: discordModule in /home/hawkcadc/public_html/core/account/register.php on line 178
+[07-Nov-2018 03:51:46 UTC] PHP Notice:  Undefined variable: discordModule in /home/hawkcadc/public_html/core/account/register.php on line 179
+[07-Nov-2018 03:54:09 UTC] PHP Warning:  Missing argument 5 for renderPage(), called in /home/hawkcadc/public_html/core/account/register.php on line 42 and defined in /home/hawkcadc/public_html/core/account/register.php on line 56
+[07-Nov-2018 03:54:09 UTC] PHP Notice:  Undefined variable: discord in /home/hawkcadc/public_html/core/account/register.php on line 181
+[07-Nov-2018 03:54:11 UTC] PHP Warning:  Missing argument 5 for renderPage(), called in /home/hawkcadc/public_html/core/account/register.php on line 42 and defined in /home/hawkcadc/public_html/core/account/register.php on line 56
+[07-Nov-2018 03:54:11 UTC] PHP Notice:  Undefined variable: discord in /home/hawkcadc/public_html/core/account/register.php on line 181
+[07-Nov-2018 04:07:30 UTC] PHP Notice:  Undefined variable: error in /home/hawkcadc/public_html/core/account/register.php on line 39
+[07-Nov-2018 04:12:50 UTC] PHP Notice:  Undefined variable: dsaa in /home/hawkcadc/public_html/core/account/index.php on line 149

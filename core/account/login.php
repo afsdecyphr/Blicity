@@ -34,7 +34,7 @@ if (isset($_POST["submit"])) {
             renderPage($username, $password, $error);
         }
     } else {
-        $error = "Invalid username/password combinationnn." . $username;
+        $error = "Invalid username/password combination." . $username;
         renderPage($username, $password, $error);
     }
     $connection->close();
@@ -49,13 +49,14 @@ function renderPage($username, $password, $error) {
 <!DOCTYPE html>
 <html>
     <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css?v=1" rel="stylesheet" />
     <link href="<?php echo SITE_URL; ?>core/assets/select2-bootstrap4.css?v=1" rel="stylesheet" />
         <link rel="stylesheet" href="<?php echo SITE_URL; ?>core/assets/bootstrap-dark.css">
     <link rel="stylesheet" href="<?php echo SITE_URL; ?>core/assets/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
@@ -68,33 +69,119 @@ function renderPage($username, $password, $error) {
                 float: none;
                 margin: 0 auto;
             }
-            
+
             a:link {
                 text-decoration: underline;
+            }
+            .login-box {
+              background-image: linear-gradient(to left bottom, #434343, #3c3c3c, #353535, #2e2e2e, #272727);
+              height: auto;
+              width: auto;
+              position: relative;
+              top: 50%;
+              transform: translateY(-50%);
+              margin: 0 auto;
+              width:25%;
+              min-width: 480px;
+            }
+            .login-input-container {
+              width: 100%;
+              margin-top: 6px;
+              margin-bottom: 6px;
+              color: #fff;
+              border:none;
+              border-radius: 0px;
+              background-color: #444444;
+              border-top: solid 1px #f7f7f7;
+              color: white;
+            }
+            .login-input {
+              width: 100%;
+              margin-top: 6px;
+              margin-bottom: 6px;
+              color: #fff;
+              border:none;
+              border-radius: 0px;
+              background-color: #444444;
+              color: white;
+            }
+            .login-input::placeholder {
+              color: #d8d8d8;
+            }
+            .login-input:focus {
+              background-color: #444444;
+              color: #d8d8d8;
+            }
+            .login-button {
+              width: 100%;
+              margin-top: 6px;
+              margin-bottom: 6px;
+              background-image: linear-gradient(to left bottom, #000000, #080808, #0e0e0e, #141414, #181818);
+              color: #fff;
+              border:none;
+              border-radius: 36px;
+            }
+            .login-button:hover {
+              background-image: linear-gradient(to right, #2c3e50, #fd746c);
+              color: white;
+            }
+            .gradient-container {
+                top: -1px; bottom: -1px;
+                left: -1px; right: -1px;
+                background: linear-gradient(to right, #2c3e50, #fd746c);
+                content: '';
+                z-index: -1;
+                border-radius: 38px;
+                width:50%;
+            }
+
+            @media only screen and (max-width: 600px) {
+              .login-box {
+                background-image: linear-gradient(to left bottom, #000000, #080808, #0e0e0e, #141414, #181818);
+                height: auto;
+                width: auto;
+                transform: translate(0, 50%);
+                margin: 0 auto;
+                width:90%;
+                min-width: 90%;
+              }
+              .gradient-container {
+                  width:35%;
+              }
+            }
+            body {
+              background-image: linear-gradient(to right, #2c3e50, #fd746c);
             }
         </style>
     </head>
     <body>
-        <h1 class="text-center" style="margin-top: 10px;"><?php echo TITLE; ?> ● Login</h1>
-        <div class="col-centered" style="width:25%; height:auto;">
+        <div class="login-box" style=" height:auto; padding-top: 100px; padding-bottom: 100px;">
+            <h1 class="text-center" style="margin-bottom:40px">Login</h1>
             <form action="" name="form1" method="post">
-                <p class="col-md-12 center" style="width: 100%; min-width: 175px;">
-                    <b>Username</b>
-                    <input type="text" name="username" class="form-control" placeholder="Username" style="width:100%; margin-top: 0px;" value="<?php echo $username; ?>">
+                <p class="col-md-12 center login-input-container" style="width: 100%; min-width: 175px; margin: 0 auto; padding: 0 0; height:45px;">
+                    <i class="fa fa-user icon" style="width:10%; display: inline-block;"></i><input name="username" class="form-control login-input" placeholder="Username"  style="width:90%; margin: 0 auto; display: inline-block; height:100%;" value="<?php echo $username; ?>">
                 </p>
-                <p class="col-md-12 center" style="width: 100%; min-width: 175px;">
-                    <b>Password</b>
-                    <input type="password" name="password" class="form-control" placeholder="Password" style="width:100%; margin-top: 0px;" value="<?php echo $password; ?>">
+
+                <p class="col-md-12 center login-input-container" style="width: 100%; min-width: 175px; margin: 0 auto; padding: 0 0; height:45px;">
+                      <i class="fa fa-key icon" style="width:10%; display: inline-block;"></i><input type="password" name="password" class="form-control login-input" placeholder="Password"  style="width:90%; margin: 0 auto; display: inline-block; height:100%;" value="<?php echo $password; ?>">
                 </p>
                 <?php
                     if ($error != "") {
                         echo '<div class="form-control-error text-center" style="width: 100%; min-width: 175px;"><font color="red">' . $error . '</font></div>';
                     }
                 ?>
-                <p class="col-md-12 center" style="width: 100%; min-width: 175px;">
-                    <input type="submit" name="submit" value="Login" class="btn btn-primary form-control" style="width:100%; margin-top:6px; margin-bottom:6px; border-color:#13ff13;">
+                <div style="width: 100%;">
+                  <div class="gradient-container" style="margin: 0 auto; margin-top: 40px;display:inline-block; margin-left: 25px;">
+                    <input type="submit" name="submit" value="Login" class="btn btn-primary form-control login-button" style="width:calc(-4px + 100%); transform:translate(2px, 0); margin: 2px 0;">
+                  </div>
+                  <p class="text-center" style="display:inline-block; width: auto; margin-left: 20px; color: white; margin-bottom: 0px;">New? Register <a href="register.php">here</a>.</p>
+                </div>
+
+                <p class="col-md-12 center" style="width: calc(-50px + 100%); min-width: 175px; margin: 0px 25px; padding: 0 0; height:auto; font-size: 14px; margin-top: 100px; text-align: center;">
+                  Hawk Technologies <a href="https://discordapp.com/invite/Ue3RGph" style="color:#7289da;">Discord</a> - © 2018 Hawk Technologies
+                  <br>
+                  Purchase this CAD <a href="https://shophawktechnology.com/">here</a>.
                 </p>
-                <p class="text-center">New? Register <a href="register.php">here</a>.</p>
             </form>
         </div>
 </html>

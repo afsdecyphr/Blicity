@@ -9688,3 +9688,15 @@ a.text-dark:hover, a.text-dark:focus {
     background-color: #222;
     color: #fff;
 }
+
+.center-box {
+    background-image: linear-gradient(to left bottom, #434343, #3c3c3c, #353535, #2e2e2e, #272727);
+    height: auto;
+    width: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width:25%;
+    min-width: 480px;
+}

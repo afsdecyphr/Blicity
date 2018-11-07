@@ -8,7 +8,7 @@ error_reporting(E_ALL);
  * and open the template in the editor.
  */
 
-$json = json_decode(file_get_contents(__DIR__ . "\_private\cdn.json"), true);
+$json = json_decode(file_get_contents(__DIR__ . "/_private/cdn.json"), true);
 
 $version = $json['versions'][0]['name'];
 $localFiles = $json['versions'][0]['localFiles'];

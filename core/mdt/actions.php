@@ -177,6 +177,36 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     }
     $result = $connection->query("UPDATE units SET status='$status' WHERE uuid='$uuid'");
     logUserAction($_SESSION['uuid'], "Updated status. Details: [Target UUID:" . '"' . $uuid . '"' . "], [Status:" . '"' . $status . '"' . "]");
+} elseif (isset($_GET['assignSelfToCall'])) {
+    $ucid = $_GET['assignSelfToCall'];
+    $uuid = $_SESSION['identifier'];
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("SELECT assigned FROM calls WHERE ucid='$ucid'");
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          $rawJSON = $row['assigned'];
+          $arr = json_decode($rawJSON);
+
+          $arr[] = $uuid;
+          $returnJSON = json_encode($arr);
+          $query = $connection->query("UPDATE calls SET assigned='$returnJSON' WHERE ucid='$ucid'");
+        }
+    }
+    logUserAction($_SESSION['uuid'], "Updated status. Details: [Target UUID:" . '"' . $uuid . '"' . "], [Status:" . '"' . $status . '"' . "]");
+} elseif (isset($_GET['createCall'])) {
+    $desc = $_GET['createCall'];
+    $uuid = $_SESSION['identifier'];
+    $ucid = gen_uuid();
+    $assigned = '["' . $uuid . '"]';
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("INSERT INTO calls VALUES (DEFAULT, '$ucid', '$desc', '$assigned')");
+    logUserAction($_SESSION['uuid'], "Updated status. Details: [Target UUID:" . '"' . $uuid . '"' . "], [Status:" . '"' . $status . '"' . "]");
 } elseif (isset($_GET['suspendLicense'])) {
     $uuid = $_GET['suspendLicense'];
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
@@ -233,6 +263,8 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
                     while($row2 = $result2->fetch_assoc()) {
                         $unitsRow = $unitsRow . $row2['callsign'];
                     }
+                } else {
+                  $unitsRow = $unitsRow . 'UNKNOWN UUID';
                 }
                 if ($on != $count) {
                     $unitsRow = $unitsRow . ', ';
@@ -240,11 +272,15 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
             }
             $tableBody = $tableBody . '<tr><td>' . $row['description'] . '</td>';
             $tableBody = $tableBody . '<td>' . $unitsRow . '</td>';
-            $tableBody = $tableBody . '<td></td></tr>';
+            $selfAss = '<button class="btn btn-sm btn-success" onclick="assignSelfToCall(' . "'" . $row['ucid'] . "'" . ');">Assign Self</button>';
+            if(in_array($_SESSION['identifier'], $arr)) {
+              $selfAss = "Already assigned";
+            }
+            $tableBody = $tableBody . '<td>' . $selfAss . '</td></tr>';
         }
     }
     $tableBody = $tableBody . '<script>
-            
+
     $(".updateunitbtn").on("click", function () {
     setStatus($(this).attr("id"), $(this).data("status"));
     });
@@ -386,5 +422,15 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
 } else {
     echo "unknownFunction";
     exit();
+}
+
+function gen_uuid() {
+    return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
+        mt_rand( 0, 0xffff ),
+        mt_rand( 0, 0x0fff ) | 0x4000,
+        mt_rand( 0, 0x3fff ) | 0x8000,
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
+    );
 }
 ?>
