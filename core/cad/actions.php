@@ -160,6 +160,56 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
         }
     }
     echo $result2 . '</tbody></table>';
+} elseif (isset($_GET['getCalls'])) {
+    $tableBody = '';
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("SELECT * FROM calls");
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $rawJSON = $row['assigned'];
+            $arr = json_decode($rawJSON);
+            $count = count($arr);
+            $on = 0;
+            $unitsRow = "";
+            foreach ($arr as $value) {
+                $on++;
+                $connection2 = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+                if ($connection2->connect_error) {
+                    die("Connection failed: " . $connection->connect_error);
+                }
+                $result2 = $connection2->query("SELECT * FROM units WHERE uuid='$value'");
+                if ($result2->num_rows > 0) {
+                    while($row2 = $result2->fetch_assoc()) {
+                        $unitsRow = $unitsRow . $row2['callsign'];
+                    }
+                } else {
+                  $unitsRow = $unitsRow . 'UNKNOWN UUID';
+                }
+                if ($on != $count) {
+                    $unitsRow = $unitsRow . ', ';
+                }
+            }
+            $tableBody = $tableBody . '<tr><td>' . $row['description'] . '</td>';
+            $tableBody = $tableBody . '<td>' . $unitsRow . '</td>';
+            $selfAssign = '<button class="btn btn-sm btn-success" onclick="assignSelfToCall(' . "'" . $row['ucid'] . "'" . ');">Assign Self</button>';
+            if(in_array($_SESSION['identifier'], $arr)) {
+              $selfAssign = "Already assigned";
+            }
+            $selfAssign = "";
+            $tableBody = $tableBody . '<td>' . $selfAss . '</td></tr>';
+        }
+    }
+    $tableBody = $tableBody . '<script>
+
+    $(".updateunitbtn").on("click", function () {
+    setStatus($(this).attr("id"), $(this).data("status"));
+    });
+    </script>';
+    echo $tableBody;
+    exit();
 } elseif (isset($_GET['updateStatus'])) {
     $status = $_GET['updateStatus'];
     $uuid = $_SESSION['identifier'];

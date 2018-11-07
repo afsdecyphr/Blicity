@@ -286,8 +286,8 @@ $_SESSION['identifier'] = $_GET['q'];
                 </div>
             </div>
             <div>
-                <h2 style="width:50%;display:inline-block;">Active Units</h2>
-                <h2 style="width:49%;display:inline-block;">Active Bolos</h2>
+                <h2 style="width:50%;display:inline-block;" class="text-center">Active Units</h2>
+                <h2 style="width:49%;display:inline-block;" class="text-center">Active Bolos</h2>
                 <div style="max-height:280px; overflow:auto; display:inline-block; width:50%; float:left;">
                     <table class="table">
                         <thead>
@@ -315,18 +315,17 @@ $_SESSION['identifier'] = $_GET['q'];
                         </tbody>
                     </table>
                 </div>
-                <h2 class="text-center" style="clear:both">Active Units</h2>
+                <h2 class="text-center" style="clear:both">Active Calls</h2>
                 <div style="max-height:280px; overflow:auto; width:100%;">
                     <table class="table">
                         <thead>
                           <tr>
-                            <th scope="col">License Plate</th>
-                            <th scope="col">Make/Model</th>
-                            <th scope="col">Color</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Assigned Units</th>
                             <th scope="col">Delete</th>
                           </tr>
                         </thead>
-                        <tbody id="bolosTableBody">
+                        <tbody id="callsTableBody">
                         </tbody>
                     </table>
                 </div>

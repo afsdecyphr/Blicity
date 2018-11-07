@@ -38,7 +38,6 @@ require_once '../core/includes/cdn_settings.php';
         </style>
     </head>
     <body>
-        <h1 class="text-center"><?php echo TITLE; ?></h1>
           <?php
           if (isset($_GET['noAccess'])) {
             echo '<div class="alert alert-dismissible alert-danger col-centered" style="width: 50%; margin-bottom: 10px;">
@@ -47,7 +46,7 @@ require_once '../core/includes/cdn_settings.php';
                   </div>';
           }
           ?>
-          <div class="center-box" style="width:25%; height:auto; padding-top: 100px;">
+          <div class="center-box" style="width:25%; height:auto; padding-top: 50px; max-height: 550px; overflow: auto; max-width:50%">
               <h3 class="text-center">Welcome, <?php echo $username; ?></h3>
               <a href="#dispatch" class="btn btn-primary form-control" data-toggle="modal" data-target="#dispatchModal" style="width:90%; margin: 5px auto;display: block;">Dispatch</a>
 
@@ -74,7 +73,13 @@ require_once '../core/includes/cdn_settings.php';
                   echo '<a href="admin/index.php" class="btn btn-danger form-control" style="width:90%; margin: 5px auto;display: block;margin-top:50px;">Admin Panel</a>';
               }
               ?>
-              <div style="height:100px;"></div>
+              <div style="height:50px;"></div>
+              
+              <footer style="position:sticky;">
+                  <p style="margin-bottom: 0px; text-align: center; width: 100%; margin-right: 5px; font-size: 14px; color: black; background-color: #f2f2f2;">
+                      Blicity v<?php echo $version; ?>
+                  </p>
+              </footer>
           </div>
 
         <div class="modal fade" id="dispatchModal" tabindex="-1" role="dialog" aria-labelledby="dispatchModalLabel" aria-hidden="true">
@@ -300,10 +305,5 @@ require_once '../core/includes/cdn_settings.php';
                 </div>
             </div>
         </div>
-        <footer style="position:fixed;">
-            <p style="margin-bottom: 0px; text-align: center; width: 100%; margin-right: 5px; font-size: 14px; color: black; background-color: #f2f2f2;">
-                Blicity v<?php echo $version; ?>
-            </p>
-        </footer>
     </body>
 </html>

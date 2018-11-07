@@ -163,6 +163,19 @@ function refresh() {
                             console.log("ajax error");
                         }
                     });
+                        $.ajax({
+                            url:"actions.php",
+                            method:"GET",
+                            data:{
+                                getCalls: '1'
+                            },
+                            success:function(response) {
+                                $('#callsTableBody').html(response);
+                            },
+                            error:function(){
+                                console.log("ajax error");
+                            }
+                        });
                     var isupdating = false;
                     $( ".unitchange" ).each(function( index ) {
                         if ($( ".unitchange" ).hasClass('show')) {

@@ -19,22 +19,6 @@ if (isset($_POST['submit'])) {
     } else {
       $customDeps = 0;
     }
-    if (isset($_POST['dep1'])) {
-      $dep1 = $_POST['dep1'];
-    } else {
-      $dep1 = "";
-    }
-    if (isset($_POST['dep2'])) {
-      $dep2 = $_POST['dep2'];
-    } else {
-      $dep2 = "";
-    }
-    if (isset($_POST['dep3'])) {
-      $dep3 = $_POST['dep3'];
-    } else {
-      $dep3 = "";
-    }
-    echo $customDeps;
     $result = $connection->query("SELECT * FROM settings");
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -55,32 +39,14 @@ if (isset($_POST['submit'])) {
                 $query = $connection->query("UPDATE settings SET siteUrl='$url' WHERE siteUrl='$oldUrl'");
             }
         }
-        $result = $connection->query("SELECT * FROM customDepartmentsModule");
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-              if ($row['id'] == 1) {
-                if ($row['depName'] != $dep1) {
-                  $query = $connection->query("UPDATE customDepartmentsModule SET depName='$dep1' WHERE id='1'");
-                }
-              }
-                if ($row['id'] == 2) {
-                  if ($row['depName'] != $dep2) {
-                    $query = $connection->query("UPDATE customDepartmentsModule SET depName='$dep2' WHERE id='2'");
-                  }
-                }
-                  if ($row['id'] == 3) {
-                    if ($row['depName'] != $dep3) {
-                      $query = $connection->query("UPDATE customDepartmentsModule SET depName='$dep3' WHERE id='3'");
-                    }
-                  }
-            }
-        }
-        renderPage($title, $url, "", $discord, $customDeps, $dep1, $dep2, $dep3);
+        renderPage($title, $url, "", $discord, $customDeps);
     } else {
         $error = "An error occured.";
-        renderPage("", "", $error, $discord, $customDeps, $dep1, $dep2, $dep3);
+        renderPage("", "", $error, $discord, $customDeps);
     }
     $connection->close();
+} elseif (isset($_POST['manageDepartments'])) {
+  header('Location: ' . SITE_URL . 'modules/customDepartmentsModule/config.php');
 } else {
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
     if ($connection->connect_error) {
@@ -93,20 +59,6 @@ if (isset($_POST['submit'])) {
             $url = $row['siteUrl'];
             $discord = $row['discordModule'];
             $customDeps = $row['customDepartmentsModule'];
-        }
-    }
-    $result = $connection->query("SELECT * FROM customDepartmentsModule");
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            if ($row['id'] == 1) {
-              $dep1 = $row['depName'];
-            }
-                if ($row['id'] == 2) {
-                  $dep2 = $row['depName'];
-                }
-                    if ($row['id'] == 3) {
-                      $dep3 = $row['depName'];
-                    }
         }
     }
     if (isset($_SESSION['uuid'])) {
@@ -135,10 +87,10 @@ if (isset($_POST['submit'])) {
         echo "noAccess";
         exit();
     }
-    renderPage($title, $url, "", $discord, $customDeps, $dep1, $dep2, $dep3);
+    renderPage($title, $url, "", $discord, $customDeps);
     exit();
 }
-function renderPage($title, $url, $info, $discord, $customDeps, $dep1, $dep2, $dep3) {
+function renderPage($title, $url, $info, $discord, $customDeps) {
 $file_access = "11111111";
 require '../../core/includes/check_access.php';
   if ($level == 1) {
@@ -207,12 +159,10 @@ require '../../core/includes/check_access.php';
                 </div>
                 <?php
                 if ($customDeps == "1") {
-                  echo '<input type="text" name="dep1" class="form-control" placeholder="Department 1" style="width:40%; margin-top: 0px;" value="' . $dep1 . '">';
-                    echo '<input type="text" name="dep2" class="form-control" placeholder="Department 2" style="width:40%; margin-top: 0px;" value="' . $dep2 . '">';
-                      echo '<input type="text" name="dep3" class="form-control" placeholder="Department 3" style="width:40%; margin-top: 0px;" value="' . $dep3 . '">';
-                }
+                  echo '<a href="' . SITE_URL . 'modules/customDepartmentsModule/config.php"><input type="submit" name="manageDepartments" value="Manage Departments" class="btn btn-info form-control" style="width:40%; margin-top:6px; margin-bottom:6px;"></a><br>';
+                }            
                 ?>
-                <input type="submit" name="submit" value="Append/Save Changes" class="btn btn-primary form-control" style="width:40%; margin-top:6px; margin-bottom:6px; border-color:#13ff13;">
+                <input type="submit" name="submit" value="Append/Save Changes" class="btn btn-success form-control" style="width:40%; margin-top:6px; margin-bottom:6px;">
             </form>
 
         </div>
