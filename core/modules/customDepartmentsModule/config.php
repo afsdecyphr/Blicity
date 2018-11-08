@@ -82,7 +82,7 @@ require '../../../core/includes/check_access.php';
         </style>
     </head>
     <body>
-        <h1 class="text-center" style="margin-top: 10px;"><?php echo TITLE; ?> ● UMS</h1>
+        <h1 class="text-center" style="margin-top: 10px;">Custom Departments Module ● Settings</h1>
         <div class="col-centered" style="width:24%; height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:left; margin-left:5px;">
             <a href="<?php echo SITE_URL; ?>" style="width:100%;"><button class="btn btn-primary" style="width:100%;">Home</button></a>
             <a href="<?php echo SITE_URL; ?>admin/index.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">Admin Panel</button></a>

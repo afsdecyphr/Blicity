@@ -16,6 +16,7 @@ require_once '../core/includes/cdn_settings.php';
 <!DOCTYPE html>
 <html>
     <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo TITLE; ?></title>
         <?php
         foreach ($requiredFiles as $file) {
@@ -74,7 +75,7 @@ require_once '../core/includes/cdn_settings.php';
               }
               ?>
               <div style="height:50px;"></div>
-              
+
               <footer style="position:sticky;">
                   <p style="margin-bottom: 0px; text-align: center; width: 100%; margin-right: 5px; font-size: 14px; color: black; background-color: #f2f2f2;">
                       Blicity v<?php echo $version; ?>

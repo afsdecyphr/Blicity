@@ -122,17 +122,18 @@ require '../../core/includes/check_access.php';
     </head>
     <body>
         <h1 class="text-center" style="margin-top: 10px;"><?php echo TITLE; ?> ● Admin Panel</h1>
-        <div class="col-centered" style="width:24%; height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:left; margin-left:5px;">
+        <div class="col-centered" style="width:calc(-10px + 33.33%); height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:left; margin:0 5px;">
             <a href="<?php echo SITE_URL; ?>" style="width:100%;"><button class="btn btn-primary" style="width:100%;">Home</button></a>
             <a href="ums/index.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">User Management System</button></a>
             <a href="logs.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">Logs</button></a>
         </div>
-        <div class="col-centered" style="width:75%; height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:right; margin-right:5px;">
+        <div class="col-centered" style="width:calc(-10px + 33.33%); height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:left; margin:0 5px;">
+          <h3>Website Settings</h3>
             <form action="" method="POST">
                 <b>Website Title</b>
-                <input type="text" name="title" class="form-control" placeholder="Website Title" style="width:40%; margin-top: 0px;" value="<?php echo $title; ?>">
+                <input type="text" name="title" class="form-control" placeholder="Website Title" style="width:100%; margin-top: 0px;" value="<?php echo $title; ?>">
                 <b>Website URL</b>
-                <input type="text" name="siteUrl" class="form-control" placeholder="Website URL (Ex: https://example.com/cad/)" style="width:40%; margin-top: 0px;" value="<?php echo $url; ?>">
+                <input type="text" name="siteUrl" class="form-control" placeholder="Website URL (Ex: https://example.com/cad/)" style="width:100%;" value="<?php echo $url; ?>">
                 <div class="form-check" style="margin-top: 10px;">
                   <label class="form-check-label">
                     <?php
@@ -157,14 +158,17 @@ require '../../core/includes/check_access.php';
                     Custom Departments Module
                   </label>
                 </div>
-                <?php
-                if ($customDeps == "1") {
-                  echo '<a href="' . SITE_URL . 'modules/customDepartmentsModule/config.php"><input type="submit" name="manageDepartments" value="Manage Departments" class="btn btn-info form-control" style="width:40%; margin-top:6px; margin-bottom:6px;"></a><br>';
-                }            
-                ?>
-                <input type="submit" name="submit" value="Append/Save Changes" class="btn btn-success form-control" style="width:40%; margin-top:6px; margin-bottom:6px;">
+                <input type="submit" name="submit" value="Append/Save Changes" class="btn btn-success form-control" style="width:100%; margin-top:6px; margin-bottom:6px;">
             </form>
+        </div>
 
+        <div class="col-centered" style="width:calc(-10px + 33.33%); height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:left; margin:0 5px;">
+          <h3>Module Settings</h3>
+          <?php
+          if ($customDeps == "1") {
+            echo '<a href="' . SITE_URL . 'modules/customDepartmentsModule/config.php"><button class="btn btn-info form-control" style="width:100%; margin-top:6px; margin-bottom:6px;">Manage Departments</button></a><br>';
+          }
+          ?>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

@@ -129,6 +129,29 @@ function assignSelfToCall(ucid) {
             });
 }
 
+function removeFromCall(ucid) {
+            if ('XDomainRequest' in window && window.XDomainRequest !== null) {
+                jQuery.ajaxSettings.xhr = function() {
+                    try { return new ActiveXObject("Microsoft.XMLHTTP"); }
+                    catch(e) { }
+                    jQuery.support.cors = true;
+                };
+            }
+            $.ajax({
+                url:"actions.php",
+                method:"GET",
+                data:{
+                    removeFromCall: ucid
+                },
+                success:function(response) {
+
+                },
+                error:function(){
+                    console.log("ajax error");
+                }
+            });
+}
+
 function createCall() {
   var desc = $("#callDescText").val();
   if (desc == "") {
@@ -190,10 +213,13 @@ function refresh() {
                     getStatus: '1'
                 },
                 success:function(response) {
-                    if (response == 1) {
-                        $("#status_1").addClass("disabled");
-                        $("#status_0").removeClass("disabled");
-                        $("#status_2").removeClass("disabled");
+                    if (response != 0 && response != 2) {
+                        $("#status_1").hide();
+                        $("#status_0").show();
+                        $("#status_2").show();
+                        if (response == 3 || response == 4) {
+                          $("#status_1").show();
+                        }
                         if ('XDomainRequest' in window && window.XDomainRequest !== null) {
                             jQuery.ajaxSettings.xhr = function() {
                                 try { return new ActiveXObject("Microsoft.XMLHTTP"); }
@@ -229,19 +255,25 @@ function refresh() {
                             });
                         console.log(1);
                     } else if (response == 0) {
-                        $("#status_0").addClass("disabled");
-                        $("#status_1").removeClass("disabled");
-                        $("#status_2").addClass("disabled");
+                        $("#status_0").hide();
+                        $("#status_1").show();
+                        $("#status_2").hide()
                         $('#callsTableBody').html("");
                         $('#bolosTableBody').html("");
                         console.log(0);
                     } else if (response == 2) {
-                        $("#status_2").addClass("disabled");
-                        $("#status_1").removeClass("disabled");
-                        $("#status_0").removeClass("disabled");
+                        $("#status_2").hide();
+                        $("#status_1").show();
+                        $("#status_0").show();
                         $('#callsTableBody').html("");
                         $('#bolosTableBody').html("");
                         console.log(2);
+                    } else {
+                        $("#status_2").show();
+                        $("#status_1").show();
+                        $("#status_0").show();
+                        $('#callsTableBody').html("");
+                        $('#bolosTableBody').html("");
                     }
                     status = response;
                 },

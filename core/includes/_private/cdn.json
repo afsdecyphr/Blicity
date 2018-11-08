@@ -11,7 +11,7 @@
                 },
                 {
                     "reference": "STYLE",
-                    "fileName": "style.css",
+                    "fileName": "style-{USER_THEME}.css",
                     "headerReference": "<link href='{SITE_URL}core/assets/{FILE_NAME}?v={VERSION}' rel='stylesheet' />",
                     "requiredEverywhere": true
                 },
@@ -83,9 +83,9 @@
                 },
                 {
                   "reference": "FONTAWESOME",
-                  "fileName": "fontawesome.js",
-                  "integrity": "sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY",
-                  "headerReference": "<script src='https://use.fontawesome.com/releases/v5.0.13/js/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'></script>",
+                  "fileName": "all.css",
+                  "integrity": "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU",
+                  "headerReference": "<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/{FILE_NAME}' integrity='{INTEGRITY}' crossorigin='anonymous'>",
                   "requiredEverywhere": false
                 },
                 {

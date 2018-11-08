@@ -195,7 +195,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
           $query = $connection->query("UPDATE calls SET assigned='$returnJSON' WHERE ucid='$ucid'");
         }
     }
-    logUserAction($_SESSION['uuid'], "Updated status. Details: [Target UUID:" . '"' . $uuid . '"' . "], [Status:" . '"' . $status . '"' . "]");
+    logUserAction($_SESSION['uuid'], "Assigned self to call. Details: [UCID:" . '"' . $ucid . '"' . "]");
 } elseif (isset($_GET['createCall'])) {
     $desc = $_GET['createCall'];
     $uuid = $_SESSION['identifier'];
@@ -206,6 +206,23 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
         die("Connection failed: " . $connection->connect_error);
     }
     $result = $connection->query("INSERT INTO calls VALUES (DEFAULT, '$ucid', '$desc', '$assigned')");
+    logUserAction($_SESSION['uuid'], "Created call. Details: [Description:" . '"' . $desc . '"' . "]");
+} elseif (isset($_GET['removeFromCall'])) {
+    $uuid = $_SESSION['identifier'];
+    $ucid = $_GET['removeFromCall'];
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("SELECT assigned FROM calls WHERE ucid='$ucid'");
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          $rawJSON = $row['assigned'];
+          $rawJSON = str_replace(',"' . $uuid . '"', '', $rawJSON);
+          $rawJSON = str_replace('"' . $uuid . '"', '', $rawJSON);
+          $query = $connection->query("UPDATE calls SET assigned='$rawJSON' WHERE ucid='$ucid'");
+        }
+    }
     logUserAction($_SESSION['uuid'], "Updated status. Details: [Target UUID:" . '"' . $uuid . '"' . "], [Status:" . '"' . $status . '"' . "]");
 } elseif (isset($_GET['suspendLicense'])) {
     $uuid = $_GET['suspendLicense'];
@@ -267,14 +284,14 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
                   $unitsRow = $unitsRow . 'UNKNOWN UUID';
                 }
                 if ($on != $count) {
-                    $unitsRow = $unitsRow . ', ';
+                    $unitsRow = $unitsRow . ' & ';
                 }
             }
             $tableBody = $tableBody . '<tr><td>' . $row['description'] . '</td>';
             $tableBody = $tableBody . '<td>' . $unitsRow . '</td>';
             $selfAss = '<button class="btn btn-sm btn-success" onclick="assignSelfToCall(' . "'" . $row['ucid'] . "'" . ');">Assign Self</button>';
             if(in_array($_SESSION['identifier'], $arr)) {
-              $selfAss = "Already assigned";
+              $selfAss = '<button class="btn btn-sm btn-danger" onclick="removeFromCall(' . "'" . $row['ucid'] . "'" . ');">Remove Self From Call</button>';
             }
             $tableBody = $tableBody . '<td>' . $selfAss . '</td></tr>';
         }
