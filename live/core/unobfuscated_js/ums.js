@@ -19,6 +19,7 @@ var editingUUID = "";
                         getUsers: '1'
                     },
                     success:function(response) {
+                      $("#usersTableBody").html("");
                         var obj = JSON.parse(response);
                         for (i = 0; i < obj.length; i++) {
                             console.log(obj[i].id);
@@ -97,6 +98,7 @@ var editingUUID = "";
                             if (response == "success") {
                                 $("#editUserModal").modal("toggle");
                             }
+                            getUsers();
                         },
                         error:function(){
                             console.log("ajax error");

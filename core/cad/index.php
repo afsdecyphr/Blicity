@@ -96,13 +96,9 @@ $_SESSION['identifier'] = $_GET['q'];
                         <i class="fas fa-car"></i>
                         Add Bolo
                     </a>
-                    <a data-toggle="modal" data-target="#charLookupModal">
-                        <i class="fas fa-drivers-license"></i>
-                        Character Lookup
-                    </a>
-                    <a data-toggle="modal" data-target="#ticketModal">
-                        <i class="fas fa-drivers-license"></i>
-                        Issue Ticket
+                    <a data-toggle="modal" data-target="#callModal">
+                        <i class="fas fa-car"></i>
+                        Add Call
                     </a>
                     <a data-toggle="modal" data-target="#notesModal">
                         <i class="fas fa-drivers-license"></i>
@@ -112,6 +108,34 @@ $_SESSION['identifier'] = $_GET['q'];
             </ul>
         </nav>
 
+        <div class="modal fade" id="callModal" role="dialog" aria-labelledby="callModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="max-height:90vh;overflow-y:auto;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="callModalLabel">New Call</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div id="callForm">
+                                <div class="form-group">
+                                    <label for="callDescText">Call Description</label>
+                                    <input type="text" class="form-control" id="callDescText" placeholder="Call Description">
+                                    <small id="callDescTextHelp" class="form-text" style="color:red; display:none;">Cannot be left blank.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="margin-bottom:10px;">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success" onclick="createCall();">Create Call</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="modal fade" id="notesModal" role="dialog" aria-labelledby="notesModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

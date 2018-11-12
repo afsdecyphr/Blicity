@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /**
 Blicity CAD/MDT
 Copyright (C) 2018 Decyphr and Blicity.
@@ -161,7 +164,7 @@ if (isset($_GET['getUserInfo'])) {
     }
     $getLevelQuery = $connection->query("SELECT level FROM users WHERE uuid='$deleteUUID'");
     if ($getLevelQuery->num_rows > 0) {
-        while($levelRow = $levelQuery->fetch_assoc()) {
+        while($levelRow = $getLevelQuery->fetch_assoc()) {
             if ($row['level'] <= $userLevel && $userLevel != 0) {
                 echo "cannotDelete";
                 exit();

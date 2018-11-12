@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 /**
 Blicity CAD/MDT
 Copyright (C) 2018 Decyphr and Blicity.
@@ -79,8 +77,9 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
                             <th scope="col">Name</th>
                             <th scope="col">Age</th>
                             <th scope="col">Gender</th>
-                            <th scope="col">Address</th>
-                          </tr>' . "</thead><tbody>";
+                            <th scope="col">Address</th>';
+
+    $result2 = $result2 . '</tr>' . "</thead><tbody>";
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
@@ -96,12 +95,75 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
                 $gender = "Unspecified";
             }
             $result2 = $result2 . '<tr>
-  <td>' . $row['name'] . '</td>
-  <td>' . $row['age'] . '</td>
-  <td>' . $gender. '</td>
-  <td>' . $row['address']. '</td>
-  </tr>';
+            <td>' . $row['name'] . '</td>
+            <td>' . $row['age'] . '</td>
+            <td>' . $gender . '</td>
+            <td>' . $row['address'] . '</td>
+            </tr>';
         }
+    }
+    $result2 = $result2 . '</tbody></table>';
+
+    $result2 = $result2 . '<h5>Licenses</h5><table class="table"><thead><tr>
+    <th scope="col">Drivers License</th>
+    <th scope="col">Weapon License</th>';
+    if (DOWF_MODULE == 1) {
+      $result2 = $result2 . '<th scope="col">Fishing License</th>
+      <th scope="col">Hunting License</th>';
+    }
+    $result2 = $result2 . '</tr></thead><tbody>';
+    $result = $connection->query("SELECT * FROM characters WHERE uuid='$uuid'");
+    if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        if ($row['licenseStatus'] == 0) {
+          $dLicense = "Unlicensed";
+        } elseif ($row['licenseStatus'] == 1) {
+          $dLicense = "Valid";
+        } elseif ($row['licenseStatus'] == 2) {
+          $dLicense = "Suspended";
+        } elseif ($row['licenseStatus'] == 3) {
+          $dLicense = "Revoked";
+        }
+        if ($row['weaponLicenseStatus'] == 0) {
+          $wLicense = "Unlicensed";
+        } elseif ($row['weaponLicenseStatus'] == 1) {
+          $wLicense = "Valid";
+        } elseif ($row['weaponLicenseStatus'] == 2) {
+          $wLicense = "Suspended";
+        } elseif ($row['weaponLicenseStatus'] == 3) {
+          $wLicense = "Revoked";
+        }
+        $result2 = $result2 . '<td>' . $dLicense . '</td>
+        <td>' . $wLicense . '</td>';
+        if (DOWF_MODULE == 1) {
+          if ($row['fishingLicense'] == 0) {
+            $fLicense = "Unlicensed";
+          } elseif ($row['fishingLicense'] == 1) {
+            $fLicense = "Valid";
+          } elseif ($row['fishingLicense'] == 2) {
+            $fLicense = "Suspended";
+          } elseif ($row['fishingLicense'] == 3) {
+            $fLicense = "Revoked";
+          }
+          if ($row['huntingLicense'] == 0) {
+            $hLicense = "Unlicensed";
+          } elseif ($row['huntingLicense'] == 1) {
+            $hLicense = "Valid";
+          } elseif ($row['huntingLicense'] == 2) {
+            $hLicense = "Suspended";
+          } elseif ($row['huntingLicense'] == 3) {
+            $hLicense = "Revoked";
+          }
+          $result2 = $result2 . '<td>' . $fLicense . '</td>
+          <td>' . $hLicense . '</td>';
+        }
+        $result2 = $result2 . '</tr>';
+        $result2 = $result2 . "<tr><td><button class='btn btn-warning' onclick='suspendLicense(" . '"' . $uuid . '"' . ", " . '"drivers"' . "); showChar(" . '"' . $uuid . '"' . ");'>Suspend Driver's License</button></td>";
+        $result2 = $result2 . "<td><button class='btn btn-warning' onclick='suspendLicense(" . '"' . $uuid . '"' . ", " . '"weapon"' . "); showChar(" . '"' . $uuid . '"' . ");'>Suspend Weapon License</button></td>";
+        $result2 = $result2 . "<td><button class='btn btn-warning' onclick='suspendLicense(" . '"' . $uuid . '"' . ", " . '"fishing"' . "); showChar(" . '"' . $uuid . '"' . ");'>Suspend Fishing License</button></td>";
+        $result2 = $result2 . "<td><button class='btn btn-warning' onclick='suspendLicense(" . '"' . $uuid . '"' . ", " . '"hunting"' . "); showChar(" . '"' . $uuid . '"' . ");'>Suspend Hunting License</button></td>";
+        $result2 = $result2 . "</tr>";
+      }
     }
     $result2 = $result2 . '</tbody></table>';
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
@@ -166,7 +228,6 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
         }
     }
     echo $result2 . '</tbody></table>';
-    echo "<button class='btn btn-warning' style='float:right;' onclick='suspendLicense(" . '"' . $uuid . '"' . ");'>Suspend Driver's License</button>";
     logUserAction($_SESSION['uuid'], "Ran character search. Details: [UCID:" . '"' . $uuid . '"' . "]");
 } elseif (isset($_GET['updateStatus'])) {
     $status = $_GET['updateStatus'];
@@ -177,6 +238,14 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     }
     $result = $connection->query("UPDATE units SET status='$status' WHERE uuid='$uuid'");
     logUserAction($_SESSION['uuid'], "Updated status. Details: [Target UUID:" . '"' . $uuid . '"' . "], [Status:" . '"' . $status . '"' . "]");
+} elseif (isset($_GET['deleteCall'])) {
+    $ucid = $_GET['deleteCall'];
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("DELETE FROM calls WHERE ucid='$ucid'");
+    logUserAction($_SESSION['uuid'], "Deleted call. Details: [UCID:" . '"' . $ucid . '"' . "]");
 } elseif (isset($_GET['assignSelfToCall'])) {
     $ucid = $_GET['assignSelfToCall'];
     $uuid = $_SESSION['identifier'];
@@ -195,7 +264,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
           $query = $connection->query("UPDATE calls SET assigned='$returnJSON' WHERE ucid='$ucid'");
         }
     }
-    logUserAction($_SESSION['uuid'], "Updated status. Details: [Target UUID:" . '"' . $uuid . '"' . "], [Status:" . '"' . $status . '"' . "]");
+    logUserAction($_SESSION['uuid'], "Assigned self to call. Details: [UCID:" . '"' . $ucid . '"' . "]");
 } elseif (isset($_GET['createCall'])) {
     $desc = $_GET['createCall'];
     $uuid = $_SESSION['identifier'];
@@ -206,15 +275,24 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
         die("Connection failed: " . $connection->connect_error);
     }
     $result = $connection->query("INSERT INTO calls VALUES (DEFAULT, '$ucid', '$desc', '$assigned')");
-    logUserAction($_SESSION['uuid'], "Updated status. Details: [Target UUID:" . '"' . $uuid . '"' . "], [Status:" . '"' . $status . '"' . "]");
-} elseif (isset($_GET['suspendLicense'])) {
-    $uuid = $_GET['suspendLicense'];
+    logUserAction($_SESSION['uuid'], "Created call. Details: [Description:" . '"' . $desc . '"' . "], [UCID:" . '"' . $ucid . '"' . "]");
+} elseif (isset($_GET['suspendLicense']) && isset($_GET['uuid'])) {
+    $uuid = $_GET['uuid'];
+    $type = $_GET['suspendLicense'];
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }
-    $result = $connection->query("UPDATE characters SET licenseStatus='2' WHERE uuid='$uuid'");
-    logUserAction($_SESSION['uuid'], "Suspended driver's license. Details: [Target UCID:" . '"' . $uuid . '"' . "]");
+    if ($type == "drivers") {
+      $result = $connection->query("UPDATE characters SET licenseStatus='2' WHERE uuid='$uuid'");
+    } elseif ($type == "weapon") {
+      $result = $connection->query("UPDATE characters SET weaponLicenseStatus='2' WHERE uuid='$uuid'");
+    } elseif ($type == "fishing") {
+      $result = $connection->query("UPDATE characters SET fishingLicense='2' WHERE uuid='$uuid'");
+    } elseif ($type == "hunting") {
+      $result = $connection->query("UPDATE characters SET huntingLicense='2' WHERE uuid='$uuid'");
+    }
+    logUserAction($_SESSION['uuid'], "Suspended " . $type . " license. Details: [Target UuID:" . '"' . $uuid . '"' . "]");
 } elseif (isset($_GET['setStatus']) && isset($_GET['uuid'])) {
     $status = $_GET['setStatus'];
     $uuid = $_GET['uuid'];
@@ -274,7 +352,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
             $tableBody = $tableBody . '<td>' . $unitsRow . '</td>';
             $selfAss = '<button class="btn btn-sm btn-success" onclick="assignSelfToCall(' . "'" . $row['ucid'] . "'" . ');">Assign Self</button>';
             if(in_array($_SESSION['identifier'], $arr)) {
-              $selfAss = "Already assigned";
+              $selfAss = '<button class="btn btn-sm btn-danger" onclick="deleteCall(' . "'" . $row['ucid'] . "'" . ');">Delete Call</button>';
             }
             $tableBody = $tableBody . '<td>' . $selfAss . '</td></tr>';
         }
@@ -295,7 +373,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     $id = $_GET['remBolo'];
     $result = $connection->query("DELETE FROM bolos WHERE id='$id'");
     echo "success";
-    logUserAction($_SESSION['uuid'], "URemoved bolo. Details: [ID:" . '"' . $id . '"' . "]");
+    logUserAction($_SESSION['uuid'], "Removed bolo. Details: [ID:" . '"' . $id . '"' . "]");
     exit();
 } elseif (isset($_GET['ticket']) && isset($_GET['reason']) && isset($_GET['amount'])) {
     $uuid = $_SESSION['identifier'];
@@ -308,7 +386,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     $amount = $_GET['amount'];
     $result = $connection->query("INSERT INTO tickets VALUES (DEFAULT, '$id', '$reason', '$amount', '$uuid')");
     echo "success";
-    logUserAction($_SESSION['uuid'], "Issued ticket. Details: [IssuedTo UCID:" . '"' . $id . '"' . "], [Reason:" . '"' . $reason . '"' . "], [Amount:" . '"' . $amount . '"' . "]");
+    logUserAction($_SESSION['uuid'], "Issued ticket. Details: [IssuedToUUID:" . '"' . $id . '"' . "], [Reason:" . '"' . $reason . '"' . "], [Amount:" . '"' . $amount . '"' . "]");
     exit();
 } elseif (isset($_GET['warrant']) && isset($_GET['reason'])) {
     $uuid = $_SESSION['identifier'];
@@ -320,7 +398,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     $reason = $_GET['reason'];
     $result = $connection->query("INSERT INTO warrants VALUES (DEFAULT, '$id', '$reason', '$uuid')");
     echo "success";
-    logUserAction($_SESSION['uuid'], "Issued warrant. Details: [IssuedTo UCID:" . '"' . $id . '"' . "], [Reason:" . '"' . $reason . '"' . "]");
+    logUserAction($_SESSION['uuid'], "Issued warrant. Details: [IssuedToUUID:" . '"' . $id . '"' . "], [Reason:" . '"' . $reason . '"' . "]");
     exit();
 } elseif (isset($_GET['getCharacters'])) {
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);

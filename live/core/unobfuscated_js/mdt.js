@@ -14,7 +14,7 @@ bootstrap_alert.success = function(message) {
     $('#alert_placeholder').html($('#alert_placeholder').html() + '<div class="alert alert-dismissible alert-success fade show" id="' + name + '"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>' + message + '</div>');
     setTimeout(function () {
         $('#'+name).alert('close');
-    }, 3000);
+    }, 1000);
 };
 
 var rawNotesText = "";
@@ -121,7 +121,7 @@ function assignSelfToCall(ucid) {
                     assignSelfToCall: ucid
                 },
                 success:function(response) {
-
+                    bootstrap_alert.success('Successfully assigned self to call.');
                 },
                 error:function(){
                     console.log("ajax error");
@@ -149,6 +149,7 @@ function createCall() {
                 },
                 success:function(response) {
                   $('#callModal').modal('toggle');
+                  bootstrap_alert.success('Successfully created call.');
                 },
                 error:function(){
                     console.log("ajax error");
@@ -372,6 +373,7 @@ function issueTicket() {
                 success:function(response) {
                     if (response == "success") {
                         $("#ticketModal").modal('toggle');
+                        bootstrap_alert.success('Successfully issued ticket.');
                     }
                 },
                 error:function(){
@@ -399,6 +401,7 @@ function issueWarrant() {
                 success:function(response) {
                     if (response == "success") {
                         $("#warrantModal").modal('toggle');
+                        bootstrap_alert.success('Successfully issued warrant.');
                     }
                 },
                 error:function(){
@@ -407,6 +410,23 @@ function issueWarrant() {
             });
             }
     }
+}
+function deleteCall(ucid) {
+            $.ajax({
+                url:"actions.php",
+                method:"GET",
+                data:{
+                  deleteCall: ucid
+                },
+                success:function(response) {
+                    if (response == "success") {
+                    }
+                    bootstrap_alert.success('Successfully deleted call.');
+                },
+                error:function(){
+                    console.log("ajax error");
+                }
+            });
 }
 function updateCharacters() {
             if ('XDomainRequest' in window && window.XDomainRequest !== null) {
@@ -452,7 +472,7 @@ function updateVehicles() {
                 }
             });
 }
-function suspendLicense(uuid) {
+function suspendLicense(uuid, type) {
             if ('XDomainRequest' in window && window.XDomainRequest !== null) {
                 jQuery.ajaxSettings.xhr = function() {
                     try { return new ActiveXObject("Microsoft.XMLHTTP"); }
@@ -464,7 +484,8 @@ function suspendLicense(uuid) {
                 url:"actions.php",
                 method:"GET",
                 data:{
-                    suspendLicense: uuid
+                    suspendLicense: type,
+                    uuid: uuid
                 },
                 success:function(response) {
 

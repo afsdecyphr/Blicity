@@ -36,51 +36,8 @@ if (isset($_SESSION['uuid'])) {
 }
 $file_access = "11111111";
 require '../../core/includes/check_access.php';
-
-if (isset($_POST['submit'])) {
-    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
-    if ($connection->connect_error) {
-        die("Connection failed: " . $connection->connect_error);
-    }
-    $title = mysqli_real_escape_string($connection, $_POST["title"]);
-    $url = mysqli_real_escape_string($connection, $_POST["url"]);
-    $result = $connection->query("SELECT * FROM settings");
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            if ($title != $row['title']) {
-                $oldTitle = $row['title'];
-                $query = $connection->query("UPDATE settings SET title='$title' WHERE title='$oldTitle'");
-            }
-            if ($url != $row['siteUrl']) {
-                $oldUrl = $row['siteUrl'];
-                $query = $connection->query("UPDATE settings SET siteUrl='$url' WHERE siteUrl='$oldUrl'");
-            }
-        }
-        renderPage($title, $url, "");
-    } else {
-        $error = "An error occured.";
-        renderPage("", "", $error);
-    }
-    $connection->close();
-} else {
-    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
-    if ($connection->connect_error) {
-        die("Connection failed: " . $connection->connect_error);
-    }
-    $result = $connection->query("SELECT * FROM settings");
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            $title = $row['title'];
-            $url = $row['siteUrl'];
-        }
-    }
-    renderPage($title, $url, "");
-    exit();
-}
-function renderPage($title, $url, $info) {
-$file_access = "11111111";
-require '../../core/includes/check_access.php';
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -109,13 +66,75 @@ require '../../core/includes/check_access.php';
             <a href="index.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">Admin Panel</button></a>
             <a href="ums/index.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">User Management System</button></a>
         </div>
-        <div class="col-centered" style="width:75%; height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:right; margin-right:5px;">
-            <div style="width:100%;height:100%;margin-top:0px;overflow-y:scroll;line-height:16px;font-size:14px;" id="" class="form-control log-box" contenteditable="false"><?php
+        <div class="col-centered" style="width:75%; height:auto; border:1px solid black; max-height: 100%; border-radius:4px; padding:5px 5px; display:inline; float:right; margin-right:5px;">
+          <?php
+          $holder = '?';
+          $sortNewest = "?sort=newest";
+          $sortOldest = "?sort=oldest";
+          if (isset($_GET['sort'])) {
+            $holder .= 'sort=' . $_GET['sort'];
+          }
+          if (isset($_GET['user'])) {
+            if ($holder == "?") {
+              $holder .= 'user=' . $_GET['user'];
+              $sortNewest .= 'user=' . $_GET['user'];
+              $sortOldest .= 'user=' . $_GET['user'];
+            } else {
+              $holder .= '&user=' . $_GET['user'];
+              $sortNewest .= '&user=' . $_GET['user'];
+              $sortOldest .= '&user=' . $_GET['user'];
+            }
+          }
+          if (isset($_GET['ip'])) {
+            if ($holder == "?") {
+              $holder .= 'ip=' . $_GET['ip'];
+              $sortNewest .= 'ip=' . $_GET['ip'];
+              $sortOldest .= 'ip=' . $_GET['ip'];
+            } else {
+              $holder .= '&ip=' . $_GET['ip'];
+              $sortNewest .= '&ip=' . $_GET['ip'];
+              $sortOldest .= '&ip=' . $_GET['ip'];
+            }
+          }
+          $sortNewestByUser = "?sort=newest&user=";
+          $sortOldestByUser = "?sort=oldest&user=";
+          $sortNewestByIP = "?sort=newest&ip=";
+          $sortOldestByIP = "?sort=oldest&ip=";
+          if (isset($_GET['ip'])) {
+            $sortNewest = $sortNewestByIP . $_GET['ip'];
+            $sortNewestTemplate = $sortNewestByIP;
+            $sortOldest = $sortOldestByIP . $_GET['ip'];
+            $sortOldestTemplate = $sortOldesttByIP;
+          }
+          if (isset($_GET['user'])) {
+            $sortNewest = $sortNewestByUser . $_GET['user'];
+            $sortNewestTemplate = $sortNewestByUser;
+            $sortOldest = $sortOldestByUser . $_GET['user'];
+            $sortOldestTemplate = $sortOldestByUser;
+          }
+          ?>
+          <a href="<?php echo $sortNewest; ?>"><button class="btn btn-sm btn-info" style="margin: 0 5px;">Sort By Newest</button></a><a href="<?php echo $sortOldest; ?>"><button class="btn btn-sm btn-info" style="margin: 0 5px;">Sort By Oldest</button></a><a href="logs.php?sort=newest"><button class="btn btn-sm btn-warning" style="margin: 0 5px;">Clear Filter</button></a>
+            <div style="width:100%; height: 100%; max-height: 490px;margin-top:5px;overflow-y:auto;line-height:16px;font-size:14px;" id="" class="form-control log-box" contenteditable="false"><?php
             $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
             if ($connection->connect_error) {
                 die("Connection failed: " . $connection->connect_error);
             }
-            $logsQuery = $connection->query("SELECT * FROM user_log");
+            $sort = "DESC";
+            if (isset($_GET['sort'])) {
+              if ($_GET['sort'] == "oldest") {
+                $sort = "ASC";
+              }
+            }
+            
+            if (isset($_GET['user'])) {
+              $user = $_GET['user'];
+              $logsQuery = $connection->query("SELECT * FROM user_log WHERE uuid='$user' ORDER BY id $sort");
+            } elseif (isset($_GET['ip'])) {
+              $ip = $_GET['ip'];
+              $logsQuery = $connection->query("SELECT * FROM user_log WHERE ip='$ip' ORDER BY id $sort");
+            } else {
+              $logsQuery = $connection->query("SELECT * FROM user_log ORDER BY id $sort");
+            }
             $i = 0;
             $add = "";
             if (mysqli_num_rows($logsQuery) >= 0) {
@@ -130,7 +149,7 @@ require '../../core/includes/check_access.php';
                             $username = $row2['username'];
                         }
                     }
-                    echo '<span class="badge badge-dark">' . date('Y-m-d h:i:s', $row['timestamp']) . '</span> <span class="badge badge-dark">' . $username . '</span> <span class="badge badge-dark">' . $row['ip'] . '</span> <span class="badge badge-primary">' . $row['action'] . '</span><br>';
+                    echo '<span class="badge badge-dark">' . date('Y-m-d h:i:s', $row['timestamp']) . '</span> <a href="?sort=newest&user=' . $uuid . '"><span class="badge badge-dark">' . $username . '</span></a> <a href="?sort=newest&ip=' . $row['ip'] . '"><span class="badge badge-dark">' . $row['ip'] . '</span></a> <span class="badge badge-primary">' . $row['action'] . '</span><br>';
                 }
             }
             ?></div>
@@ -142,6 +161,3 @@ require '../../core/includes/check_access.php';
         <script src="<?php echo SITE_URL; ?>core/assets/bootstrap-number-input.js"></script>
     </body>
 </html>
-<?php
-}
-?>

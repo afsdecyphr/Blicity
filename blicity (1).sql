@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 07, 2018 at 10:40 PM
+-- Generation Time: Nov 12, 2018 at 06:48 PM
 -- Server version: 8.0.4-rc-log
 -- PHP Version: 7.2.5
 
@@ -35,14 +35,6 @@ CREATE TABLE `bolos` (
   `color` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `bolos`
---
-
-INSERT INTO `bolos` (`id`, `plate`, `makemodel`, `color`) VALUES
-(41, 'tre', '5e', 'te'),
-(42, 'sda', 'dsa', 'qdwq');
-
 -- --------------------------------------------------------
 
 --
@@ -55,14 +47,6 @@ CREATE TABLE `calls` (
   `description` varchar(255) DEFAULT NULL,
   `assigned` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `calls`
---
-
-INSERT INTO `calls` (`id`, `ucid`, `description`, `assigned`) VALUES
-(1, 'dsha', 'call description', '[\"cc1acb28-673e-4e54-84d2-55087f2ce2ec\",\"617c396f-7aad-4601-b7ce-941cdad1cef3\",\"4853e905-9959-4fe8-94e8-ba76d2276b33\"]'),
-(2, '46fff8e7-1822-4a4b-b579-13f3e1efcf8f', 'fds', '[\"617c396f-7aad-4601-b7ce-941cdad1cef3\",\"4853e905-9959-4fe8-94e8-ba76d2276b33\"]');
 
 -- --------------------------------------------------------
 
@@ -79,17 +63,18 @@ CREATE TABLE `characters` (
   `address` varchar(255) DEFAULT NULL,
   `association` varchar(255) DEFAULT NULL,
   `licenseStatus` int(6) DEFAULT NULL,
-  `weaponLicenseStatus` int(6) DEFAULT NULL
+  `weaponLicenseStatus` int(6) DEFAULT NULL,
+  `fishingLicense` int(11) NOT NULL DEFAULT '0',
+  `huntingLicense` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `characters`
 --
 
-INSERT INTO `characters` (`id`, `uuid`, `name`, `age`, `gender`, `address`, `association`, `licenseStatus`, `weaponLicenseStatus`) VALUES
-(1, '29f89bac-f1bf-4b34-a1a0-f862730aaae3', 'max jones', 21, 2, 'test addrress', 'csdhj', 2, 1),
-(2, '9ef0e3f3-bab3-49ac-800a-7980980af2b2', 'Max Well', 22, 0, 'cdjsp[', 'csdhj', 1, 1),
-(4, '9a0d9f1b-98e4-4a76-b9cc-b254e84d0eba', 'df', 19, 0, 'dfsdfsdf', '1a745b26-d781-47f6-8cae-a1d4c68c8ec6', 0, 0);
+INSERT INTO `characters` (`id`, `uuid`, `name`, `age`, `gender`, `address`, `association`, `licenseStatus`, `weaponLicenseStatus`, `fishingLicense`, `huntingLicense`) VALUES
+(1, '29f89bac-f1bf-4b34-a1a0-f862730aaae3', 'max jones', 21, 2, 'test addrress', 'csdhj', 2, 2, 0, 0),
+(2, '9ef0e3f3-bab3-49ac-800a-7980980af2b2', 'Max Well', 22, 0, 'cdjsp[', 'csdhj', 1, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -142,18 +127,20 @@ INSERT INTO `known_ips` (`id`, `uuid`, `ip`) VALUES
 --
 
 CREATE TABLE `settings` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `siteUrl` varchar(255) DEFAULT NULL,
   `discordModule` int(11) NOT NULL,
-  `customDepartmentsModule` int(11) NOT NULL DEFAULT '0'
+  `customDepartmentsModule` int(11) NOT NULL DEFAULT '0',
+  `dowfModule` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`title`, `siteUrl`, `discordModule`, `customDepartmentsModule`) VALUES
-('Blicity (HAWK DEV BUILD)', 'http://localhost:8080/Blicity/Blicity/live/', 1, 1);
+INSERT INTO `settings` (`id`, `title`, `siteUrl`, `discordModule`, `customDepartmentsModule`, `dowfModule`) VALUES
+(1, 'Blicity (HAWK DEV BUILD)', 'http://localhost:8080/Blicity/Blicity/live/', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -178,7 +165,8 @@ INSERT INTO `tickets` (`id`, `giventouuid`, `reason`, `amount`, `issuedBy`) VALU
 (2, '29f89bac-f1bf-4b34-a1a0-f862730aaae3', 'jk', '290', 'cc1acb28-673e-4e54-84d2-55087f2ce2ec'),
 (3, '9ef0e3f3-bab3-49ac-800a-7980980af2b2', 'cndk', 'njfed', 'cc1acb28-673e-4e54-84d2-55087f2ce2ec'),
 (4, '29f89bac-f1bf-4b34-a1a0-f862730aaae3', 'cdsj', 'hucde', 'cc1acb28-673e-4e54-84d2-55087f2ce2ec'),
-(5, '29f89bac-f1bf-4b34-a1a0-f862730aaae3', 'cdsj', 'hucde', 'cc1acb28-673e-4e54-84d2-55087f2ce2ec');
+(5, '29f89bac-f1bf-4b34-a1a0-f862730aaae3', 'cdsj', 'hucde', 'cc1acb28-673e-4e54-84d2-55087f2ce2ec'),
+(6, '9ef0e3f3-bab3-49ac-800a-7980980af2b2', 'dsasda', 'ds', '617c396f-7aad-4601-b7ce-941cdad1cef3');
 
 -- --------------------------------------------------------
 
@@ -204,12 +192,7 @@ CREATE TABLE `units` (
 --
 
 INSERT INTO `units` (`id`, `uuid`, `association`, `callsign`, `status`, `currentcall_ucid`, `dispatch`, `mdt`, `civ`, `notes`) VALUES
-(11, '617c396f-7aad-4601-b7ce-941cdad1cef3', 'csdhj', 'DISP-01', 1, '', 1, 1, 1, 'hjk;\ncmdslds;\nbuyi;yu'),
-(16, '02de9d03-bc0d-4b38-a4db-a048cae5c2d4', '1a745b26-d781-47f6-8cae-a1d4c68c8ec6', '789456123', 1, '', 1, 1, 1, ''),
-(17, 'eb274dee-15aa-4516-bb6c-ef5a10b9d918', '1a745b26-d781-47f6-8cae-a1d4c68c8ec6', '78945`````````````6123', 0, '', 1, 1, 1, ''),
-(18, '4853e905-9959-4fe8-94e8-ba76d2276b33', 'e2ec4d2d-689d-41ba-9795-b3f7c4030b20', '1k-42', 1, '', 1, 1, 1, ''),
-(19, 'b1cc96c6-becb-4639-882a-f6b7b2330220', '4f331bcb-1ba2-4518-a656-981635937be3', 'DSA', 0, '', 0, 0, 1, ''),
-(20, '8d3a8d75-1b6f-4525-b3c2-17f463761196', '4f331bcb-1ba2-4518-a656-981635937be3', 'DSAA', 0, '', 0, 0, 1, '');
+(11, '617c396f-7aad-4601-b7ce-941cdad1cef3', 'csdhj', 'DISP-01', 1, '', 1, 1, 1, 'hjk;\ncmdslds;\nbuyi;yu');
 
 -- --------------------------------------------------------
 
@@ -232,13 +215,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `uuid`, `username`, `password`, `level`, `theme`, `discord`) VALUES
-(1, 'csdhj', 'Decyphr', '$2y$10$vHpeiWxDWYBXQ5qjSYts1eaV5xpa63qdrwN8hqD7qCYftRLBGrMbe', 0, 'dark', 'Decyphr#1065'),
-(4, 'e2ec4d2d-689d-41ba-9795-b3f7c4030b20', 'smileyisbae', '$2y$10$pFbBLMQ4Tj8vcIxvgd/RvOkYNgFbmcPquEOsGs.KfEfE8fwx0Hky2', 1, 'dark', 'Braden H.#9035'),
-(5, '8a794796-bf0f-40f6-a19b-1d0256cf9276', 'dsa', '$2y$10$lbFIgpNFSG1IKOPxefq2COLMiBVqItHlttqywm75U.o8L6.EwQhF2', 1, 'dark', ''),
-(6, '1a745b26-d781-47f6-8cae-a1d4c68c8ec6', 'OfficerScentral', '$2y$10$cGMeMMXEkyEWRLiPe9ryf.lY80i0TjD0JuCWxMQ7hJk6hm1eNAZHy', 0, 'dark', ''),
-(7, '4f331bcb-1ba2-4518-a656-981635937be3', 'dsaa', '$2y$10$MAb9N1RczG9IBJtGzMlC0Od1UMSNqTuBd5zkCSJ9qTmjmPPPPs.Ja', 9, 'dark', ''),
-(8, '26be408f-6286-4d20-bead-18b1a3c0d346', 'Ben', '$2y$10$ZE.wyWTFr7fTQPbaKJkFU.fZRFcL/jHkoj1O/LWu9sFzZCJ498I5y', 0, 'dark', ''),
-(9, '7716abac-c296-4f14-8cce-8eb41d24b1d7', 'dsaaa', '$2y$10$.KUSXx6OK7BjP0mbIn2DZu25EJAKnfT4YXr3T/.V1tKJeWrJ47vLK', 9, 'dark', 'dsaaaa');
+(1, 'csdhj', 'Decyphr', '$2y$10$vHpeiWxDWYBXQ5qjSYts1eaV5xpa63qdrwN8hqD7qCYftRLBGrMbe', 0, 'dark', 'Decyphr#1065');
 
 -- --------------------------------------------------------
 
@@ -358,7 +335,75 @@ INSERT INTO `user_log` (`id`, `timestamp`, `uuid`, `action`, `ip`) VALUES
 (97, '1541577595', 'csdhj', 'Updated status. Details: [Target UUID:\"617c396f-7aad-4601-b7ce-941cdad1cef3\"], [Status:\"\"]', '107.215.32.123'),
 (98, '1541577595', 'csdhj', 'Updated status. Details: [Target UUID:\"617c396f-7aad-4601-b7ce-941cdad1cef3\"], [Status:\"\"]', '107.215.32.123'),
 (99, '1541577595', 'csdhj', 'Updated status. Details: [Target UUID:\"617c396f-7aad-4601-b7ce-941cdad1cef3\"], [Status:\"\"]', '107.215.32.123'),
-(100, '1541577595', 'csdhj', 'Updated status. Details: [Target UUID:\"617c396f-7aad-4601-b7ce-941cdad1cef3\"], [Status:\"\"]', '107.215.32.123');
+(100, '1541577595', 'csdhj', 'Updated status. Details: [Target UUID:\"617c396f-7aad-4601-b7ce-941cdad1cef3\"], [Status:\"\"]', '107.215.32.123'),
+(101, '1542038749', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(102, '1542038976', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(103, '1542038993', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(104, '1542039016', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(105, '1542039466', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(106, '1542039471', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(107, '1542039477', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(108, '1542039480', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(109, '1542040190', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(110, '1542040240', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(111, '1542040283', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(112, '1542040308', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(113, '1542040398', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(114, '1542040524', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(115, '1542040536', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(116, '1542040558', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(117, '1542040569', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(118, '1542040608', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(119, '1542040864', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(120, '1542040918', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(121, '1542040939', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(122, '1542041882', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(123, '1542041890', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(124, '1542041893', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(125, '1542041913', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(126, '1542041921', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(127, '1542041973', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(128, '1542042030', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(129, '1542042112', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(130, '1542042128', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(131, '1542042164', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(132, '1542042176', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(133, '1542042180', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(134, '1542042232', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(135, '1542042234', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(136, '1542042235', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(137, '1542042252', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(138, '1542042279', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(139, '1542042280', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(140, '1542042284', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(141, '1542042326', 'csdhj', 'Ran character search. Details: [UCID:\"29f89bac-f1bf-4b34-a1a0-f862730aaae3\"]', '::1'),
+(142, '1542042329', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(143, '1542042331', 'csdhj', 'Ran character search. Details: [UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"]', '::1'),
+(144, '1542042534', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(145, '1542042536', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(146, '1542042536', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(147, '1542042557', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(148, '1542042594', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(149, '1542042637', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(150, '1542042638', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(151, '1542042639', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(152, '1542042643', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(153, '1542042644', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(154, '1542042654', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(155, '1542042655', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(156, '1542042705', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(157, '1542042707', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(158, '1542042710', 'csdhj', 'URemoved bolo. Details: [ID:\"41\"]', '::1'),
+(159, '1542042711', 'csdhj', 'URemoved bolo. Details: [ID:\"42\"]', '::1'),
+(160, '1542042782', 'csdhj', 'Updated status. Details: [Target UUID:\"617c396f-7aad-4601-b7ce-941cdad1cef3\"], [Status:\"1\"]', '::1'),
+(161, '1542042791', 'csdhj', 'Added bolo. Details: [LicensePlate:\"cds\"], [MakeModel:\"cds\"], [Color:\"cds\"]', '::1'),
+(162, '1542042800', 'csdhj', 'Updated status. Details: [Target UUID:\"617c396f-7aad-4601-b7ce-941cdad1cef3\"], [Status:\"\"]', '::1'),
+(163, '1542042804', 'csdhj', 'Updated status. Details: [Target UUID:\"\"], [Status:\"\"]', '::1'),
+(164, '1542042822', 'csdhj', 'Issued ticket. Details: [IssuedTo UCID:\"9ef0e3f3-bab3-49ac-800a-7980980af2b2\"], [Reason:\"dsasda\"], [Amount:\"ds\"]', '::1'),
+(165, '1542042909', 'csdhj', 'URemoved bolo. Details: [ID:\"43\"]', '::1'),
+(166, '1542042924', 'csdhj', 'Added bolo. Details: [LicensePlate:\"dsa\"], [MakeModel:\"dsa\"], [Color:\"dsa\"]', '::1'),
+(167, '1542043430', 'csdhj', 'Updated status. Details: [Target UUID:\"617c396f-7aad-4601-b7ce-941cdad1cef3\"], [Status:\"\"]', '::1'),
+(168, '1542047949', 'csdhj', 'URemoved bolo. Details: [ID:\"44\"]', '::1');
 
 -- --------------------------------------------------------
 
@@ -376,6 +421,13 @@ CREATE TABLE `vehicles` (
   `vehicleTags` int(6) DEFAULT NULL,
   `insuranceStatus` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `vehicles`
+--
+
+INSERT INTO `vehicles` (`id`, `uvid`, `association`, `licensePlate`, `makemodel`, `color`, `vehicleTags`, `insuranceStatus`) VALUES
+(8, '537a55e5-0dcb-404b-b40b-530b07ac2120', '9ef0e3f3-bab3-49ac-800a-7980980af2b2', 'dsa', 'dsa', 'chrome', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -438,7 +490,7 @@ ALTER TABLE `known_ips`
 -- Indexes for table `settings`
 --
 ALTER TABLE `settings`
-  ADD PRIMARY KEY (`title`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tickets`
@@ -484,13 +536,13 @@ ALTER TABLE `warrants`
 -- AUTO_INCREMENT for table `bolos`
 --
 ALTER TABLE `bolos`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `calls`
 --
 ALTER TABLE `calls`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `characters`
@@ -511,10 +563,16 @@ ALTER TABLE `known_ips`
   MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `units`
@@ -532,13 +590,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `user_log`
 --
 ALTER TABLE `user_log`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- AUTO_INCREMENT for table `vehicles`
 --
 ALTER TABLE `vehicles`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `warrants`

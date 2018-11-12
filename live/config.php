@@ -25,6 +25,7 @@ if ($result->num_rows > 0) {
         define('SITE_URL', $row["siteUrl"]);
         define('DISCORD_MODULE', $row["discordModule"]);
         define('CUSTOM_DEPARTMENTS_MODULE', $row["customDepartmentsModule"]);
+        define('DOWF_MODULE', $row["dowfModule"]);
     }
 } else {
     echo "0 results";

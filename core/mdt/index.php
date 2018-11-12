@@ -372,8 +372,8 @@ $_SESSION['identifier'] = $_GET['q'];
                             <div class="form-group">
                                 <div id="callForm">
                                     <div class="form-group">
-                                        <label for="callDescText">Warrant Reason</label>
-                                        <input type="text" class="form-control" id="callDescText" placeholder="Reason">
+                                        <label for="callDescText">Call Description</label>
+                                        <input type="text" class="form-control" id="callDescText" placeholder="Call Description">
                                         <small id="callDescTextHelp" class="form-text" style="color:red; display:none;">Cannot be left blank.</small>
                                     </div>
                                 </div>

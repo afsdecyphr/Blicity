@@ -144,7 +144,7 @@ if (isset($_GET['getTickets'])) {
                     . '<option value="2">Suspended</option>'
                     . '<option value="3">Revoked</option>'
                     . '</select>'
-                    . '<label for="wLicenseStatusSelect">Weapon License Status</label>'
+                    . '<label for="wLicenseStatusSelect" style="margin-top: 10px;">Weapon License Status</label>'
                     . '<select class="form-control selectpicker js-example-basic-single" id="wLicenseStatusSelect" name="wLicenseStatusSelect">'
                     . '<option value="0">Unlicensed</option>'
                     . '<option value="1">Valid</option>'
@@ -156,8 +156,35 @@ if (isset($_GET['getTickets'])) {
             $js = $js . '<script>$("#dLicenseStatusSelect").val("' . $characterRow['licenseStatus'] . '").trigger("change.select2");</script>';
             $js = $js . '<script>$("#wLicenseStatusSelect").select2();$("#wLicenseStatusSelect").select2({width: "100%", minimumResultsForSearch: Infinity, theme: "bootstrap4"});</script>';
             $js = $js . '<script>$("#wLicenseStatusSelect").val("' . $characterRow['weaponLicenseStatus'] . '").trigger("change.select2");</script>';
+            $js = $js . '<script></script>';
+            $settingsQuery = $connection->query("SELECT dowfModule FROM settings WHERE id='1'");
+            if ($settingsQuery->num_rows == 1) {
+              while($row = $settingsQuery->fetch_assoc()) {
+                if ($row['dowfModule'] == 1) {
+                  $return = $return 
+                          . '<label for="fishingLicenseStatusSelect" style="margin-top: 10px;">Fishing License Status</label>'
+                          . '<select class="form-control selectpicker js-example-basic-single" id="fishingLicenseStatusSelect" name="fishingLicenseStatusSelect">'
+                          . '<option value="0">Unlicensed</option>'
+                          . '<option value="1">Valid</option>'
+                          . '<option value="2">Suspended</option>'
+                          . '<option value="3">Revoked</option>'
+                          . '</select>'
+                          . '<label for="huntingLicenseStatusSelect" style="margin-top: 10px;">Hunting License Status</label>'
+                          . '<select class="form-control selectpicker js-example-basic-single" id="huntingLicenseStatusSelect" name="huntingLicenseStatusSelect">'
+                          . '<option value="0">Unlicensed</option>'
+                          . '<option value="1">Valid</option>'
+                          . '<option value="2">Suspended</option>'
+                          . '<option value="3">Revoked</option>'
+                          . '</select>';
+                          
+                  $js = $js . '<script>$("#fishingLicenseStatusSelect").select2();$("#fishingLicenseStatusSelect").select2({width: "100%", minimumResultsForSearch: Infinity, theme: "bootstrap4"});</script>';
+                  $js = $js . '<script>$("#fishingLicenseStatusSelect").val("' . $characterRow['fishingLicense'] . '").trigger("change.select2");</script>';
+                  $js = $js . '<script>$("#huntingLicenseStatusSelect").select2();$("#huntingLicenseStatusSelect").select2({width: "100%", minimumResultsForSearch: Infinity, theme: "bootstrap4"});</script>';
+                  $js = $js . '<script>$("#huntingLicenseStatusSelect").val("' . $characterRow['huntingLicense'] . '").trigger("change.select2");</script>';
+                }
+              }
+            }
         }
-        $js = $js . '<script></script>';
         echo $return . $js;
         exit();
     } else {
@@ -263,15 +290,20 @@ if (isset($_GET['getTickets'])) {
     $sqlQuery = $connection->query("UPDATE vehicles SET licensePlate='$lp', makemodel='$mm', color='$color', vehicleTags='$tag', insuranceStatus='$insurance' WHERE uvid='$uvid' AND association='$uuid'");
     echo "success";
     exit();
-} elseif (isset($_GET['dLicenseData']) && isset($_GET['wLicenseData'])) {
+} elseif (isset($_GET['dLicenseData']) && isset($_GET['wLicenseData']) && isset($_GET['fishingLicenseStatus']) && isset($_GET['huntingLicenseStatus'])) {
     $dLicenseData = $_GET['dLicenseData'];
     $wLicenseData = $_GET['wLicenseData'];
+    $fishingLicenseStatus = $_GET['fishingLicenseStatus'];
+    $huntingLicenseStatus = $_GET['huntingLicenseStatus'];
     $uuid = $_SESSION['identifier'];
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }
     $sqlQuery = $connection->query("UPDATE characters SET licenseStatus='$dLicenseData', weaponLicenseStatus='$wLicenseData' WHERE uuid='$uuid'");
+    if ($huntingLicenseStatus != 9 && $fishingLicenseStatus != 9) {
+      $sqlQuery = $connection->query("UPDATE characters SET fishingLicense='$fishingLicenseStatus', huntingLicense='$huntingLicenseStatus' WHERE uuid='$uuid'");
+    }
     echo "success";
     exit();
 } elseif (isset($_GET['loadEditCharacter'])) {

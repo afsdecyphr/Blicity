@@ -67,6 +67,15 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
         }
     }
     echo $tableBody;
+} elseif (isset($_GET['createCall'])) {
+    $desc = $_GET['createCall'];
+    $uuid = $_SESSION['identifier'];
+    $ucid = gen_uuid();
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("INSERT INTO calls VALUES (DEFAULT, '$ucid', '$desc', '[]')");
 } elseif (isset($_GET['searchChar'])) {
     $uuid = $_GET['searchChar'];
     $result2 = "<h5>Information</h5><table class='table'><thead>" . '<tr>
@@ -196,10 +205,9 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
             $tableBody = $tableBody . '<td>' . $unitsRow . '</td>';
             $selfAssign = '<button class="btn btn-sm btn-success" onclick="assignSelfToCall(' . "'" . $row['ucid'] . "'" . ');">Assign Self</button>';
             if(in_array($_SESSION['identifier'], $arr)) {
-              $selfAssign = "Already assigned";
+              $selfAssign = '<button class="btn btn-sm btn-danger" onclick="deleteCall(' . "'" . $row['ucid'] . "'" . ');">Delete Call</button>';
             }
-            $selfAssign = "";
-            $tableBody = $tableBody . '<td>' . $selfAss . '</td></tr>';
+            $tableBody = $tableBody . '<td>' . $selfAssign . '</td></tr>';
         }
     }
     $tableBody = $tableBody . '<script>
@@ -210,7 +218,15 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     </script>';
     echo $tableBody;
     exit();
-} elseif (isset($_GET['updateStatus'])) {
+  } elseif (isset($_GET['deleteCall'])) {
+      $ucid = $_GET['deleteCall'];
+      $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+      if ($connection->connect_error) {
+          die("Connection failed: " . $connection->connect_error);
+      }
+      $result = $connection->query("DELETE FROM calls WHERE ucid='$ucid'");
+      logUserAction($_SESSION['uuid'], "Updated status. Details: [Target UUID:" . '"' . $uuid . '"' . "], [Status:" . '"' . $status . '"' . "]");
+  } elseif (isset($_GET['updateStatus'])) {
     $status = $_GET['updateStatus'];
     $uuid = $_SESSION['identifier'];
     $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
@@ -342,4 +358,13 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
     exit();
 }
 
+function gen_uuid() {
+    return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
+        mt_rand( 0, 0xffff ),
+        mt_rand( 0, 0x0fff ) | 0x4000,
+        mt_rand( 0, 0x3fff ) | 0x8000,
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
+    );
+}
 ?>

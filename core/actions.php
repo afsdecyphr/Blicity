@@ -75,7 +75,7 @@ if (isset($_GET['createIdentity'])) {
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }
-    $result = $connection->query("INSERT INTO characters VALUES (DEFAULT, '$ucid', '$name', '$age', '$gender', '$address', '$uuid', 0, 0)");
+    $result = $connection->query("INSERT INTO characters VALUES (DEFAULT, '$ucid', '$name', '$age', '$gender', '$address', '$uuid', 0, 0, 0, 0)");
     echo "success";
 } elseif (isset($_GET['changeColor'])) {
     $color = $_GET['changeColor'];

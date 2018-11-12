@@ -105,6 +105,51 @@ function showChar(uuid) {
     });
 }
 
+function createCall() {
+  var desc = $("#callDescText").val();
+  if (desc == "") {
+    $("#callDescTextHelp").show();
+  } else {
+            if ('XDomainRequest' in window && window.XDomainRequest !== null) {
+                jQuery.ajaxSettings.xhr = function() {
+                    try { return new ActiveXObject("Microsoft.XMLHTTP"); }
+                    catch(e) { }
+                    jQuery.support.cors = true;
+                };
+            }
+            $.ajax({
+                url:"actions.php",
+                method:"GET",
+                data:{
+                    createCall: desc
+                },
+                success:function(response) {
+                  $('#callModal').modal('toggle');
+                },
+                error:function(){
+                    console.log("ajax error");
+                }
+            });
+  }
+}
+
+function deleteCall(ucid) {
+            $.ajax({
+                url:"actions.php",
+                method:"GET",
+                data:{
+                  deleteCall: ucid
+                },
+                success:function(response) {
+                    if (response == "success") {
+                    }
+                },
+                error:function(){
+                    console.log("ajax error");
+                }
+            });
+}
+
 function setStatus(uuid, status) {
     if ('XDomainRequest' in window && window.XDomainRequest !== null) {
         jQuery.ajaxSettings.xhr = function() {

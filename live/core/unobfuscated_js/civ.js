@@ -248,6 +248,14 @@ function saveVehicle() {
 function saveLicenseData() {
     var dLicenseStatus = $("#dLicenseStatusSelect").val();
     var wLicenseStatus = $("#wLicenseStatusSelect").val();
+    var fishingLicenseStatus = $("#fishingLicenseStatusSelect").val();
+    var huntingLicenseStatus = $("#huntingLicenseStatusSelect").val();
+    if (fishingLicenseStatus == undefined) {
+      fishingLicenseStatus = 9;
+    }
+    if (huntingLicenseStatus == undefined) {
+      huntingLicenseStatus = 9;
+    }
     if ('XDomainRequest' in window && window.XDomainRequest !== null) {
         jQuery.ajaxSettings.xhr = function() {
             try { return new ActiveXObject("Microsoft.XMLHTTP"); }
@@ -260,7 +268,9 @@ function saveLicenseData() {
         method:"GET",
         data:{
             dLicenseData: dLicenseStatus,
-            wLicenseData: wLicenseStatus
+            wLicenseData: wLicenseStatus,
+            fishingLicenseStatus: fishingLicenseStatus,
+            huntingLicenseStatus: huntingLicenseStatus
         },
         success:function(response) {
             if (response == "success") {
