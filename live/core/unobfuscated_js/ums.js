@@ -1,9 +1,24 @@
 var discordModule = 0;
 var editingUUID = "";
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+function getUrlParam(parameter, defaultvalue){
+    var urlparameter = defaultvalue;
+    if(window.location.href.indexOf(parameter) > -1){
+        urlparameter = getUrlVars()[parameter];
+        }
+    return urlparameter;
+}
             $( document ).ready(function() {
-                getUsers();
+              var page = getUrlParam("page", "1");
+                getUsers(page);
             });
-            function getUsers() {
+            function getUsers(page) {
                 $("#usersTableBody").html("");
                 if ('XDomainRequest' in window && window.XDomainRequest !== null) {
                     jQuery.ajaxSettings.xhr = function() {
@@ -16,7 +31,7 @@ var editingUUID = "";
                     url:"actions.php",
                     method:"GET",
                     data:{
-                        getUsers: '1'
+                        getUsers: page
                     },
                     success:function(response) {
                       $("#usersTableBody").html("");

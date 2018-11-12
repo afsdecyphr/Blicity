@@ -104,12 +104,18 @@ if (isset($_GET['getUserInfo'])) {
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }
+    $start = $_GET['getUsers'] * 8 - 7;
+    $end = $start + 7;
     $result = $connection->query("SELECT * FROM users");
     $return = "";
     $rows = array();
+    $on = 1;
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
+          if ($on >= $start && $on <= $end) {
             $rows[] = $row;
+          }
+          $on++;
         }
     }
     echo json_encode($rows);

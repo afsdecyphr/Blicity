@@ -92,6 +92,62 @@ require '../../../core/includes/check_access.php';
                 <tbody id="usersTableBody">
                 </tbody>
             </table>
+            <div>
+              <ul class="pagination pagination-sm">
+                <?php
+                $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+                if ($connection->connect_error) {
+                    die("Connection failed: " . $connection->connect_error);
+                }
+                $result = $connection->query("SELECT * FROM users");
+                $users = mysqli_num_rows($result);
+                if ($_GET['page'] == 1) {
+                  echo '
+                  <li class="page-item disabled">
+                    <a class="page-link" href="?page=1">&laquo;</a>
+                  </li>';
+                } else {
+                  echo '
+                  <li class="page-item">
+                    <a class="page-link" href="?page=1">&laquo;</a>
+                  </li>';
+                }
+                $pages = ceil($users / 8);
+                $pageOn = $_GET['page'];
+                $startPage = $pageOn - 3;
+                while ($startPage <= $_GET['page']-1) {
+                  if ($startPage >= 1) {
+                    echo '<li class="page-item active">
+                      <a class="page-link" href="?page=' . $startPage . '">' . $startPage . '</a>
+                    </li>';
+                  }
+                  $startPage++;
+                }
+                echo '<li class="page-item disabled">
+                  <a class="page-link" href="#">' . $_GET['page'] . '</a>
+                </li>';
+                $pageOn = $_GET['page']+1;
+                $pagesOnRightHTML = '';
+                while ($pageOn <= $_GET['page']+3) {
+                  if ($pageOn <= $pages) {
+                    echo '<li class="page-item active">
+                      <a class="page-link" href="?page=' . $pageOn . '">' . $pageOn . '</a>
+                    </li>';
+                  }
+                  $pageOn++;
+                }
+                if ($_GET['page'] == $pages) {
+                  echo '<li class="page-item disabled">
+                    <a class="page-link" href="?page=' . $pages . '">&raquo;</a>
+                  </li>';
+                } else {
+                  echo '<li class="page-item">
+                    <a class="page-link" href="?page=' . $pages . '">&raquo;</a>
+                  </li>';
+                }
+                ?>
+              </ul>
+            </div>
         </div>
 
         <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
