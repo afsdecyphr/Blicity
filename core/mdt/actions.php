@@ -293,6 +293,23 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
       $result = $connection->query("UPDATE characters SET huntingLicense='2' WHERE uuid='$uuid'");
     }
     logUserAction($_SESSION['uuid'], "Suspended " . $type . " license. Details: [Target UuID:" . '"' . $uuid . '"' . "]");
+} elseif (isset($_GET['removeFromCall'])) {
+    $uuid = $_SESSION['identifier'];
+    $ucid = $_GET['removeFromCall'];
+    $connection = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE);
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+    $result = $connection->query("SELECT assigned FROM calls WHERE ucid='$ucid'");
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          $rawJSON = $row['assigned'];
+          $rawJSON = str_replace(',"' . $uuid . '"', '', $rawJSON);
+          $rawJSON = str_replace('"' . $uuid . '"', '', $rawJSON);
+          $query = $connection->query("UPDATE calls SET assigned='$rawJSON' WHERE ucid='$ucid'");
+        }
+    }
+    logUserAction($_SESSION['uuid'], "Updated status. Details: [Target UUID:" . '"' . $uuid . '"' . "], [Status:" . '"' . $status . '"' . "]");
 } elseif (isset($_GET['setStatus']) && isset($_GET['uuid'])) {
     $status = $_GET['setStatus'];
     $uuid = $_GET['uuid'];
@@ -345,7 +362,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
                   $unitsRow = $unitsRow . 'UNKNOWN UUID';
                 }
                 if ($on != $count) {
-                    $unitsRow = $unitsRow . ', ';
+                    $unitsRow = $unitsRow . ' & ';
                 }
             }
             $tableBody = $tableBody . '<tr><td>' . $row['description'] . '</td>';
@@ -353,6 +370,7 @@ if (isset($_POST['makemodel']) && isset($_POST['color']) && isset($_POST['lp']))
             $selfAss = '<button class="btn btn-sm btn-success" onclick="assignSelfToCall(' . "'" . $row['ucid'] . "'" . ');">Assign Self</button>';
             if(in_array($_SESSION['identifier'], $arr)) {
               $selfAss = '<button class="btn btn-sm btn-danger" onclick="deleteCall(' . "'" . $row['ucid'] . "'" . ');">Delete Call</button>';
+              $selfAss .= '<button class="btn btn-sm btn-warning" onclick="removeFromCall(' . "'" . $row['ucid'] . "'" . ');" style="margin-left:5px;">Remove Self From Call</button>';
             }
             $tableBody = $tableBody . '<td>' . $selfAss . '</td></tr>';
         }

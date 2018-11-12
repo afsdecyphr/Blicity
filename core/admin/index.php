@@ -132,7 +132,7 @@ require '../../core/includes/check_access.php';
     </head>
     <body>
         <h1 class="text-center" style="margin-top: 10px;"><?php echo TITLE; ?> ● Admin Panel</h1>
-        <div class="col-centered" style="width:calc(-10px + 33.33%); height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:left; margin: 0 5px;">
+        <div class="col-centered" style="width:calc(-10px + 33.33%); height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:left; margin:0 5px;">
             <a href="<?php echo SITE_URL; ?>" style="width:100%;"><button class="btn btn-primary" style="width:100%;">Home</button></a>
             <a href="ums/index.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">User Management System</button></a>
             <a href="logs.php" style="width:100%; margin-top:5px;"><button class="btn btn-primary" style="width:100%; margin-top:5px;">Logs</button></a>
@@ -183,13 +183,13 @@ require '../../core/includes/check_access.php';
                 <input type="submit" name="submit" value="Append/Save Changes" class="btn btn-success form-control" style="width:100%; margin-top:6px; margin-bottom:6px;">
             </form>
         </div>
-        
-        <div class="col-centered" style="width:calc(-10px + 33.33%); height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:left; margin: 0 5px;">
+
+        <div class="col-centered" style="width:calc(-10px + 33.33%); height:auto; border:1px solid black; border-radius:4px; padding:5px 5px; display:inline; float:left; margin:0 5px;">
           <h3>Module Settings</h3>
           <?php
           if ($customDeps == "1") {
-            echo '<a href="' . SITE_URL . 'modules/customDepartmentsModule/config.php"><input type="submit" name="manageDepartments" value="Manage Departments" class="btn btn-info form-control" style="width:100%; margin-top:6px; margin-bottom:6px;"></a><br>';
-          }            
+            echo '<a href="' . SITE_URL . 'modules/customDepartmentsModule/config.php"><button class="btn btn-info form-control" style="width:100%; margin-top:6px; margin-bottom:6px;">Manage Departments</button></a><br>';
+          }
           ?>
         </div>
 

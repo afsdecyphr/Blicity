@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -15,6 +15,10 @@ $localFiles = $json['versions'][0]['localFiles'];
 $remoteFiles = $json['versions'][0]['remoteFiles'];
 
 $requiredFiles = array();
+
+if (!isset($theme) || $theme == "") {
+  $theme = "dark";
+}
 
 foreach ($remoteFiles as $file) {
     $headerReference = str_replace("{FILE_NAME}", $file['fileName'], $file['headerReference']);

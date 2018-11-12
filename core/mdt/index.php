@@ -65,6 +65,9 @@ $_SESSION['identifier'] = $_GET['q'];
             .table th , .table td {
                 padding: 0.5rem;
             }
+            .btn-lg {
+              margin: 5px 0;
+            }
         </style>
     </head>
 
@@ -96,25 +99,27 @@ $_SESSION['identifier'] = $_GET['q'];
                             Add Bolo
                         </a>
                         <a data-toggle="modal" data-target="#charLookupModal" onclick="updateCharacters();">
-                            <i class="fas fa-drivers-license"></i>
+                            <i class="fas fa-id-card"></i>
                             Character Lookup
                         </a>
                         <a data-toggle="modal" data-target="#vehicleLookupModal" onclick="updateVehicles();">
-                            <i class="fas fa-drivers-license"></i>
+                            <i class="fas fa-car"></i>
                             Vehicle Lookup
                         </a>
                         <a data-toggle="modal" data-target="#ticketModal">
-                            <i class="fas fa-drivers-license"></i>
+                            <i class="fa fa-plus-square" aria-hidden="true"></i>
                             Issue Ticket
                         </a>
                         <a data-toggle="modal" data-target="#warrantModal">
-                            <i class="fas fa-drivers-license"></i>
+                            <i class="fa fa-plus-square"></i>
                             Issue Warrant
                         </a>
                         <a data-toggle="modal" data-target="#callModal">
+                          <i class="fa fa-phone-square"></i>
                             New Call
                         </a>
                         <a data-toggle="modal" data-target="#notesModal">
+                          <i class="fas fa-sticky-note"></i>
                             Note Pad
                         </a>
                     </li>
@@ -405,12 +410,12 @@ $_SESSION['identifier'] = $_GET['q'];
                 <h3 class="text-center">Accessing as [<?php echo $callsign; ?>].</h3>
                 <div class="center-block" style="text-align: center;">
                     <div class="center-block" style="margin: 0 auto; text-align: center; width: inherit; display: inline-block;">
-                        <button class="btn btn-success center-block" onclick="updateStatus(1);" id="status_1">10-8</button>
-                        <button href="#" class="btn btn-warning center-block" onclick="updateStatus(2);" id="status_2">10-6</button>
-                        <button href="#" class="btn btn-danger center-block" onclick="updateStatus(0);" id="status_0">10-7</button>
+                        <button class="btn btn-success center-block" onclick="updateStatus(1);" style="width:150px;" id="status_1">10-8</button>
+                        <button href="#" class="btn btn-warning center-block" onclick="updateStatus(2);" style="width:150px;" id="status_2">10-6</button>
+                        <button href="#" class="btn btn-danger center-block" onclick="updateStatus(0);" style="width:150px;" id="status_0">10-7</button>
                     </div>
                 </div>
-                <div>
+                <div style="width: 100%; float: left; margin: 0 5px;">
                     <h2 style="">Active Calls</h2>
                     <div style="max-height:280px; overflow:auto;">
                         <table class="table">
@@ -446,7 +451,7 @@ $_SESSION['identifier'] = $_GET['q'];
     </body>
 
     <footer>
-        <p style="margin-bottom: 0px; text-align: center; width: 100%; margin-right: 5px; font-size: 14px; color: black; background-color: #f2f2f2;">
+        <p style="bottom: 0; margin-bottom: 0px; text-align: center; width: 100%; margin-right: 5px; font-size: 14px; color: black; background-color: #f2f2f2; position: fixed;">
             Blicity v<?php echo $version; ?>
         </p>
     </footer>

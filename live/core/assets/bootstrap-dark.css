@@ -9700,3 +9700,10 @@ a.text-dark:hover, a.text-dark:focus {
     width:25%;
     min-width: 480px;
 }
+
+@media only screen and (max-width: 600px) {
+  .center-box {
+    width:90%;
+    min-width: 90%;
+  }
+}

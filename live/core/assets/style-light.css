@@ -107,8 +107,8 @@ i {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
-    color: #fff;
+    background: #cccccc;
+    color: black;
     transition: all 0.3s;
 }
 
@@ -159,7 +159,7 @@ i {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #cccccc;
 }
 
 #sidebar .sidebar-header strong {
@@ -169,7 +169,7 @@ i {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #cccccc;
 }
 
 #sidebar ul li a {
