@@ -101,7 +101,12 @@ require '../../../core/includes/check_access.php';
                 }
                 $result = $connection->query("SELECT * FROM users");
                 $users = mysqli_num_rows($result);
-                if ($_GET['page'] == 1) {
+                if (isset($_GET['page'])) {
+                  $page = $_GET['page'];
+                } else {
+                  $page = 1;
+                }
+                if ($page == 1) {
                   echo '
                   <li class="page-item disabled">
                     <a class="page-link" href="?page=1">&laquo;</a>
@@ -113,9 +118,9 @@ require '../../../core/includes/check_access.php';
                   </li>';
                 }
                 $pages = ceil($users / 8);
-                $pageOn = $_GET['page'];
+                $pageOn = $page;
                 $startPage = $pageOn - 3;
-                while ($startPage <= $_GET['page']-1) {
+                while ($startPage <= $page-1) {
                   if ($startPage >= 1) {
                     echo '<li class="page-item active">
                       <a class="page-link" href="?page=' . $startPage . '">' . $startPage . '</a>
@@ -124,11 +129,11 @@ require '../../../core/includes/check_access.php';
                   $startPage++;
                 }
                 echo '<li class="page-item disabled">
-                  <a class="page-link" href="#">' . $_GET['page'] . '</a>
+                  <a class="page-link" href="#">' . $page . '</a>
                 </li>';
-                $pageOn = $_GET['page']+1;
+                $pageOn = $page+1;
                 $pagesOnRightHTML = '';
-                while ($pageOn <= $_GET['page']+3) {
+                while ($pageOn <= $page+3) {
                   if ($pageOn <= $pages) {
                     echo '<li class="page-item active">
                       <a class="page-link" href="?page=' . $pageOn . '">' . $pageOn . '</a>
@@ -136,7 +141,7 @@ require '../../../core/includes/check_access.php';
                   }
                   $pageOn++;
                 }
-                if ($_GET['page'] == $pages) {
+                if ($page == $pages) {
                   echo '<li class="page-item disabled">
                     <a class="page-link" href="?page=' . $pages . '">&raquo;</a>
                   </li>';
